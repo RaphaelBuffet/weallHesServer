@@ -2,10 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/functions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/anneeXP-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/contrat-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/dateXP-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/diplome-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/dispo-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/entreprise-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/formation-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/langue-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/localite-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/member-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/niveau-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/niveauLangue-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/offre-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/postulant-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/secteur-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/classes/tauxActivite-class.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/functions.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -70,7 +86,8 @@
       <workItem from="1584706330782" duration="124000" />
       <workItem from="1584706632978" duration="3604000" />
       <workItem from="1584738069840" duration="4382000" />
-      <workItem from="1584802256032" duration="4213000" />
+      <workItem from="1584802256032" duration="4845000" />
+      <workItem from="1585053877443" duration="4638000" />
     </task>
     <servers />
   </component>
@@ -78,14 +95,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="704" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585054324027">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="704" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1585054324027" />
     <state x="420" y="248" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584706443714">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="420" y="248" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1584706443714" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584802258990">
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1585053916083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1584802258990" />
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1585053916083" />
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1584543296477" />
     <state x="616" y="242" key="run.anything.popup" timestamp="1584550501342">
       <screen x="0" y="0" width="1920" height="1040" />
