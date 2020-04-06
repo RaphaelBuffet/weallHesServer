@@ -91,27 +91,9 @@ mysql.createConnection(
     MembersRouter.route('/')
         // récupère la listes des membres
         // nous avons mis que si nous mettons un parametre '?max=x' il nous sorts que les x premiers
-        .get((req,res)=>{
-            if(req.query.max !=undefined && req.query.max >0){
-                db.query('Select * from members Limit 0, ?',[req.query.max],(err,result)=>{
-                    if(err) {
-                        res.json(error(err.message))
-                    } else {
-                        res.json(success(result))
-                    }
-                })
-            }
-            else if(req.query.max !=undefined){
-                res.json(error('Wrong max value'))
-            } else{
-                db.query('Select * from members',(err,result)=>{
-                    if(err) {
-                        res.json(error(err.message))
-                    } else {
-                        res.json(success(result))
-                    }
-                })
-            }
+        .get(async (req,res)=>{
+            let allMembers=await Members.getAll(req.query.max)
+            res.json(checkAndChange(allMembers))
         })
         //crée un nouveau membre et un nouvelle id associé
         .post((req,res)=> {
