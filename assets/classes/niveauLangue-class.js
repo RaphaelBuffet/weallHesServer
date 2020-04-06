@@ -21,5 +21,10 @@ let NiveauLangue =class {
 
         })
     }
+    static add(idPostulant,idLangue,idNiveau){
+        return new Promise((next)=> {
+            db.query('Insert into offre(idPostulant,idLangue,idNiveau) values (?)', [idPostulant,idLangue,idNiveau])
+        })
+    }
 
 }

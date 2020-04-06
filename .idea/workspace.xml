@@ -4,22 +4,13 @@
     <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/anneeXP-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/anneeXP-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/contrat-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/contrat-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/dateXP-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/dateXP-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/diplome-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/diplome-class.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/classes/dateXP-class.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/classes/dispo-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/dispo-class.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/classes/entreprise-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/entreprise-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/formation-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/formation-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/langue-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/langue-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/localite-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/localite-class.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/classes/member-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/member-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/niveau-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/niveau-class.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/classes/niveauLangue-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/niveauLangue-class.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/classes/offre-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/offre-class.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/classes/postulant-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/postulant-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/secteur-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/secteur-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/tauxActivite-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/tauxActivite-class.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +76,8 @@
       <workItem from="1584802256032" duration="4845000" />
       <workItem from="1585053877443" duration="6886000" />
       <workItem from="1585567828026" duration="600000" />
-      <workItem from="1586172584156" duration="1412000" />
+      <workItem from="1586172584156" duration="5380000" />
+      <workItem from="1586178474295" duration="7561000" />
     </task>
     <servers />
   </component>
@@ -101,11 +93,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="420" y="248" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1584706443714" />
-    <state x="441" y="-699" key="com.intellij.ide.util.TipDialog" timestamp="1586172584262">
-      <screen x="0" y="-1024" width="1280" height="984" />
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1586178501756">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="441" y="-699" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.-1024.1280.984" timestamp="1586172584262" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1585567828008" />
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1586178501756" />
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1584543296477" />
     <state x="616" y="242" key="run.anything.popup" timestamp="1584550501342">
       <screen x="0" y="0" width="1920" height="1040" />

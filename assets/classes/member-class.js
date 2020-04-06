@@ -40,5 +40,38 @@ let Members =class  {
         })
 
     }
+    static add(name){
+        return new Promise((next)=> {
+
+            if (name != undefined && name.trim()!= '') {
+
+                name=name.trim()
+
+                db.query('Select * from members where name= ?', [name])
+                    .then((result) => {
+
+                        if (result[0] != undefined) {
+                            next(new Error("name already taken"))
+                        } else {
+                            return db.query('Insert into members(name) values (?)', [name])
+                        }
+                    })
+                    .then(()=>{
+                        return db.query('Select * from members where name = ?', [name])
+                        })
+                    .then((result)=> {
+                        next({
+                            id: result[0].id,
+                            name: result[0].name
+                        })
+                    })
+                    .catch((err) => next(err))
+
+            } else {
+                next(new Error('no name value'))
+            }
+
+        })
+    }
 
 }
