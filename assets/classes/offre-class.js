@@ -6,7 +6,6 @@ module.exports = (_db, _config)=>{
 }
 let Offre =class {
     static getById(id){
-
         return new Promise((next) => {
             db.query('Select * from offre WHERE id= ?',[id])
                 .then((result)=> {
@@ -18,7 +17,20 @@ let Offre =class {
                     }
                 })
                 .catch((err) => next(err))
-
+        })
+    }
+    static getByEntreprise(id){
+        return new Promise((next) => {
+            db.query('Select * from offre WHERE idEntreprise = ?',[id])
+                .then((result)=> {
+                    if (result[0]!=undefined){
+                        next(result)
+                    }
+                    else {
+                        next(new Error('Wrong id'))
+                    }
+                })
+                .catch((err) => next(err))
         })
     }
     static add(name,cahierCharge,idEntreprise,idDisponibilite,idContrat,idTauxActivite,idLocalite,idSecteur){

@@ -172,7 +172,7 @@ mysql.createConnection(
             res.json(checkAndChange(allDispo))
         })
         .post(async (req,res) => {
-            let addDispo= await Dispo.add(req.body.name)
+            let addDispo= await Dispo.add(req.body)
             res.json(checkAndChange(addDispo))
         })
     DispoRouter.route('/:id')
@@ -245,6 +245,63 @@ mysql.createConnection(
         .get(async (req,res)=>{
             let taux = await TauxActivite.getById(req.params.id)
             await res.json(checkAndChange(taux))
+        })
+    //requete d'entreprise
+    EntrepriseRouter.route('/')
+        .get(async (req,res)=>{
+            let allEntreprise=await Entreprise.getAll(req.query.max)
+            res.json(checkAndChange(allEntreprise))
+        })
+        .post(async (req,res) => {
+            let addEntreprise= await Entreprise.add(req.body)
+            res.json(checkAndChange(addEntreprise))
+        })
+    EntrepriseRouter.route('/:id')
+        .get(async (req,res)=>{
+            let entreprise = await Entreprise.getById(req.params.id)
+            await res.json(checkAndChange(entreprise))
+        })
+    //requete de niveau de langue
+    NiveauLangueRouter.route('/')
+        .post(async (req,res) => {
+            let addLangue= await NiveauLangue.add(req.body)
+            res.json(checkAndChange(addLangue))
+        })
+    NiveauLangueRouter.route('/:id')
+        .get(async (req,res)=>{
+            let langueniveau = await NiveauLangue.getByPostulant(req.params.id)
+            await res.json(checkAndChange(langueniveau))
+        })
+    //requete Offre
+    OffreRouter.route('/')
+        .post(async (req,res) => {
+            let addOffre= await Offre.add(req.body)
+            res.json(checkAndChange(addOffre))
+        })
+    OffreRouter.route('/:id')
+        .get(async (req,res)=>{
+            let offre = await Offre.getById(req.params.id)
+            await res.json(checkAndChange(offre))
+        })
+    OffreRouter.route('/entreprise/:id')
+        .get(async (req,res)=>{
+            let offre = await Offre.getByEntreprise(req.params.id)
+            await res.json(checkAndChange(offre))
+        })
+    //requete des postulants
+    PostulantRouter.route('/')
+        .get(async (req,res)=>{
+            let allposutlant=await Postulant.getAll(req.query.max)
+            res.json(checkAndChange(allposutlant))
+        })
+        .post(async (req,res) => {
+            let addPostulant= await Postulant.add(req.body)
+            res.json(checkAndChange(addPostulant))
+        })
+    PostulantRouter.route('/:id')
+        .get(async (req,res)=>{
+            let postulant = await TauxActivite.getById(req.params.id)
+            await res.json(checkAndChange(postulant))
         })
 
     // creation des chemins d'acces pour chaque table de la BDD
