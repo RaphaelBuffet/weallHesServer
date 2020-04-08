@@ -14,7 +14,7 @@ let Dispo =class {
                         next(result[0])
                     }
                     else {
-                        next(new Error('Wrong id'))
+                        next(new Error(config.errors.wrongID))
                     }
                 })
                 .catch((err) => next(err))
@@ -28,7 +28,7 @@ let Dispo =class {
                     .then((result) => next(result))
                     .catch((err) => next(err))
             }else if(max !=undefined) {
-                next(new Error('Wrong max value'))
+                next(new Error(config.errors.wrongMaxValue))
 
             }
             else {
@@ -48,7 +48,7 @@ let Dispo =class {
                     .then((result) => {
 
                         if (result[0] != undefined) {
-                            next(new Error("date already taken"))
+                            next(new Error(config.errors.dateAlreadyTaken))
                         } else {
                             return db.query('Insert into disponibilite(year,month) values (?)', [year,month])
                         }
@@ -66,7 +66,7 @@ let Dispo =class {
                     .catch((err) => next(err))
 
             } else {
-                next(new Error('no value'))
+                next(new Error(config.errors.noValue))
             }
 
         })

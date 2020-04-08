@@ -13,7 +13,7 @@ let Offre =class {
                         next(result[0])
                     }
                     else {
-                        next(new Error('Wrong id'))
+                        next(new Error(config.errors.wrongID))
                     }
                 })
                 .catch((err) => next(err))
@@ -27,7 +27,7 @@ let Offre =class {
                         next(result)
                     }
                     else {
-                        next(new Error('Wrong id'))
+                        next(new Error(config.errors.wrongID))
                     }
                 })
                 .catch((err) => next(err))
@@ -51,9 +51,38 @@ let Offre =class {
                     .catch((err) => next(err))
 
             } else {
-                next(new Error('no name value'))
+                next(new Error(config.errors.noNameValue))
             }
 
+        })
+    }
+    static update(id,name,cahierCharge,idEntreprise,idDisponibilite,idContrat,idTauxActivite,idLocalite,idSecteur){
+        return new Promise((next)=>{
+
+            if (name != undefined) {
+
+                db.query('Select * from Offre WHERE id = ?',[id])
+                    .then((result)=>{
+                        if (result[0]!=undefined) {
+                            return db.query('Select * from Offre where name=? And id!=?', [name, id])
+                        } else{
+                            next(new Error(config.errors.wrongID))
+                        }
+                    })
+                    .then((result)=>{
+                        if (result[0] != undefined) {
+                            next(new Error(config.errors.sameName))
+                        } else {
+                            return db.query('Update Offre Set name=?,cahierCharge=?,idEntreprise=?,idDisponibilite=?,idContrat=?,idTauxActivite=?,idLocalite=?,idSecteur=? where id=?', [name,cahierCharge,idEntreprise,idDisponibilite,idContrat,idTauxActivite,idLocalite,idSecteur, id])
+                        }
+                    })
+                    .then(()=>{
+                        next(true)
+                    })
+                    .catch((err) => next(err))
+            } else {
+                next(new Error(config.errors.noValue))
+            }
         })
     }
 

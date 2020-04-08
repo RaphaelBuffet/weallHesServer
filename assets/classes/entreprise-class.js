@@ -14,12 +14,30 @@ let Entreprise =class {
                         next(result[0])
                     }
                     else {
-                        next(new Error('Wrong id'))
+                        next(new Error(config.errors.wrongID))
                     }
                 })
                 .catch((err) => next(err))
 
         })
+    }
+    static getAll(max){
+        return new Promise((next) => {
+            if(max !=undefined && max >0) {
+                db.query('Select * from Entreprise Limit 0, ?', [parseInt(max)])
+                    .then((result) => next(result))
+                    .catch((err) => next(err))
+            }else if(max !=undefined) {
+                next(new Error(config.errors.wrongMaxValue))
+
+            }
+            else {
+                db.query('Select * from Entreprise')
+                    .then((result) => next(result))
+                    .catch((err) => next(err))
+            }
+        })
+
     }
     static add(username,password,name,description,photo){
         return new Promise((next)=> {
@@ -30,7 +48,7 @@ let Entreprise =class {
                     .then((result) => {
 
                         if (result[0] != undefined) {
-                            next(new Error("name already taken"))
+                            next(new Error(config.errors.nameAlreadyTaken))
                         } else {
                             return db.query('Insert into entreprise(Username,Password,Name,Description,Photo) values (?)', [username,password,name,description,photo])
                         }
@@ -47,9 +65,38 @@ let Entreprise =class {
                     .catch((err) => next(err))
 
             } else {
-                next(new Error('no name value'))
+                next(new Error(config.errors.noNameValue))
             }
 
+        })
+    }
+    static update(id,username,password,name,description,photo){
+        return new Promise((next)=>{
+
+            if (username != undefined) {
+
+                db.query('Select * from Entreprise WHERE id = ?',[id])
+                    .then((result)=>{
+                        if (result[0]!=undefined) {
+                            return db.query('Select * from Entreprise where name=? And id!=?', [name, id])
+                        } else{
+                            next(new Error(config.errors.wrongID))
+                        }
+                    })
+                    .then((result)=>{
+                        if (result[0] != undefined) {
+                            next(new Error(config.errors.sameName))
+                        } else {
+                            return db.query('Update Entreprise Set username=?,password=?,name=?,description=?,photo=? where id=?', [username,password,name,description,photo, id])
+                        }
+                    })
+                    .then(()=>{
+                        next(true)
+                    })
+                    .catch((err) => next(err))
+            } else {
+                next(new Error(config.errors.noValue))
+            }
         })
     }
 

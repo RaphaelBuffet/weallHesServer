@@ -14,7 +14,7 @@ let Diplome =class {
                         next(result[0])
                     }
                     else {
-                        next(new Error('Wrong id'))
+                        next(new Error(config.errors.wrongID))
                     }
                 })
                 .catch((err) => next(err))
@@ -28,7 +28,7 @@ let Diplome =class {
                     .then((result) => next(result))
                     .catch((err) => next(err))
             }else if(max !=undefined) {
-                next(new Error('Wrong max value'))
+                next(new Error(config.errors.wrongMaxValue))
 
             }
             else {

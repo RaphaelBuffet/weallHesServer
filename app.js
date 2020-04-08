@@ -62,62 +62,14 @@ mysql.createConnection(
         })
 
         // modifie le nom d'un membre grace à son id
-        .put((req,res)=>{
-            if (req.body.name) {
-                db.query('Select * from members WHERE id = ?',[req.params.id], (err,result)=> {
-                    if(err) {
-                        res.json(error(err.message))
-                    } else {
-                        if (result[0]!=undefined) {
-
-                            db.query('Select * from members where nom=? And id!=?', [req.body.name, req.params.id], (err, result) => {
-                                if (err) {
-                                    res.json(error(err.message))
-                                } else {
-
-                                    if (result[0] != undefined) {
-                                        res.json(error("same name"))
-                                    } else {
-
-                                        db.query('Update members Set nom= ? where id=?', [req.body.name, req.params.id], (err, result) => {
-                                            if (err) {
-                                                res.json(error(err.message))
-                                            } else {
-                                                res.json(success(true))
-                                            }
-                                        })
-                                    }
-                                }
-                            })
-                        } else{
-                            res.json(error('wrong id'))
-                        }
-                    }
-                })
-            } else {
-                res.json("no name value")
-            }
+        .put(async (req,res)=>{
+            let updatemember=await Members.update(req.params.id,req.body.name)
+            await res.json(checkAndChange(updatemember))
         })
         // supprime un membre grace à son id
-        .delete((req,res)=> {
-            db.query('Select * from members WHERE id= ?',[req.params.id], (err,result)=> {
-                if(err) {
-                    res.json(error(err.message))
-                } else {
-                    if (result[0]!=undefined){
-
-                        db.query("Delete from members where id=?",[req.params.id],(err,result)=> {
-                            if(err){
-                                res.json(error(err.message))
-                            } else{
-                                res.json(success(true))
-                            }
-                        })
-                    } else{
-                        res.json(error('wrong id'))
-                    }
-                }
-            })
+        .delete(async (req,res)=> {
+            let deleteMember=await Members.delete(req.params.id)
+            await res.json(checkAndChange(deleteMember))
         })
 
     MembersRouter.route('/')
@@ -125,18 +77,18 @@ mysql.createConnection(
         // nous avons mis que si nous mettons un parametre '?max=x' il nous sorts que les x premiers
         .get(async (req,res)=>{
             let allMembers=await Members.getAll(req.query.max)
-            res.json(checkAndChange(allMembers))
+            await res.json(checkAndChange(allMembers))
         })
         //crée un nouveau membre et un nouvelle id associé
         .post(async (req,res) => {
             let addMember= await Members.add(req.body.name)
-            res.json(checkAndChange(addMember))
+            await res.json(checkAndChange(addMember))
         })
     //requete d'année d'expérience
     AnneeXPRouter.route('/')
         .get(async (req,res)=>{
             let allXP=await AnneeXP.getAll(req.query.max)
-            res.json(checkAndChange(allXP))
+            await res.json(checkAndChange(allXP))
         })
     AnneeXPRouter.route('/:id')
         .get(async (req,res)=>{
@@ -147,7 +99,7 @@ mysql.createConnection(
     ContratRouter.route('/')
         .get(async (req,res)=>{
             let allContrat=await Contrat.getAll(req.query.max)
-            res.json(checkAndChange(allContrat))
+            await res.json(checkAndChange(allContrat))
         })
     ContratRouter.route('/:id')
         .get(async (req,res)=>{
@@ -158,7 +110,7 @@ mysql.createConnection(
     DiplomeRouter.route('/')
         .get(async (req,res)=>{
             let allDiplome=await Diplome.getAll(req.query.max)
-            res.json(checkAndChange(allDiplome))
+            await res.json(checkAndChange(allDiplome))
         })
     DiplomeRouter.route('/:id')
         .get(async (req,res)=>{
@@ -169,11 +121,11 @@ mysql.createConnection(
     DispoRouter.route('/')
         .get(async (req,res)=>{
             let allDispo=await Dispo.getAll(req.query.max)
-            res.json(checkAndChange(allDispo))
+            await res.json(checkAndChange(allDispo))
         })
         .post(async (req,res) => {
             let addDispo= await Dispo.add(req.body)
-            res.json(checkAndChange(addDispo))
+            await res.json(checkAndChange(addDispo))
         })
     DispoRouter.route('/:id')
         .get(async (req,res)=>{
@@ -184,7 +136,7 @@ mysql.createConnection(
     FormationRouter.route('/')
         .get(async (req,res)=>{
             let allFormation=await Formation.getAll(req.query.max)
-            res.json(checkAndChange(allFormation))
+            await res.json(checkAndChange(allFormation))
         })
     FormationRouter.route('/:id')
         .get(async (req,res)=>{
@@ -195,7 +147,7 @@ mysql.createConnection(
     LangueRouter.route('/')
         .get(async (req,res)=>{
             let allLangue=await Langue.getAll(req.query.max)
-            res.json(checkAndChange(allLangue))
+            await res.json(checkAndChange(allLangue))
         })
     LangueRouter.route('/:id')
         .get(async (req,res)=>{
@@ -206,7 +158,7 @@ mysql.createConnection(
     LocaliteRouter.route('/')
         .get(async (req,res)=>{
             let allLocalite=await Localite.getAll(req.query.max)
-            res.json(checkAndChange(allLocalite))
+            await res.json(checkAndChange(allLocalite))
         })
     LocaliteRouter.route('/:id')
         .get(async (req,res)=>{
@@ -217,7 +169,7 @@ mysql.createConnection(
     NiveauRouter.route('/')
         .get(async (req,res)=>{
             let allNiveau=await Niveau.getAll(req.query.max)
-            res.json(checkAndChange(allNiveau))
+            await res.json(checkAndChange(allNiveau))
         })
     NiveauRouter.route('/:id')
         .get(async (req,res)=>{
@@ -239,7 +191,7 @@ mysql.createConnection(
     TauxActiviteRouter.route('/')
         .get(async (req,res)=>{
             let alltaux=await TauxActivite.getAll(req.query.max)
-            res.json(checkAndChange(alltaux))
+            await res.json(checkAndChange(alltaux))
         })
     TauxActiviteRouter.route('/:id')
         .get(async (req,res)=>{
@@ -250,38 +202,50 @@ mysql.createConnection(
     EntrepriseRouter.route('/')
         .get(async (req,res)=>{
             let allEntreprise=await Entreprise.getAll(req.query.max)
-            res.json(checkAndChange(allEntreprise))
+            await res.json(checkAndChange(allEntreprise))
         })
         .post(async (req,res) => {
             let addEntreprise= await Entreprise.add(req.body)
-            res.json(checkAndChange(addEntreprise))
+            await res.json(checkAndChange(addEntreprise))
         })
     EntrepriseRouter.route('/:id')
         .get(async (req,res)=>{
             let entreprise = await Entreprise.getById(req.params.id)
             await res.json(checkAndChange(entreprise))
         })
+        .put(async (req,res)=>{
+            let updateEntreprise=await Entreprise.update(req.params.id,req.body.username,req.body.password,req.body.name,req.body.description,req.body.photo)
+            await res.json(checkAndChange(updateEntreprise))
+        })
     //requete de niveau de langue
     NiveauLangueRouter.route('/')
         .post(async (req,res) => {
             let addLangue= await NiveauLangue.add(req.body)
-            res.json(checkAndChange(addLangue))
+            await res.json(checkAndChange(addLangue))
         })
     NiveauLangueRouter.route('/:id')
         .get(async (req,res)=>{
             let langueniveau = await NiveauLangue.getByPostulant(req.params.id)
             await res.json(checkAndChange(langueniveau))
         })
+        .put(async (req,res)=>{
+            let updateLangue=await NiveauLangue.update(req.params.id,req.body.idPostulant,req.body.idLangue,req.body.idNiveau)
+            await res.json(checkAndChange(updateLangue))
+        })
     //requete Offre
     OffreRouter.route('/')
         .post(async (req,res) => {
             let addOffre= await Offre.add(req.body)
-            res.json(checkAndChange(addOffre))
+            await res.json(checkAndChange(addOffre))
         })
     OffreRouter.route('/:id')
         .get(async (req,res)=>{
             let offre = await Offre.getById(req.params.id)
             await res.json(checkAndChange(offre))
+        })
+        .put(async (req,res)=>{
+            let updateOffre=await Offre.update(req.params.id,req.body.name,req.body.cahierCharge,req.body.idEntreprise,req.body.idDisponibilite,req.body.idContrat,req.body.idTauxActivite,req.body.idLocalite,req.body.idSecteur)
+            await res.json(checkAndChange(updateOffre))
         })
     OffreRouter.route('/entreprise/:id')
         .get(async (req,res)=>{
@@ -292,16 +256,20 @@ mysql.createConnection(
     PostulantRouter.route('/')
         .get(async (req,res)=>{
             let allposutlant=await Postulant.getAll(req.query.max)
-            res.json(checkAndChange(allposutlant))
+            await res.json(checkAndChange(allposutlant))
         })
         .post(async (req,res) => {
             let addPostulant= await Postulant.add(req.body)
-            res.json(checkAndChange(addPostulant))
+            await res.json(checkAndChange(addPostulant))
         })
     PostulantRouter.route('/:id')
         .get(async (req,res)=>{
             let postulant = await TauxActivite.getById(req.params.id)
             await res.json(checkAndChange(postulant))
+        })
+        .put(async (req,res)=>{
+            let updatePostulant=await Postulant.update(req.params.id,req.body.username,req.body.password,req.body.description,req.body.photo,req.body.salaire,req.body.derniereExperience,req.body.idAnneeExperience,req.body.idDiplome,req.body.idFormation,req.body.idDisponibilite,req.body.idSecteurs)
+            await res.json(checkAndChange(updatePostulant))
         })
 
     // creation des chemins d'acces pour chaque table de la BDD
