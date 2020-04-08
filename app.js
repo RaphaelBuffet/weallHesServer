@@ -3,7 +3,9 @@ const express = require('express')
 const bodyParser= require('body-parser')
 const morgan = require('morgan')('dev')
 const config = require('./assets/config')
-const {success,error,checkAndChange} = require('./assets/functions')
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./assets/swagger.json');
+const {checkAndChange} = require('./assets/functions')
 mysql.createConnection(
     {
         host: config.db.host,
@@ -14,7 +16,6 @@ mysql.createConnection(
     console.log('connected')
     const app = express();
     // creation des variables des chemin d'acces
-    let MembersRouter = express.Router()
     let AnneeXPRouter= express.Router()
     let ContratRouter= express.Router()
     let DiplomeRouter = express.Router()
@@ -31,7 +32,6 @@ mysql.createConnection(
     let TauxActiviteRouter= express.Router()
 
     // importation des classe de requete
-    let Members= require('./assets/classes/member-class')(db,config)
     let AnneeXP= require('./assets/classes/anneeXP-class')(db,config)
     let Contrat= require('./assets/classes/contrat-class')(db,config)
     let Diplome= require('./assets/classes/diplome-class')(db,config)
@@ -47,43 +47,11 @@ mysql.createConnection(
     let Secteur= require('./assets/classes/secteur-class')(db,config)
     let TauxActivite= require('./assets/classes/tauxActivite-class')(db,config)
 
-    console.log(Members)
-
     app.use(morgan);
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended:true}));
+    app.use(config.rootAPI+'api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-    MembersRouter.route('/:id')
-
-        // recupère le nom d'un membre grace à son id
-        .get(async (req,res)=>{
-            let member = await Members.getById(req.params.id)
-            await res.json(checkAndChange(member))
-        })
-
-        // modifie le nom d'un membre grace à son id
-        .put(async (req,res)=>{
-            let updatemember=await Members.update(req.params.id,req.body.name)
-            await res.json(checkAndChange(updatemember))
-        })
-        // supprime un membre grace à son id
-        .delete(async (req,res)=> {
-            let deleteMember=await Members.delete(req.params.id)
-            await res.json(checkAndChange(deleteMember))
-        })
-
-    MembersRouter.route('/')
-        // récupère la listes des membres
-        // nous avons mis que si nous mettons un parametre '?max=x' il nous sorts que les x premiers
-        .get(async (req,res)=>{
-            let allMembers=await Members.getAll(req.query.max)
-            await res.json(checkAndChange(allMembers))
-        })
-        //crée un nouveau membre et un nouvelle id associé
-        .post(async (req,res) => {
-            let addMember= await Members.add(req.body.name)
-            await res.json(checkAndChange(addMember))
-        })
     //requete d'année d'expérience
     AnneeXPRouter.route('/')
         .get(async (req,res)=>{
@@ -289,7 +257,6 @@ mysql.createConnection(
         })
 
     // creation des chemins d'acces pour chaque table de la BDD
-    app.use(config.rootAPI+'members',MembersRouter)
     app.use(config.rootAPI+'anneexp',AnneeXPRouter)
     app.use(config.rootAPI+'contrat',ContratRouter)
     app.use(config.rootAPI+'diplome',DiplomeRouter)
