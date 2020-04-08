@@ -4,22 +4,10 @@
     <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/anneeXP-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/anneeXP-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/contrat-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/contrat-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/diplome-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/diplome-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/dispo-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/dispo-class.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/classes/entreprise-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/entreprise-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/formation-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/formation-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/langue-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/langue-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/localite-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/localite-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/member-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/member-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/niveau-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/niveau-class.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/classes/niveauLangue-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/niveauLangue-class.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/classes/offre-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/offre-class.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/classes/postulant-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/postulant-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/secteur-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/secteur-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/tauxActivite-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/tauxActivite-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/config.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +75,7 @@
       <workItem from="1585567828026" duration="600000" />
       <workItem from="1586172584156" duration="5380000" />
       <workItem from="1586178474295" duration="15965000" />
-      <workItem from="1586344686646" duration="5966000" />
+      <workItem from="1586344686646" duration="6304000" />
     </task>
     <servers />
   </component>

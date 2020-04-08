@@ -217,6 +217,10 @@ mysql.createConnection(
             let updateEntreprise=await Entreprise.update(req.params.id,req.body.username,req.body.password,req.body.name,req.body.description,req.body.photo)
             await res.json(checkAndChange(updateEntreprise))
         })
+        .delete(async (req,res)=> {
+            let deletEntrprise=await Entreprise.delete(req.params.id)
+            await res.json(checkAndChange(deletEntrprise))
+        })
     //requete de niveau de langue
     NiveauLangueRouter.route('/')
         .post(async (req,res) => {
@@ -232,6 +236,10 @@ mysql.createConnection(
             let updateLangue=await NiveauLangue.update(req.params.id,req.body.idPostulant,req.body.idLangue,req.body.idNiveau)
             await res.json(checkAndChange(updateLangue))
         })
+        .delete(async (req,res)=> {
+            let deleteLangue=await NiveauLangue.delete(req.params.id)
+            await res.json(checkAndChange(deleteLangue))
+        })
     //requete Offre
     OffreRouter.route('/')
         .post(async (req,res) => {
@@ -246,6 +254,10 @@ mysql.createConnection(
         .put(async (req,res)=>{
             let updateOffre=await Offre.update(req.params.id,req.body.name,req.body.cahierCharge,req.body.idEntreprise,req.body.idDisponibilite,req.body.idContrat,req.body.idTauxActivite,req.body.idLocalite,req.body.idSecteur)
             await res.json(checkAndChange(updateOffre))
+        })
+        .delete(async (req,res)=> {
+            let deletOffre=await Offre.delete(req.params.id)
+            await res.json(checkAndChange(deletOffre))
         })
     OffreRouter.route('/entreprise/:id')
         .get(async (req,res)=>{
@@ -270,6 +282,10 @@ mysql.createConnection(
         .put(async (req,res)=>{
             let updatePostulant=await Postulant.update(req.params.id,req.body.username,req.body.password,req.body.description,req.body.photo,req.body.salaire,req.body.derniereExperience,req.body.idAnneeExperience,req.body.idDiplome,req.body.idFormation,req.body.idDisponibilite,req.body.idSecteurs)
             await res.json(checkAndChange(updatePostulant))
+        })
+        .delete(async (req,res)=> {
+            let deletePostulant=await Postulant.delete(req.params.id)
+            await res.json(checkAndChange(deletePostulant))
         })
 
     // creation des chemins d'acces pour chaque table de la BDD

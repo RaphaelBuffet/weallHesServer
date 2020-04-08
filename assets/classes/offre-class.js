@@ -85,5 +85,24 @@ let Offre =class {
             }
         })
     }
+    static delete(id){
+        return new Promise((next)=>{
+
+            db.query('Select * from offre WHERE id= ?',[id])
+                .then((result)=>{
+
+                    if (result[0]!=undefined) {
+                        return db.query('Delete from offre where id=?', [id])
+                    }
+                    else{
+                        next(new Error(config.errors.wrongID))
+                    }
+                })
+                .then(()=>{
+                    next(true)
+                })
+                .catch((err) => next(err))
+        })
+    }
 
 }

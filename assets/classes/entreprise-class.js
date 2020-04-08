@@ -99,5 +99,24 @@ let Entreprise =class {
             }
         })
     }
+    static delete(id){
+        return new Promise((next)=>{
+
+            db.query('Select * from entreprise WHERE id= ?',[id])
+                .then((result)=>{
+
+                    if (result[0]!=undefined) {
+                        return db.query('Delete from entreprise where id=?', [id])
+                    }
+                    else{
+                        next(new Error(config.errors.wrongID))
+                    }
+                })
+                .then(()=>{
+                    next(true)
+                })
+                .catch((err) => next(err))
+        })
+    }
 
 }
