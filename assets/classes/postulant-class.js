@@ -4,6 +4,7 @@ module.exports = (_db, _config)=>{
     config=_config
     return Postulant
 }
+
 let Postulant =class {
     static getById(id){
 
@@ -39,14 +40,84 @@ let Postulant =class {
         })
 
     }
+    static async getByFilter(salaire, derniereExperience, idAnneeExperience, idDiplome, idFormation, idDisponibilite, idSecteurs) {
+        return new Promise((next) => {
+            let colomn = 0
+            let endresult = []
+
+            db.query('Select * from Postulant')
+                .then((result) => {
+                    for (let i = 0; i < result.length; i++) {
+                        console.log(i)
+                        var row = (result[i]);
+                        if (salaire != undefined) {
+                            if (salaire > row.Salaire) {
+                                row = null
+                            }
+                        }
+                        if (derniereExperience != undefined) {
+                            if (row != null) {
+                                if (derniereExperience < row.DerniereExperience) {
+                                    row = null
+                                }
+                            }
+
+                        }
+                        if (idAnneeExperience != undefined) {
+                            if (row != null) {
+                                if (idAnneeExperience < row.IdAnneeExperience) {
+                                    row = null
+                                }
+                            }
+                        }
+                        if (idDiplome != undefined) {
+                            if (row != null) {
+                                if (idDiplome != row.IdDiplome) {
+                                    row = null
+                                }
+                            }
+                        }
+                        if (idFormation != undefined) {
+                            if (row != null) {
+                                if (idFormation != row.IdFormation) {
+                                    row = null
+                                }
+                            }
+                        }
+                        if (idDisponibilite != undefined) {
+                            if (row != null) {
+                                if (idDisponibilite > row.IdDisponibilite) {
+                                    row = null
+                                }
+                            }
+                        }
+                        if (idSecteurs != undefined) {
+                            if (row != null) {
+                                if (idSecteurs != row.IdSecteur) {
+                                    row = null
+                                }
+                            }
+                        }
+                        if (row != null) {
+                            endresult[colomn] = row
+                            colomn = colomn + 1
+                        }
+                    }
+                    return endresult
+                })
+                .then(endresult=>{
+                    next (endresult)
+                })
+                .catch((err) => next(err))
+        })
+    }
+
     static add(username,password,description,photo,salaire,derniereExperience,idAnneeExperience,idDiplome,idFormation,idDisponibilite,idSecteurs){
         return new Promise((next)=> {
 
-            if (username != undefined && description != undefined && photo != undefined && salaire != undefined
+            if (username != undefined &&  password!=undefined && description != undefined && photo != undefined && salaire != undefined
                 && derniereExperience != undefined && idAnneeExperience != undefined && idDiplome != undefined && idFormation != undefined
                 && idDisponibilite != undefined && idSecteurs != undefined) {
-
-
 
                 db.query('Select * from postulant where Username = ?', [username])
                     .then((result) => {

@@ -214,7 +214,16 @@ mysql.createConnection(
             let addOffre= await Offre.add(req.body)
             await res.json(checkAndChange(addOffre))
         })
-    OffreRouter.route('/:id')
+        .get(async (req,res) => {
+            let Offres= await Offre.getAll(req.query.max)
+            await res.json(checkAndChange(Offres))
+        })
+    OffreRouter.route('/filter')
+        .get(async (req,res)=>{
+            let offreFilter = await Offre.getByFilter(req.body.idDisponibilite,req.body.idContrat,req.body.idTauxActivite,req.body.idLocalite,req.body.idSecteurs)
+            await res.json(checkAndChange(offreFilter))
+        })
+    OffreRouter.route('/id/:id')
         .get(async (req,res)=>{
             let offre = await Offre.getById(req.params.id)
             await res.json(checkAndChange(offre))
@@ -242,9 +251,9 @@ mysql.createConnection(
             let addPostulant= await Postulant.add(req.body)
             await res.json(checkAndChange(addPostulant))
         })
-    PostulantRouter.route('/:id')
+    PostulantRouter.route('/id/:id')
         .get(async (req,res)=>{
-            let postulant = await TauxActivite.getById(req.params.id)
+            let postulant = await Postulant.getById(req.params.id)
             await res.json(checkAndChange(postulant))
         })
         .put(async (req,res)=>{
@@ -254,6 +263,11 @@ mysql.createConnection(
         .delete(async (req,res)=> {
             let deletePostulant=await Postulant.delete(req.params.id)
             await res.json(checkAndChange(deletePostulant))
+        })
+    PostulantRouter.route('/filter')
+        .get(async (req,res)=>{
+            let postulantfilter = await Postulant.getByFilter(req.body.salaire,req.body.derniereExperience,req.body.idAnneeExperience,req.body.idDiplome,req.body.idFormation,req.body.idDisponibilite,req.body.idSecteurs)
+            await res.json(checkAndChange(postulantfilter))
         })
 
     // creation des chemins d'acces pour chaque table de la BDD

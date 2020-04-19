@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/classes/offre-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/offre-class.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/classes/postulant-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/postulant-class.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/swagger.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +75,13 @@
       <workItem from="1586172584156" duration="5380000" />
       <workItem from="1586178474295" duration="15965000" />
       <workItem from="1586344686646" duration="12885000" />
+      <workItem from="1586373032220" duration="19000" />
+      <workItem from="1586615876639" duration="2370000" />
+      <workItem from="1586861772562" duration="8926000" />
+      <workItem from="1587036075410" duration="2747000" />
+      <workItem from="1587038832656" duration="4448000" />
+      <workItem from="1587296498056" duration="1200000" />
+      <workItem from="1587310302347" duration="7498000" />
     </task>
     <servers />
   </component>
@@ -78,6 +89,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="178" key="#Inspections" timestamp="1587312389576">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Inspections/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1587312389576" />
     <state x="704" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585054324027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -86,11 +101,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="420" y="248" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1584706443714" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1586344687747">
+    <state x="803" y="230" key="RollbackChangesDialog" timestamp="1586617051642">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="803" y="230" key="RollbackChangesDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1586617051642" />
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1587310304910">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="441" y="-699" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.-1024.1280.984" timestamp="1586172584262" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1586344687747" />
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1587310304910" />
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1584543296477" />
     <state x="616" y="242" key="run.anything.popup" timestamp="1584550501342">
       <screen x="0" y="0" width="1920" height="1040" />

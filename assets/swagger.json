@@ -90,7 +90,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -118,7 +119,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -146,7 +148,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -171,12 +174,14 @@
         "parameters": [{
           "name": "year",
           "in": "body",
-          "required": true
+          "required": true,
+          "type": "integer"
         },
           {
             "name": "month",
             "in": "body",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -193,7 +198,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -219,7 +225,8 @@
           {
             "name": "name",
             "in": "body",
-            "required": true
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {}
@@ -236,7 +243,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -251,12 +259,14 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           },
           {
             "name": "username",
             "in": "body",
-            "required": true
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {}
@@ -271,7 +281,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -299,7 +310,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -327,7 +339,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -355,7 +368,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -383,7 +397,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -411,7 +426,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -426,7 +442,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -441,7 +458,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -458,15 +476,58 @@
           {
             "name": "name",
             "in": "body",
-            "required": true
+            "required": true,
+            "type": "string"
           }],
         "responses": {}
       }
     },
-    "/offre/{id}": {
+    "/offre/filter": {
       "get": {
         "tags": ["Offre"],
-        "summary": "/offre/{id}",
+        "summary": "/offre/filter",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "idDisponibilite",
+            "in": "body",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "idContrat",
+            "in": "body",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "idTauxActivite",
+            "in": "body",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "idLocalite",
+            "in": "body",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "idSecteurs",
+            "in": "body",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/offre/id/{id}": {
+      "get": {
+        "tags": ["Offre"],
+        "summary": "/offre/id/{id}",
         "consumes": [
           "application/json"
         ],
@@ -474,14 +535,15 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
       },
       "put": {
         "tags": ["Offre"],
-        "summary": "/offre/{id}",
+        "summary": "/offre/id/{id}",
         "consumes": [
           "application/json"
         ],
@@ -489,19 +551,21 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           },
           {
             "name": "name",
             "in": "body",
-            "required": true
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {}
       },
       "delete": {
         "tags": ["Offre"],
-        "summary": "/offre/{id}",
+        "summary": "/offre/id/{id}",
         "consumes": [
           "application/json"
         ],
@@ -509,7 +573,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -526,7 +591,8 @@
           {
             "name": "idEntreprise",
             "in": "path",
-            "required": true
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {}
@@ -551,20 +617,93 @@
         "parameters": [{
           "name": "id",
           "in": "path",
-          "required": true
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
         },
           {
             "name": "username",
             "in": "body",
-            "required": true
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }],
         "responses": {}
       }
     },
-    "/postulant/{id}": {
+    "/postulant/filter": {
       "get": {
         "tags": ["Postulant"],
-        "summary": "/postulant/{id}",
+        "summary": "/postulant/filter",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "salaire",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "derniereExperience",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "idAnneeExperience",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "idDiplome",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "idFormation",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "idDisponibilite",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "idSecteurs",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+        }],
+        "responses": {}
+      }
+    },
+    "/postulant/id/{id}": {
+      "get": {
+        "tags": ["Postulant"],
+        "summary": "/postulant/id/{id}",
         "consumes": [
           "application/json"
         ],
@@ -579,7 +718,7 @@
       },
       "put": {
         "tags": ["Postulant"],
-        "summary": "/postulant/{id}",
+        "summary": "/postulant/id/{id}",
         "consumes": [
           "application/json"
         ],
@@ -599,7 +738,7 @@
       },
       "delete": {
         "tags": ["Postulant"],
-        "summary": "/postulant/{id}",
+        "summary": "/postulant/id/{id}",
         "consumes": [
           "application/json"
         ],

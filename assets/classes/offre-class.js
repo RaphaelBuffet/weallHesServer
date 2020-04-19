@@ -19,6 +19,24 @@ let Offre =class {
                 .catch((err) => next(err))
         })
     }
+    static getAll(max){
+        return new Promise((next) => {
+            if(max !=undefined && max >0) {
+                db.query('Select * from Offre Limit 0, ?', [parseInt(max)])
+                    .then((result) => next(result))
+                    .catch((err) => next(err))
+            }else if(max !=undefined) {
+                next(new Error(config.errors.wrongMaxValue))
+
+            }
+            else {
+                db.query('Select * from Offre')
+                    .then((result) => next(result))
+                    .catch((err) => next(err))
+            }
+        })
+
+    }
     static getByEntreprise(id){
         return new Promise((next) => {
             db.query('Select * from offre WHERE idEntreprise = ?',[id])
@@ -100,6 +118,63 @@ let Offre =class {
                 })
                 .then(()=>{
                     next(true)
+                })
+                .catch((err) => next(err))
+        })
+    }
+    static async getByFilter(idDisponibilite,idContrat,idTauxActivite,idLocalite, idSecteurs) {
+        return new Promise((next) => {
+            let colomn = 0
+            let endresult = []
+
+            db.query('Select * from Offre')
+                .then((result) => {
+                    for (let i = 0; i < result.length; i++) {
+                        console.log(i)
+                        var row = (result[i]);
+                        if (idDisponibilite != undefined) {
+                            if (idDisponibilite > row.IdDisponibilite) {
+                                row = null
+                            }
+                        }
+                        if (idContrat != undefined) {
+                            if (row != null) {
+                                if (idContrat != row.IdContrat) {
+                                    row = null
+                                }
+                            }
+
+                        }
+                        if (idTauxActivite != undefined) {
+                            if (row != null) {
+                                if (idTauxActivite < row.IdTauxActivite) {
+                                    row = null
+                                }
+                            }
+                        }
+                        if (idLocalite != undefined) {
+                            if (row != null) {
+                                if (idLocalite != row.IdLocalite) {
+                                    row = null
+                                }
+                            }
+                        }
+                        if (idSecteurs != undefined) {
+                            if (row != null) {
+                                if (idSecteurs != row.IdSecteur) {
+                                    row = null
+                                }
+                            }
+                        }
+                        if (row != null) {
+                            endresult[colomn] = row
+                            colomn = colomn + 1
+                        }
+                    }
+                    return endresult
+                })
+                .then(endresult=>{
+                    next (endresult)
                 })
                 .catch((err) => next(err))
         })
