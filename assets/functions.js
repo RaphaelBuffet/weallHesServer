@@ -16,5 +16,5 @@ exports.isErr = (err)=> {
 }
 // ternaire après le '?' valeurs vrai, après ':' valeurs fausse (par rapport au test)
 exports.checkAndChange = (obj) => {
-    return this.isErr(obj)? this.error(obj.message): this.success(obj)
+    return this.isErr(obj)? this.error(obj.message): this.success((obj))
 }

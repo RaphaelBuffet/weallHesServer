@@ -152,6 +152,7 @@ let Offre =class {
                                 }
                             }
                         }
+                        console.log(idLocalite)
                         if (idLocalite != undefined) {
                             if (row != null) {
                                 if (idLocalite != row.IdLocalite) {

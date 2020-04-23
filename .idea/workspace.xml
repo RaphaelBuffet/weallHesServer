@@ -5,8 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/classes/offre-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/offre-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/postulant-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/postulant-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/swagger.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/functions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +39,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Downloads/mapathonHES-master/mapathonHES-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -82,6 +82,11 @@
       <workItem from="1587038832656" duration="4448000" />
       <workItem from="1587296498056" duration="1200000" />
       <workItem from="1587310302347" duration="7498000" />
+      <workItem from="1587576859704" duration="3000" />
+      <workItem from="1587649519035" duration="3446000" />
+      <workItem from="1587669189932" duration="2330000" />
+      <workItem from="1587673050070" duration="436000" />
+      <workItem from="1587673499454" duration="3167000" />
     </task>
     <servers />
   </component>
@@ -101,15 +106,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="420" y="248" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1584706443714" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1587654778767">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1587654778767" />
     <state x="803" y="230" key="RollbackChangesDialog" timestamp="1586617051642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="803" y="230" key="RollbackChangesDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1586617051642" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1587310304910">
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1587673503584">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="441" y="-699" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.-1024.1280.984" timestamp="1586172584262" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1587310304910" />
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1587673503584" />
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1584543296477" />
     <state x="616" y="242" key="run.anything.popup" timestamp="1584550501342">
       <screen x="0" y="0" width="1920" height="1040" />
