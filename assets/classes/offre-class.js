@@ -10,7 +10,7 @@ let Offre =class {
             db.query('Select * from offre WHERE id= ?',[id])
                 .then((result)=> {
                     if (result[0]!=undefined){
-                        next(result[0])
+                        next(result)
                     }
                     else {
                         next(new Error(config.errors.wrongID))

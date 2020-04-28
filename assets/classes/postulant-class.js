@@ -65,7 +65,7 @@ let Postulant =class {
                         }
                         if (idAnneeExperience != undefined) {
                             if (row != null) {
-                                if (idAnneeExperience < row.IdAnneeExperience) {
+                                if (idAnneeExperience > row.IdAnneeExperience) {
                                     row = null
                                 }
                             }
@@ -91,8 +91,10 @@ let Postulant =class {
                                 }
                             }
                         }
+                        console.log(idSecteurs)
                         if (idSecteurs != undefined) {
                             if (row != null) {
+                                console.log(idSecteurs)
                                 if (idSecteurs != row.IdSecteur) {
                                     row = null
                                 }

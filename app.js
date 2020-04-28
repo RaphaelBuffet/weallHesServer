@@ -226,7 +226,7 @@ mysql.createConnection(
         })
     OffreRouter.route('/filter')
         .get(async (req,res)=>{
-            let offreFilter = await Offre.getByFilter(req.query.idDisponibilite,req.query.idContrat,req.query.idTauxActivite,req.query.idLocalite,req.query.idSecteurs)
+            let offreFilter = await Offre.getByFilter(req.query.idDisponibilite,req.query.idContrat,req.query.idTauxActivite,req.query.idLocalite,req.query.idSecteur)
             await res.json(offreFilter)
         })
     OffreRouter.route('/id/:id')
