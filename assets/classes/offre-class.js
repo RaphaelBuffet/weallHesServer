@@ -167,7 +167,7 @@ let Offre =class {
                                 }
                             }
                         }
-                        if (row != null) {
+                        if (row != null && colomn<31) {
                             endresult[colomn] = row
                             colomn = colomn + 1
                         }

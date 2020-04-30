@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="" />
+    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/classes/offre-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/offre-class.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/classes/postulant-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/postulant-class.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/config.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,6 +91,9 @@
       <workItem from="1587991918104" duration="2336000" />
       <workItem from="1588076498586" duration="2393000" />
       <workItem from="1588095132567" duration="902000" />
+      <workItem from="1588158687010" duration="856000" />
+      <workItem from="1588250712799" duration="123000" />
+      <workItem from="1588286865482" duration="841000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -133,13 +141,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/629.-1024.1280.984@0.0.1920.1040" timestamp="1588096029889" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1588095403130">
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1588286865215">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="441" y="-699" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.-1024.1280.984" timestamp="1586172584262" />
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1587673503584" />
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1584543296477" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/629.-1024.1280.984@0.0.1920.1040" timestamp="1588095403130" />
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/629.-1024.1280.984@0.0.1920.1040" timestamp="1588286865215" />
     <state x="616" y="242" key="run.anything.popup" timestamp="1584550501342">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
