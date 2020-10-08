@@ -2,10 +2,10 @@
   "rootAPI": "/api/v1/",
   "port": 8080,
   "db": {
-    "host": "zw99a.myd.infomaniak.com",
-    "database": "zw99a_weallbackend",
-    "user": "zw99a_raphy",
-    "password": "Loki.5loki.5"
+    "host": "j5zntocs2dn6c3fj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
+    "database": "test",
+    "user": "tx6khruhyytcuvbs",
+    "password": "fnzj9i616b1x7cqh"
   },
   "errors" : {
     "wrongID": "Wrong id",
