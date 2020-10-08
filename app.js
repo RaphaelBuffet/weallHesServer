@@ -299,7 +299,7 @@ mysql.createConnection(
     app.listen(config.port, () => console.log('started on 8080'))
 
 }).catch((err)=>{
-    console.log('Error during db connection')
+    console.log('Error during db connection !! !! !! !!')
     console.log(err.message)
 })
 
