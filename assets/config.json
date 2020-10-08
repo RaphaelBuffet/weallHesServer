@@ -1,6 +1,6 @@
 {
   "rootAPI": "/api/v1/",
-  "port": 80,
+  "port": "process.env.PORT || 8080",
   "db": {
     "host": "j5zntocs2dn6c3fj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
     "database": "test",

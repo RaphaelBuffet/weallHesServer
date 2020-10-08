@@ -296,7 +296,7 @@ mysql.createConnection(
     app.use(config.rootAPI+'taux',TauxActiviteRouter)
 
     // ouverture du port pour les requetea
-    app.listen(config.port, () => console.log('started on 8080'))
+    app.listen(process.env.PORT || 8080, () => console.log('started on 8080'))
 
 }).catch((err)=>{
     console.log('Error during db connection !! !! !! !!')
