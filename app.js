@@ -277,7 +277,7 @@ mysql.createConnection(
         })
 
     // creation des chemins d'acces pour chaque table de la BDD
-    app.get('coucou', (req,res) => {
+    app.get('/coucou', (req,res) => {
        res.end("ok")
     });
     app.use(config.rootAPI+'anneexp',AnneeXPRouter)
