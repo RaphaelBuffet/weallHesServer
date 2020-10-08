@@ -277,8 +277,8 @@ mysql.createConnection(
         })
 
     // creation des chemins d'acces pour chaque table de la BDD
-    app.get('coucou', function (req,res) {
-       res.json({"status!!" : "ok"})
+    app.get('coucou', (req,res) => {
+       res.end("ok")
     });
     app.use(config.rootAPI+'anneexp',AnneeXPRouter)
     app.use(config.rootAPI+'contrat',ContratRouter)
@@ -296,7 +296,7 @@ mysql.createConnection(
     app.use(config.rootAPI+'taux',TauxActiviteRouter)
 
     // ouverture du port pour les requetea
-    app.listen(process.env.PORT || 8080, () => console.log('started on 8080'))
+    app.listen(process.env.PORT || 8080, () => console.log('started on '+ (process.env.PORT || 8080)))
 
 }).catch((err)=>{
     console.log('Error during db connection !! !! !! !!')
