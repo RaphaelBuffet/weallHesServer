@@ -6,6 +6,10 @@ const config = require('./assets/config')
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./assets/swagger.json');
 const {checkAndChange} = require('./assets/functions')
+const app = express();
+const http = require('http').createServer(app);
+const io = require('socket.io').listen(http);
+
 mysql.createConnection(
     {
         host: config.db.host,
@@ -14,7 +18,6 @@ mysql.createConnection(
         password: config.db.password
     }).then((db)=>{
     console.log('connected')
-    const app = express();
     // creation des variables des chemin d'acces
     let AnneeXPRouter= express.Router()
     let ContratRouter= express.Router()
@@ -295,8 +298,18 @@ mysql.createConnection(
     app.use(config.rootAPI+'secteur',SecteurRouter)
     app.use(config.rootAPI+'taux',TauxActiviteRouter)
 
+    io.on('connection', (socket) => {
+        console.log('a user connected');
+        socket.on("chat message", msg => {
+            console.log(msg);
+            msg = JSON.parse(msg);
+            console.log(msg.sender + " : " + msg.msg);
+            io.emit(msg.to, JSON.stringify(msg));
+        });
+    })
+
     // ouverture du port pour les requetea
-    app.listen(process.env.PORT || 8080, () => console.log('started on '+ (process.env.PORT || 8080)))
+    http.listen(process.env.PORT || '8080', () => console.log('started on '+ (process.env.PORT || 8080)))
 
 }).catch((err)=>{
     console.log('Error during db connection !! !! !! !!')
