@@ -19,8 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="changement mineur">
+    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Ajout de socket Io pour le chat">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/classes/anneeXP-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/anneeXP-class.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +69,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1ZDrH7WOyjYjc2zxe5AgEhH1Ofd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -67,13 +78,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.13.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.11.5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Downloads/mapathonHES-master/mapathonHES-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -82,10 +94,12 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="SQL Resolution Scopes" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat" />
       <recent name="C:\Users\raphy\weallbackend\assets" />
     </key>
   </component>
@@ -132,6 +146,7 @@
       <workItem from="1588286865482" duration="841000" />
       <workItem from="1602084501712" duration="1775000" />
       <workItem from="1602160271001" duration="2301000" />
+      <workItem from="1602503808980" duration="2303000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -182,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602162482373</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Ajout de socket Io pour le chat">
+      <created>1602350862299</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1602350862299</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,12 +224,53 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changement mineur" />
-    <option name="LAST_COMMIT_MESSAGE" value="changement mineur" />
+    <MESSAGE value="Ajout de socket Io pour le chat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de socket Io pour le chat" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1602162483899">
+    <state x="906" y="378" key="#Inspections" timestamp="1602504914123">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602162483899" />
+    <state x="906" y="378" key="#Inspections/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602504914123" />
+    <state x="872" y="358" key="#Intentions" timestamp="1602505062330">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="358" key="#Intentions/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505062330" />
+    <state x="654" y="541" key="#SQL_Dialects" timestamp="1602504901473">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="654" y="541" key="#SQL_Dialects/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602504901473" />
+    <state x="1224" y="489" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602351147065">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1224" y="489" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602351147065" />
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1602505098848">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="455" key="FileChooserDialogImpl/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505098848" />
+    <state width="271" height="457" key="HiddenNamespacesPopup" timestamp="1602351167937">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="271" height="457" key="HiddenNamespacesPopup/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602351167937" />
+    <state x="781" y="345" key="SettingsEditor" timestamp="1602505101590">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="781" y="345" key="SettingsEditor/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505101590" />
+    <state width="82" height="441" key="SqlResolveConfigurable" timestamp="1602505093660">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="82" height="441" key="SqlResolveConfigurable/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505093660" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1602350864897">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602350864897" />
+    <state x="1138" y="263" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602505045970">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1138" y="263" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505045970" />
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602504011648">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602504011648" />
   </component>
 </project>

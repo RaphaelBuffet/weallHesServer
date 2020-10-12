@@ -298,15 +298,11 @@ mysql.createConnection(
     app.use(config.rootAPI+'secteur',SecteurRouter)
     app.use(config.rootAPI+'taux',TauxActiviteRouter)
 
+
     io.on('connection', (socket) => {
         console.log('a user connected');
-        socket.on("chat message", msg => {
-            console.log(msg);
-            msg = JSON.parse(msg);
-            console.log(msg.sender + " : " + msg.msg);
-            io.emit(msg.to, JSON.stringify(msg));
-        });
-    })
+        socket.on("chat message", msg => require('./chat/message').newMessage(io,msg,db));
+    });
 
     // ouverture du port pour les requetea
     http.listen(process.env.PORT || '8080', () => console.log('started on '+ (process.env.PORT || 8080)))

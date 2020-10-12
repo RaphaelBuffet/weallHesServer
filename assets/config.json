@@ -3,7 +3,7 @@
   "port": "process.env.PORT || 8080",
   "db": {
     "host": "j5zntocs2dn6c3fj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
-    "database": "test",
+    "database": "spc07tfhbp7shb2h",
     "user": "tx6khruhyytcuvbs",
     "password": "fnzj9i616b1x7cqh"
   },

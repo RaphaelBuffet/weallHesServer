@@ -6,7 +6,6 @@ module.exports = (_db, _config)=>{
 }
 let AnneeXP =class {
     static getById(id){
-
         return new Promise((next) => {
             db.query('Select * from anneeexperience WHERE id= ?',[id])
                 .then((result)=> {
