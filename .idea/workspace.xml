@@ -19,18 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Ajout de socket Io pour le chat">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat/message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Ajout des logs dans la BDD et splitting dans des fichiers.">
+      <change afterPath="$PROJECT_DIR$/chat/request/message.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat/socket/message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/anneeXP-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/anneeXP-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/message.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +79,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.13.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.11.5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/chat/request" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -95,10 +89,15 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="SQL Resolution Scopes" />
+    <property name="ts.external.directory.path" value="C:\Users\disco\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.7319.49\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat\request" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat\socket" />
       <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat" />
       <recent name="C:\Users\raphy\weallbackend\assets" />
     </key>
@@ -146,7 +145,7 @@
       <workItem from="1588286865482" duration="841000" />
       <workItem from="1602084501712" duration="1775000" />
       <workItem from="1602160271001" duration="2301000" />
-      <workItem from="1602503808980" duration="2303000" />
+      <workItem from="1602503808980" duration="3772000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -204,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602350862299</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Ajout des logs dans la BDD et splitting dans des fichiers.">
+      <created>1602506240103</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1602506240103</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +231,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changement mineur" />
     <MESSAGE value="Ajout de socket Io pour le chat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de socket Io pour le chat" />
+    <MESSAGE value="Ajout des logs dans la BDD et splitting dans des fichiers." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des logs dans la BDD et splitting dans des fichiers." />
   </component>
   <component name="WindowStateProjectService">
     <state x="906" y="378" key="#Inspections" timestamp="1602504914123">
@@ -264,10 +271,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602350864897" />
-    <state x="1138" y="263" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602505045970">
+    <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602507021125">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1138" y="263" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505045970" />
+    <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602507021125" />
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602504011648">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
