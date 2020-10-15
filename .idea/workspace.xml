@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="">
+    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Ajout des logs dans la BDD et splitting dans des fichiers.">
+      <change afterPath="$PROJECT_DIR$/chat/request/message.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat/socket/message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/offre-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/offre-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/postulant-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/postulant-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/message.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,21 +44,42 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/chat" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1ZDrH7WOyjYjc2zxe5AgEhH1Ofd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.16.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Downloads/mapathonHES-master/mapathonHES-master" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.13.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.11.5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/chat/request" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -48,12 +88,21 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="SQL Resolution Scopes" />
+    <property name="ts.external.directory.path" value="C:\Users\disco\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.7319.49\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat\request" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat\socket" />
+      <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat" />
       <recent name="C:\Users\raphy\weallbackend\assets" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -94,6 +143,9 @@
       <workItem from="1588158687010" duration="856000" />
       <workItem from="1588250712799" duration="123000" />
       <workItem from="1588286865482" duration="841000" />
+      <workItem from="1602084501712" duration="1775000" />
+      <workItem from="1602160271001" duration="2301000" />
+      <workItem from="1602503808980" duration="3772000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -102,59 +154,130 @@
       <option name="project" value="LOCAL" />
       <updated>1588096027104</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="changement mineur">
+      <created>1602161482478</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602161482478</updated>
+    </task>
+    <task id="LOCAL-00003" summary="changement mineur">
+      <created>1602161699753</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602161699753</updated>
+    </task>
+    <task id="LOCAL-00004" summary="changement mineur">
+      <created>1602161893852</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602161893852</updated>
+    </task>
+    <task id="LOCAL-00005" summary="changement mineur">
+      <created>1602161988639</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1602161988639</updated>
+    </task>
+    <task id="LOCAL-00006" summary="changement mineur">
+      <created>1602162102740</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1602162102740</updated>
+    </task>
+    <task id="LOCAL-00007" summary="changement mineur">
+      <created>1602162482373</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1602162482373</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Ajout de socket Io pour le chat">
+      <created>1602350862299</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1602350862299</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Ajout des logs dans la BDD et splitting dans des fichiers.">
+      <created>1602506240103</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1602506240103</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changement mineur" />
-    <option name="LAST_COMMIT_MESSAGE" value="changement mineur" />
+    <MESSAGE value="Ajout de socket Io pour le chat" />
+    <MESSAGE value="Ajout des logs dans la BDD et splitting dans des fichiers." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des logs dans la BDD et splitting dans des fichiers." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#Inspections" timestamp="1587312389576">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="906" y="378" key="#Inspections" timestamp="1602504914123">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="552" y="178" key="#Inspections/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1587312389576" />
-    <state x="704" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585054324027">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="906" y="378" key="#Inspections/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602504914123" />
+    <state x="872" y="358" key="#Intentions" timestamp="1602505062330">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="704" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1585054324027" />
-    <state x="420" y="248" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584706443714">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="872" y="358" key="#Intentions/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505062330" />
+    <state x="654" y="541" key="#SQL_Dialects" timestamp="1602504901473">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="420" y="248" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1584706443714" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1588096023160">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="654" y="541" key="#SQL_Dialects/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602504901473" />
+    <state x="1224" y="489" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602351147065">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/629.-1024.1280.984@0.0.1920.1040" timestamp="1588096023160" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1587654778767">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1224" y="489" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602351147065" />
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1602505098848">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1587654778767" />
-    <state x="803" y="230" key="RollbackChangesDialog" timestamp="1586617051642">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1060" y="455" key="FileChooserDialogImpl/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505098848" />
+    <state width="271" height="457" key="HiddenNamespacesPopup" timestamp="1602351167937">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="803" y="230" key="RollbackChangesDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1586617051642" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1588096029889">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="271" height="457" key="HiddenNamespacesPopup/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602351167937" />
+    <state x="781" y="345" key="SettingsEditor" timestamp="1602505101590">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/629.-1024.1280.984@0.0.1920.1040" timestamp="1588096029889" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1588286865215">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="781" y="345" key="SettingsEditor/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505101590" />
+    <state width="82" height="441" key="SqlResolveConfigurable" timestamp="1602505093660">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="441" y="-699" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.-1024.1280.984" timestamp="1586172584262" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1024.1280.984@0.0.1920.1040" timestamp="1587673503584" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1584543296477" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/629.-1024.1280.984@0.0.1920.1040" timestamp="1588286865215" />
-    <state x="616" y="242" key="run.anything.popup" timestamp="1584550501342">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="82" height="441" key="SqlResolveConfigurable/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505093660" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1602350864897">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="616" y="242" key="run.anything.popup/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1584550501342" />
-    <state x="623" y="239" key="search.everywhere.popup" timestamp="1584544786925">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602350864897" />
+    <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602507021125">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="623" y="239" key="search.everywhere.popup/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1584544786925" />
+    <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602507021125" />
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602504011648">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602504011648" />
   </component>
 </project>

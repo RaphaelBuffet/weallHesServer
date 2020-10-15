@@ -6,6 +6,10 @@ const config = require('./assets/config')
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./assets/swagger.json');
 const {checkAndChange} = require('./assets/functions')
+const app = express();
+const http = require('http').createServer(app);
+const io = require('socket.io').listen(http);
+
 mysql.createConnection(
     {
         host: config.db.host,
@@ -14,7 +18,6 @@ mysql.createConnection(
         password: config.db.password
     }).then((db)=>{
     console.log('connected')
-    const app = express();
     // creation des variables des chemin d'acces
     let AnneeXPRouter= express.Router()
     let ContratRouter= express.Router()
@@ -30,6 +33,7 @@ mysql.createConnection(
     let PostulantRouter = express.Router()
     let SecteurRouter= express.Router()
     let TauxActiviteRouter= express.Router()
+    let ChatRouter = express.Router();
 
     // importation des classe de requete
     let AnneeXP= require('./assets/classes/anneeXP-class')(db,config)
@@ -46,6 +50,7 @@ mysql.createConnection(
     let Postulant= require('./assets/classes/postulant-class')(db,config)
     let Secteur= require('./assets/classes/secteur-class')(db,config)
     let TauxActivite= require('./assets/classes/tauxActivite-class')(db,config)
+    let Chat = require('./chat/request/message')(db,config);
 
     app.use(morgan);
     app.use(bodyParser.json());
@@ -275,8 +280,15 @@ mysql.createConnection(
             let postulantfilter = await Postulant.getByFilter(req.query.salaire,req.query.derniereExperience,req.query.idAnneeExperience,req.query.idDiplome,req.query.idFormation,req.query.idDisponibilite,req.query.idSecteurs)
             await res.json(postulantfilter)
         })
-
+    ChatRouter.route('/myHistoric')
+        .get(async (req, res)=>{
+            let myHistorical = await Chat.myHistory(1234121);
+            await res.json(myHistorical);
+        });
     // creation des chemins d'acces pour chaque table de la BDD
+    app.get('/coucou', (req,res) => {
+       res.end("ok");
+    });
     app.use(config.rootAPI+'anneexp',AnneeXPRouter)
     app.use(config.rootAPI+'contrat',ContratRouter)
     app.use(config.rootAPI+'diplome',DiplomeRouter)
@@ -291,12 +303,20 @@ mysql.createConnection(
     app.use(config.rootAPI+'postulant',PostulantRouter)
     app.use(config.rootAPI+'secteur',SecteurRouter)
     app.use(config.rootAPI+'taux',TauxActiviteRouter)
+    app.use(config.rootAPI+'chat',ChatRouter);
+
+
+    io.on('connection', (socket) => {
+        console.log('a user connected');
+        let message = require('./chat/socket/message')(db,io);
+        socket.on("chat message", msg => message.postMessage(msg));
+    });
 
     // ouverture du port pour les requetea
-    app.listen(config.port, () => console.log('started on 8080'))
+    http.listen(process.env.PORT || '8080', () => console.log('started on '+ (process.env.PORT || 8080)))
 
 }).catch((err)=>{
-    console.log('Error during db connection')
+    console.log('Error during db connection !! !! !! !!')
     console.log(err.message)
 })
 
