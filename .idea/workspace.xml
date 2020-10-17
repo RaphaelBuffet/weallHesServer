@@ -21,6 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Ajout de myHistoric qui n'est que l'ébauche de la récupération de l'historique de conv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/request/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/request/message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/socket/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/socket/message.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +145,8 @@
       <workItem from="1602084501712" duration="1775000" />
       <workItem from="1602160271001" duration="2301000" />
       <workItem from="1602503808980" duration="6050000" />
-      <workItem from="1602764237708" duration="3613000" />
+      <workItem from="1602764237708" duration="6956000" />
+      <workItem from="1602925790012" duration="6030000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -215,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602507902739</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Ajout de myHistoric qui n'est que l'ébauche de la récupération de l'historique de conv">
+      <created>1602768320224</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1602768320224</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,18 +283,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="82" height="441" key="SqlResolveConfigurable/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505093660" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1602507907767">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1602768321851">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602507907767" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602768321851" />
     <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602766232092">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602766232092" />
-    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602504011648">
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602768965674">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602504011648" />
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602768965674" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1602508049930">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

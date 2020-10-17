@@ -282,9 +282,14 @@ mysql.createConnection(
         })
     ChatRouter.route('/myHistoric')
         .get(async (req, res)=>{
-            let myHistorical = await Chat.myHistory(1234121);
+            let myHistorical = await Chat.myHistory(1);
             await res.json(myHistorical);
         });
+    ChatRouter.route('/:id')
+        .get(async (req,res) => {
+            let historical = await Chat.myHistoryWith(1,req.params.id);
+            await res.json(historical);
+        })
     // creation des chemins d'acces pour chaque table de la BDD
     app.get('/coucou', (req,res) => {
        res.end("ok");
