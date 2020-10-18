@@ -23,7 +23,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/request/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/request/message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/socket/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/socket/message.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +145,7 @@
       <workItem from="1602160271001" duration="2301000" />
       <workItem from="1602503808980" duration="6050000" />
       <workItem from="1602764237708" duration="6956000" />
-      <workItem from="1602925790012" duration="6030000" />
+      <workItem from="1602925790012" duration="11203000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -225,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602768320224</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Ajout de myHistoric qui n'est que l'ébauche de la récupération de l'historique de conv">
+      <created>1602957732652</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1602957732652</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,14 +289,34 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="82" height="441" key="SqlResolveConfigurable/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505093660" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1602768321851">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1602957734706">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602768321851" />
-    <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602766232092">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602957734706" />
+    <state x="1179" y="577" width="890" height="524" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1603035427077">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602766232092" />
+    <state x="1179" y="577" width="890" height="524" key="com.intellij.database.actions.DdlActions$CreateObject$1/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603035427077" />
+    <state x="1170" y="587" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603035142485">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1170" y="587" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603035142485" />
+    <state x="1179" y="577" width="754" height="497" key="com.intellij.database.actions.DdlActions$ModifyObject$1" timestamp="1603034643467">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1179" y="577" width="754" height="497" key="com.intellij.database.actions.DdlActions$ModifyObject$1/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603034643467" />
+    <state x="1076" y="520" width="408" height="355" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1603035471327">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1076" y="520" width="408" height="355" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603035471327" />
+    <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1603032994758">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603032994758" />
+    <state x="814" y="506" key="com.intellij.database.view.ui.DatabasePreviewDialog" timestamp="1603035599881">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="814" y="506" key="com.intellij.database.view.ui.DatabasePreviewDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603035599881" />
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602768965674">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
