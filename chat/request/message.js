@@ -14,12 +14,12 @@ let Message = class {
                 else {
                     let result = {};
                     for (const value of rows){
-                        let idOther = value.id_user1 === id ? value.id_user2 : value.id_user1;
+                        let idOther = value.id_user1 === Number(id) ? value.id_user2 : value.id_user1;
                         if(typeof result[idOther] === 'undefined'){
                             result[idOther] = {};
                             result[idOther].msg = [];
                             result[idOther].id = idOther;
-                            result[idOther].name = value.id_entreprise === id ? value.nom_entreprise : value.nom_postulant;
+                            result[idOther].name = value.id_entreprise === idOther ? value.nom_entreprise : value.nom_postulant;
                         }
                         result[idOther].msg.push({
                             idUser1 : value.id_user1,
@@ -39,6 +39,8 @@ let Message = class {
             db.query('SELECT * FROM chatLogView WHERE (id_user1 = ? AND id_user2 = ?) OR (id_user1 = ? AND id_user2 = ?)', [myId, otherId, otherId, myId], (err, rows) =>{
                 if(err){console.log(err);}
                 else {
+                    myId = Number(myId);
+                    otherId = Number(otherId);
                     let result = {};
                     result.msg = [];
                     if(rows.length > 0)

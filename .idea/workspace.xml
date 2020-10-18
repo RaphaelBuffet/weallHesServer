@@ -19,9 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Ajout de myHistoric qui n'est que l'ébauche de la récupération de l'historique de conv">
+    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Créations des vues pour avoir les bonnes informations à chaque récupération des historiques et modification de ses dernières.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/request/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/request/message.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +144,7 @@
       <workItem from="1602160271001" duration="2301000" />
       <workItem from="1602503808980" duration="6050000" />
       <workItem from="1602764237708" duration="6956000" />
-      <workItem from="1602925790012" duration="11203000" />
+      <workItem from="1602925790012" duration="13974000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -231,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602957732652</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Créations des vues pour avoir les bonnes informations à chaque récupération des historiques et modification de ses dernières.">
+      <created>1603036885112</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1603036885112</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +260,8 @@
     <MESSAGE value="Ajout de socket Io pour le chat" />
     <MESSAGE value="Ajout des logs dans la BDD et splitting dans des fichiers." />
     <MESSAGE value="Ajout de myHistoric qui n'est que l'ébauche de la récupération de l'historique de conv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de myHistoric qui n'est que l'ébauche de la récupération de l'historique de conv" />
+    <MESSAGE value="Créations des vues pour avoir les bonnes informations à chaque récupération des historiques et modification de ses dernières." />
+    <option name="LAST_COMMIT_MESSAGE" value="Créations des vues pour avoir les bonnes informations à chaque récupération des historiques et modification de ses dernières." />
   </component>
   <component name="WindowStateProjectService">
     <state x="906" y="378" key="#Inspections" timestamp="1602504914123">
@@ -277,6 +284,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505098848" />
+    <state width="860" height="349" key="GridCell.Tab.0.bottom" timestamp="1603040142722">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="860" height="349" key="GridCell.Tab.0.bottom/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603040142722" />
+    <state width="860" height="349" key="GridCell.Tab.0.center" timestamp="1603040142722">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="860" height="349" key="GridCell.Tab.0.center/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603040142722" />
+    <state width="860" height="349" key="GridCell.Tab.0.left" timestamp="1603040142721">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="860" height="349" key="GridCell.Tab.0.left/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603040142721" />
+    <state width="860" height="349" key="GridCell.Tab.0.right" timestamp="1603040142722">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="860" height="349" key="GridCell.Tab.0.right/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603040142722" />
     <state width="271" height="457" key="HiddenNamespacesPopup" timestamp="1602351167937">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -289,10 +312,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="82" height="441" key="SqlResolveConfigurable/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505093660" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1602957734706">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1603036887133">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602957734706" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603036887133" />
     <state x="1179" y="577" width="890" height="524" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1603035427077">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -309,6 +332,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1076" y="520" width="408" height="355" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603035471327" />
+    <state x="1179" y="629" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1603040073805">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1179" y="629" key="com.intellij.database.run.ParametersPanel.Standalone/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603040073805" />
     <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1603032994758">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -321,6 +348,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602768965674" />
+    <state x="936" y="330" key="run.anything.popup" timestamp="1603040522135">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="936" y="330" key="run.anything.popup/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603040522135" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1602508049930">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
