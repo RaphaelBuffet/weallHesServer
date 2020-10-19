@@ -20,23 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Ajout des logs dans la BDD et splitting dans des fichiers.">
-      <change afterPath="$PROJECT_DIR$/assets/classes/benefice_externe-class.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/classes/cursus-class.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/classes/ethique-class.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/classes/salaire-class.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/classes/softskill-class.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/classes/type-class.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/contrat-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/contrat-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/diplome-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/diplome-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/dispo-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/dispo-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/formation-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/formation-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/langue-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/langue-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/localite-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/localite-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/niveau-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/niveau-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/secteur-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/secteur-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/classes/tauxActivite-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/taux-class.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +145,7 @@
       <workItem from="1602084501712" duration="1775000" />
       <workItem from="1602160271001" duration="2301000" />
       <workItem from="1602503808980" duration="3772000" />
-      <workItem from="1603097935224" duration="5741000" />
+      <workItem from="1603097935224" duration="6041000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>

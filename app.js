@@ -357,22 +357,26 @@ mysql.createConnection(
     app.get('/coucou', (req,res) => {
        res.end("ok");
     });
+    app.use(config.rootAPI+'benefice',BeneficeExterneRouter)
+    app.use(config.rootAPI+'chat',ChatRouter);
     app.use(config.rootAPI+'contrat',ContratRouter)
+    app.use(config.rootAPI+'cursus',CursusRouter)
     app.use(config.rootAPI+'diplome',DiplomeRouter)
     app.use(config.rootAPI+'dispo',DispoRouter)
     app.use(config.rootAPI+'entreprise',EntrepriseRouter)
+    app.use(config.rootAPI+'ethique',EthiqueRouter)
     app.use(config.rootAPI+'formation',FormationRouter)
     app.use(config.rootAPI+'langue',LangueRouter)
     app.use(config.rootAPI+'localite',LocaliteRouter)
     app.use(config.rootAPI+'niveau',NiveauRouter)
     app.use(config.rootAPI+'niveaulangue',NiveauLangueRouter)
+    app.use(config.rootAPI+'salaire',SalaireRouter)
     app.use(config.rootAPI+'offre',OffreRouter)
     app.use(config.rootAPI+'postulant',PostulantRouter)
     app.use(config.rootAPI+'secteur',SecteurRouter)
     app.use(config.rootAPI+'taux',TauxRouter)
-    app.use(config.rootAPI+'chat',ChatRouter);
-
-
+    app.use(config.rootAPI+'type',TypeRouter)
+    
     io.on('connection', (socket) => {
         console.log('a user connected');
         let message = require('./chat/socket/message')(db,io);
