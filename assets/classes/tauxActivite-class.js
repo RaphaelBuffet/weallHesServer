@@ -8,7 +8,7 @@ let TauxActivite =class {
     static getById(id){
 
         return new Promise((next) => {
-            db.query('Select * from tauxactivite WHERE id= ?',[id])
+            db.query('Select * from taux WHERE id= ?',[id])
                 .then((result)=> {
                     if (result[0]!=undefined){
                         next(result[0])
@@ -24,7 +24,7 @@ let TauxActivite =class {
     static getAll(max){
         return new Promise((next) => {
             if(max !=undefined && max >0) {
-                db.query('Select * from tauxactivite Limit 0, ?', [parseInt(max)])
+                db.query('Select * from taux Limit 0, ?', [parseInt(max)])
                     .then((result) => next(result))
                     .catch((err) => next(err))
             }else if(max !=undefined) {

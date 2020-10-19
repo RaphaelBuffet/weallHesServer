@@ -19,7 +19,6 @@ mysql.createConnection(
     }).then((db)=>{
     console.log('connected')
     // creation des variables des chemin d'acces
-    let AnneeXPRouter= express.Router()
     let ContratRouter= express.Router()
     let DiplomeRouter = express.Router()
     let DispoRouter = express.Router()
@@ -36,7 +35,6 @@ mysql.createConnection(
     let ChatRouter = express.Router();
 
     // importation des classe de requete
-    let AnneeXP= require('./assets/classes/anneeXP-class')(db,config)
     let Contrat= require('./assets/classes/contrat-class')(db,config)
     let Diplome= require('./assets/classes/diplome-class')(db,config)
     let Dispo= require('./assets/classes/dispo-class')(db,config)
@@ -63,17 +61,6 @@ mysql.createConnection(
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         next();
     });
-    //requete d'année d'expérience
-    AnneeXPRouter.route('/')
-        .get(async (req,res)=>{
-            let allXP=await AnneeXP.getAll(req.query.max)
-            await res.json(allXP)
-        })
-    AnneeXPRouter.route('/:id')
-        .get(async (req,res)=>{
-            let xp = await AnneeXP.getById(req.params.id)
-            await res.json(xp)
-        })
     //requète de Contrat
     ContratRouter.route('/')
         .get(async (req,res)=>{
@@ -268,7 +255,7 @@ mysql.createConnection(
             await res.json(postulant)
         })
         .put(async (req,res)=>{
-            let updatePostulant=await Postulant.update(req.params.id,req.body.username,req.body.password,req.body.description,req.body.photo,req.body.salaire,req.body.derniereExperience,req.body.idAnneeExperience,req.body.idDiplome,req.body.idFormation,req.body.idDisponibilite,req.body.idSecteurs)
+            let updatePostulant=await Postulant.update(req.params.id,req.body.username,req.body.password,req.body.description,req.body.photo,req.body.salaire,req.body.derniereExperience,req.body.idDiplome,req.body.idFormation,req.body.idDisponibilite,req.body.idSecteurs)
             await res.json(updatePostulant)
         })
         .delete(async (req,res)=> {
@@ -277,7 +264,7 @@ mysql.createConnection(
         })
     PostulantRouter.route('/filter')
         .get(async (req,res)=>{
-            let postulantfilter = await Postulant.getByFilter(req.query.salaire,req.query.derniereExperience,req.query.idAnneeExperience,req.query.idDiplome,req.query.idFormation,req.query.idDisponibilite,req.query.idSecteurs)
+            let postulantfilter = await Postulant.getByFilter(req.query.salaire,req.query.derniereExperience,req.query.idDiplome,req.query.idFormation,req.query.idDisponibilite,req.query.idSecteurs)
             await res.json(postulantfilter)
         })
     ChatRouter.route('/myHistoric')
@@ -289,7 +276,6 @@ mysql.createConnection(
     app.get('/coucou', (req,res) => {
        res.end("ok");
     });
-    app.use(config.rootAPI+'anneexp',AnneeXPRouter)
     app.use(config.rootAPI+'contrat',ContratRouter)
     app.use(config.rootAPI+'diplome',DiplomeRouter)
     app.use(config.rootAPI+'dispo',DispoRouter)

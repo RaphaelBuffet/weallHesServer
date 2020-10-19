@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Ajout des logs dans la BDD et splitting dans des fichiers.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/classes/anneeXP-class.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/classes/tauxActivite-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/tauxActivite-class.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +145,7 @@
       <workItem from="1602084501712" duration="1775000" />
       <workItem from="1602160271001" duration="2301000" />
       <workItem from="1602503808980" duration="3772000" />
-      <workItem from="1603097935224" duration="521000" />
+      <workItem from="1603097935224" duration="2411000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -252,6 +254,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1224" y="489" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602351147065" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603098863771">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603098863771" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1602505098848">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -281,5 +287,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602504011648" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1603098931673">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603098931673" />
   </component>
 </project>
