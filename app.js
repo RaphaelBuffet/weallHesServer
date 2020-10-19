@@ -374,9 +374,10 @@ mysql.createConnection(
     app.use(config.rootAPI+'offre',OffreRouter)
     app.use(config.rootAPI+'postulant',PostulantRouter)
     app.use(config.rootAPI+'secteur',SecteurRouter)
+    app.use(config.rootAPI+'softskill',SoftskillRouter)
     app.use(config.rootAPI+'taux',TauxRouter)
     app.use(config.rootAPI+'type',TypeRouter)
-    
+
     io.on('connection', (socket) => {
         console.log('a user connected');
         let message = require('./chat/socket/message')(db,io);
