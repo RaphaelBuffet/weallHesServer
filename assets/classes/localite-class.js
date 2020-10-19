@@ -21,21 +21,13 @@ let Localite =class {
 
         })
     }
-    static getAll(max){
+    static getAll(){
         return new Promise((next) => {
-            if(max !=undefined && max >0) {
-                db.query('Select * from localite Limit 0, ?', [parseInt(max)])
-                    .then((result) => next(result))
-                    .catch((err) => next(err))
-            }else if(max !=undefined) {
-                next(new Error(config.errors.wrongMaxValue))
 
-            }
-            else {
                 db.query('Select * from localite')
                     .then((result) => next(result))
                     .catch((err) => next(err))
-            }
+
         })
 
     }

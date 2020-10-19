@@ -2,13 +2,13 @@ let db, config
 module.exports = (_db, _config)=>{
     db=_db
     config=_config
-    return TauxActivite
+    return Type
 }
-let TauxActivite =class {
+let Type =class {
     static getById(id){
 
         return new Promise((next) => {
-            db.query('Select * from taux WHERE id= ?',[id])
+            db.query('Select * from type WHERE id= ?',[id])
                 .then((result)=> {
                     if (result[0]!=undefined){
                         next(result[0])
@@ -21,21 +21,13 @@ let TauxActivite =class {
 
         })
     }
-    static getAll(max){
+    static getAll(){
         return new Promise((next) => {
-            if(max !=undefined && max >0) {
-                db.query('Select * from taux Limit 0, ?', [parseInt(max)])
-                    .then((result) => next(result))
-                    .catch((err) => next(err))
-            }else if(max !=undefined) {
-                next(new Error(config.errors.wrongMaxValue))
 
-            }
-            else {
-                db.query('Select * from taux')
+                db.query('Select * from type')
                     .then((result) => next(result))
                     .catch((err) => next(err))
-            }
+
         })
 
     }

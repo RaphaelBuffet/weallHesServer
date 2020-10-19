@@ -19,10 +19,14 @@ mysql.createConnection(
     }).then((db)=>{
     console.log('connected')
     // creation des variables des chemin d'acces
+    let BeneficeExterneRouter= express.Router()
+    let ChatRouter = express.Router();
     let ContratRouter= express.Router()
+    let CursusRouter= express.Router()
     let DiplomeRouter = express.Router()
     let DispoRouter = express.Router()
     let EntrepriseRouter= express.Router()
+    let EthiqueRouter= express.Router()
     let FormationRouter = express.Router()
     let LangueRouter= express.Router()
     let LocaliteRouter = express.Router()
@@ -30,15 +34,22 @@ mysql.createConnection(
     let NiveauLangueRouter = express.Router()
     let OffreRouter= express.Router()
     let PostulantRouter = express.Router()
+    let SalaireRouter= express.Router()
     let SecteurRouter= express.Router()
-    let TauxActiviteRouter= express.Router()
-    let ChatRouter = express.Router();
+    let SoftskillRouter= express.Router()
+    let TauxRouter= express.Router()
+    let TypeRouter= express.Router()
+
 
     // importation des classe de requete
+    let BeneficeExterne= require('./assets/classes/benefice_externe-class')(db,config)
+    let Chat = require('./chat/request/message')(db,config);
     let Contrat= require('./assets/classes/contrat-class')(db,config)
+    let Cursus= require('./assets/classes/cursus-class')(db,config)
     let Diplome= require('./assets/classes/diplome-class')(db,config)
     let Dispo= require('./assets/classes/dispo-class')(db,config)
     let Entreprise= require('./assets/classes/entreprise-class')(db,config)
+    let Ethique= require('./assets/classes/ethique-class')(db,config)
     let Formation= require('./assets/classes/formation-class')(db,config)
     let Langue= require('./assets/classes/langue-class')(db,config)
     let Localite= require('./assets/classes/localite-class')(db,config)
@@ -46,9 +57,12 @@ mysql.createConnection(
     let NiveauLangue= require('./assets/classes/niveauLangue-class')(db,config)
     let Offre= require('./assets/classes/offre-class')(db,config)
     let Postulant= require('./assets/classes/postulant-class')(db,config)
+    let Salaire= require('./assets/classes/salaire-class')(db,config)
     let Secteur= require('./assets/classes/secteur-class')(db,config)
-    let TauxActivite= require('./assets/classes/tauxActivite-class')(db,config)
-    let Chat = require('./chat/request/message')(db,config);
+    let Softskill= require('./assets/classes/softskill-class')(db,config)
+    let Taux = require('./assets/classes/taux-class')(db,config)
+    let Type= require('./assets/classes/type-class')(db,config)
+
 
     app.use(morgan);
     app.use(bodyParser.json());
@@ -61,10 +75,21 @@ mysql.createConnection(
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         next();
     });
+    //requète de Benefice externe
+    BeneficeExterneRouter.route('/')
+        .get(async (req,res)=>{
+            let allBenef=await BeneficeExterne.getAll()
+            await res.json(allBenef)
+        })
+    BeneficeExterneRouter.route('/:id')
+        .get(async (req,res)=>{
+            let benef = await BeneficeExterne.getById(req.params.id)
+            await res.json(benef)
+        })
     //requète de Contrat
     ContratRouter.route('/')
         .get(async (req,res)=>{
-            let allContrat=await Contrat.getAll(req.query.max)
+            let allContrat=await Contrat.getAll()
             await res.json(allContrat)
         })
     ContratRouter.route('/:id')
@@ -72,10 +97,21 @@ mysql.createConnection(
             let contrat = await Contrat.getById(req.params.id)
             await res.json(contrat)
         })
+    //requète de Cursus
+    CursusRouter.route('/')
+        .get(async (req,res)=>{
+            let allcursus=await Cursus.getAll()
+            await res.json(allcursus)
+        })
+    CursusRouter.route('/:id')
+        .get(async (req,res)=>{
+            let cursus = await Cursus.getById(req.params.id)
+            await res.json(cursus)
+        })
     //requete de diplome
     DiplomeRouter.route('/')
         .get(async (req,res)=>{
-            let allDiplome=await Diplome.getAll(req.query.max)
+            let allDiplome=await Diplome.getAll()
             await res.json(allDiplome)
         })
     DiplomeRouter.route('/:id')
@@ -86,7 +122,7 @@ mysql.createConnection(
     // requete de dispo
     DispoRouter.route('/')
         .get(async (req,res)=>{
-            let allDispo=await Dispo.getAll(req.query.max)
+            let allDispo=await Dispo.getAll()
             await res.json(allDispo)
         })
         .post(async (req,res) => {
@@ -98,10 +134,21 @@ mysql.createConnection(
             let dispo = await Dispo.getById(req.params.id)
             await res.json(dispo)
         })
+    //requete de ethique
+    EthiqueRouter.route('/')
+        .get(async (req,res)=>{
+            let allEthique=await Ethique.getAll()
+            await res.json(allEthique)
+        })
+    EthiqueRouter.route('/:id')
+        .get(async (req,res)=>{
+            let ethique = await Ethique.getById(req.params.id)
+            await res.json(ethique)
+        })
     //requete de formation
     FormationRouter.route('/')
         .get(async (req,res)=>{
-            let allFormation=await Formation.getAll(req.query.max)
+            let allFormation=await Formation.getAll()
             await res.json(allFormation)
         })
     FormationRouter.route('/:id')
@@ -112,7 +159,7 @@ mysql.createConnection(
     //requete de langue
     LangueRouter.route('/')
         .get(async (req,res)=>{
-            let allLangue=await Langue.getAll(req.query.max)
+            let allLangue=await Langue.getAll()
             await res.json(allLangue)
         })
     LangueRouter.route('/:id')
@@ -123,7 +170,7 @@ mysql.createConnection(
     //requete de localite
     LocaliteRouter.route('/')
         .get(async (req,res)=>{
-            let allLocalite=await Localite.getAll(req.query.max)
+            let allLocalite=await Localite.getAll()
             await res.json(allLocalite)
         })
     LocaliteRouter.route('/:id')
@@ -134,7 +181,7 @@ mysql.createConnection(
     //requete de niveau
     NiveauRouter.route('/')
         .get(async (req,res)=>{
-            let allNiveau=await Niveau.getAll(req.query.max)
+            let allNiveau=await Niveau.getAll()
             await res.json(allNiveau)
         })
     NiveauRouter.route('/:id')
@@ -142,10 +189,21 @@ mysql.createConnection(
             let niveau = await Niveau.getById(req.params.id)
             await res.json(niveau)
         })
+    // requete de salaire
+    SalaireRouter.route('/')
+        .get(async (req,res)=>{
+            let allSalaire=await Salaire.getAll()
+            res.json(allSalaire)
+        })
+    SalaireRouter.route('/:id')
+        .get(async (req,res)=>{
+            let salaire = await Salaire.getById(req.params.id)
+            await res.json(salaire)
+        })
     // requete de secteur
     SecteurRouter.route('/')
         .get(async (req,res)=>{
-            let allSecteurs=await Secteur.getAll(req.query.max)
+            let allSecteurs=await Secteur.getAll()
             res.json(allSecteurs)
         })
     SecteurRouter.route('/:id')
@@ -153,17 +211,40 @@ mysql.createConnection(
             let secteur = await Secteur.getById(req.params.id)
             await res.json(secteur)
         })
-    //requete de taux d activite
-    TauxActiviteRouter.route('/')
+    // requete de softskill
+    SoftskillRouter.route('/')
         .get(async (req,res)=>{
-            let alltaux=await TauxActivite.getAll(req.query.max)
+            let allSoftskill=await Softskill.getAll()
+            res.json(allSoftskill)
+        })
+    SoftskillRouter.route('/:id')
+        .get(async (req,res)=>{
+            let softskill = await Softskill.getById(req.params.id)
+            await res.json(softskill)
+        })
+    //requete de taux d activite
+    TauxRouter.route('/')
+        .get(async (req,res)=>{
+            let alltaux=await Taux.getAll()
             await res.json(alltaux)
         })
-    TauxActiviteRouter.route('/:id')
+    TauxRouter.route('/:id')
         .get(async (req,res)=>{
-            let taux = await TauxActivite.getById(req.params.id)
+            let taux = await Taux.getById(req.params.id)
             await res.json(taux)
         })
+    //requete de type d'entreprise
+    TypeRouter.route('/')
+        .get(async (req,res)=>{
+            let alltype=await Taux.getAll()
+            await res.json(alltype)
+        })
+    TypeRouter.route('/:id')
+        .get(async (req,res)=>{
+            let type = await Taux.getById(req.params.id)
+            await res.json(type)
+        })
+
     //requete d'entreprise
     EntrepriseRouter.route('/')
         .get(async (req,res)=>{
@@ -218,7 +299,7 @@ mysql.createConnection(
         })
     OffreRouter.route('/filter')
         .get(async (req,res)=>{
-            let offreFilter = await Offre.getByFilter(req.query.idDisponibilite,req.query.idContrat,req.query.idTauxActivite,req.query.idLocalite,req.query.idSecteur)
+            let offreFilter = await Offre.getByFilter(req.query.idDisponibilite,req.query.idContrat,req.query.idTaux,req.query.idLocalite,req.query.idSecteur)
             await res.json(offreFilter)
         })
     OffreRouter.route('/id/:id')
@@ -227,7 +308,7 @@ mysql.createConnection(
             await res.json(offre)
         })
         .put(async (req,res)=>{
-            let updateOffre=await Offre.update(req.params.id,req.body.name,req.body.cahierCharge,req.body.idEntreprise,req.body.idDisponibilite,req.body.idContrat,req.body.idTauxActivite,req.body.idLocalite,req.body.idSecteur)
+            let updateOffre=await Offre.update(req.params.id,req.body.name,req.body.cahierCharge,req.body.idEntreprise,req.body.idDisponibilite,req.body.idContrat,req.body.idTaux,req.body.idLocalite,req.body.idSecteur)
             await res.json(updateOffre)
         })
         .delete(async (req,res)=> {
@@ -288,7 +369,7 @@ mysql.createConnection(
     app.use(config.rootAPI+'offre',OffreRouter)
     app.use(config.rootAPI+'postulant',PostulantRouter)
     app.use(config.rootAPI+'secteur',SecteurRouter)
-    app.use(config.rootAPI+'taux',TauxActiviteRouter)
+    app.use(config.rootAPI+'taux',TauxRouter)
     app.use(config.rootAPI+'chat',ChatRouter);
 
 
