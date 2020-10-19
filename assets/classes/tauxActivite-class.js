@@ -32,7 +32,7 @@ let TauxActivite =class {
 
             }
             else {
-                db.query('Select * from tauxactivite')
+                db.query('Select * from taux')
                     .then((result) => next(result))
                     .catch((err) => next(err))
             }
