@@ -23,7 +23,7 @@ mysql.createConnection(
     let ChatRouter = express.Router();
     let ContratRouter= express.Router()
     let CursusRouter= express.Router()
-    let DiplomeRouter = express.Router()
+    let DegreRouter = express.Router()
     let DispoRouter = express.Router()
     let EntrepriseRouter= express.Router()
     let EthiqueRouter= express.Router()
@@ -46,7 +46,7 @@ mysql.createConnection(
     let Chat = require('./chat/request/message')(db,config);
     let Contrat= require('./assets/classes/contrat-class')(db,config)
     let Cursus= require('./assets/classes/cursus-class')(db,config)
-    let Diplome= require('./assets/classes/diplome-class')(db,config)
+    let Degre= require('./assets/classes/degre-class')(db,config)
     let Dispo= require('./assets/classes/dispo-class')(db,config)
     let Entreprise= require('./assets/classes/entreprise-class')(db,config)
     let Ethique= require('./assets/classes/ethique-class')(db,config)
@@ -108,16 +108,16 @@ mysql.createConnection(
             let cursus = await Cursus.getById(req.params.id)
             await res.json(cursus)
         })
-    //requete de diplome
-    DiplomeRouter.route('/')
+    //requete de degre
+    DegreRouter.route('/')
         .get(async (req,res)=>{
-            let allDiplome=await Diplome.getAll()
-            await res.json(allDiplome)
+            let allDegre=await Degre.getAll()
+            await res.json(allDegre)
         })
-    DiplomeRouter.route('/:id')
+    DegreRouter.route('/:id')
         .get(async (req,res)=>{
-            let diplome = await Diplome.getById(req.params.id)
-            await res.json(diplome)
+            let degre = await Degre.getById(req.params.id)
+            await res.json(degre)
         })
     // requete de dispo
     DispoRouter.route('/')
@@ -336,7 +336,7 @@ mysql.createConnection(
             await res.json(postulant)
         })
         .put(async (req,res)=>{
-            let updatePostulant=await Postulant.update(req.params.id,req.body.username,req.body.password,req.body.description,req.body.photo,req.body.salaire,req.body.derniereExperience,req.body.idDiplome,req.body.idFormation,req.body.idDisponibilite,req.body.idSecteurs)
+            let updatePostulant=await Postulant.update(req.params.id,req.body.username,req.body.password,req.body.description,req.body.photo,req.body.salaire,req.body.derniereExperience,req.body.idDegre,req.body.idFormation,req.body.idDisponibilite,req.body.idSecteurs)
             await res.json(updatePostulant)
         })
         .delete(async (req,res)=> {
@@ -345,7 +345,7 @@ mysql.createConnection(
         })
     PostulantRouter.route('/filter')
         .get(async (req,res)=>{
-            let postulantfilter = await Postulant.getByFilter(req.query.salaire,req.query.derniereExperience,req.query.idDiplome,req.query.idFormation,req.query.idDisponibilite,req.query.idSecteurs)
+            let postulantfilter = await Postulant.getByFilter(req.query.salaire,req.query.derniereExperience,req.query.idDegre,req.query.idFormation,req.query.idDisponibilite,req.query.idSecteurs)
             await res.json(postulantfilter)
         })
     ChatRouter.route('/myHistoric')
@@ -361,7 +361,7 @@ mysql.createConnection(
     app.use(config.rootAPI+'chat',ChatRouter);
     app.use(config.rootAPI+'contrat',ContratRouter)
     app.use(config.rootAPI+'cursus',CursusRouter)
-    app.use(config.rootAPI+'diplome',DiplomeRouter)
+    app.use(config.rootAPI+'degre',DegreRouter)
     app.use(config.rootAPI+'dispo',DispoRouter)
     app.use(config.rootAPI+'entreprise',EntrepriseRouter)
     app.use(config.rootAPI+'ethique',EthiqueRouter)
