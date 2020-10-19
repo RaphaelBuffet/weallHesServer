@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Ajout des logs dans la BDD et splitting dans des fichiers.">
-      <change afterPath="$PROJECT_DIR$/chat/request/message.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat/socket/message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/message.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/config.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,9 +74,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.13.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.11.5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/chat/request" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.12.68" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -88,7 +85,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="SQL Resolution Scopes" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="C:\Users\disco\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.7319.49\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -146,6 +143,7 @@
       <workItem from="1602084501712" duration="1775000" />
       <workItem from="1602160271001" duration="2301000" />
       <workItem from="1602503808980" duration="3772000" />
+      <workItem from="1603097935224" duration="521000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -229,6 +227,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/weallbackend" />
+    </ignored-roots>
     <MESSAGE value="changement mineur" />
     <MESSAGE value="Ajout de socket Io pour le chat" />
     <MESSAGE value="Ajout des logs dans la BDD et splitting dans des fichiers." />
@@ -259,10 +260,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="271" height="457" key="HiddenNamespacesPopup/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602351167937" />
-    <state x="781" y="345" key="SettingsEditor" timestamp="1602505101590">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="586" y="256" key="SettingsEditor" timestamp="1603098456322">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="781" y="345" key="SettingsEditor/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505101590" />
+    <state x="586" y="256" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603098456322" />
     <state width="82" height="441" key="SqlResolveConfigurable" timestamp="1602505093660">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
