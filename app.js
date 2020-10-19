@@ -236,12 +236,12 @@ mysql.createConnection(
     //requete de type d'entreprise
     TypeRouter.route('/')
         .get(async (req,res)=>{
-            let alltype=await Taux.getAll()
+            let alltype=await Type.getAll()
             await res.json(alltype)
         })
     TypeRouter.route('/:id')
         .get(async (req,res)=>{
-            let type = await Taux.getById(req.params.id)
+            let type = await Type.getById(req.params.id)
             await res.json(type)
         })
 
