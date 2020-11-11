@@ -32,7 +32,7 @@ let Entreprise =class {
 
             }
             else {
-                db.query('Select * from Entreprise')
+                db.query('Select * from entreprise')
                     .then((result) => next(result))
                     .catch((err) => next(err))
             }
@@ -54,7 +54,7 @@ let Entreprise =class {
                         }
                     })
                     .then(()=>{
-                        return db.query('Select * from members where Username = ?', [username])
+                        return db.query('Select * from entreprise where Username = ?', [username])
                     })
                     .then((result)=> {
                         next({
@@ -78,7 +78,7 @@ let Entreprise =class {
                 db.query('Select * from entreprise WHERE id = ?',[id])
                     .then((result)=>{
                         if (result[0]!=undefined) {
-                            return db.query('Select * from Entreprise where name=? And id!=?', [name, id])
+                            return db.query('Select * from entreprise where name=? And id!=?', [name, id])
                         } else{
                             next(new Error(config.errors.wrongID))
                         }
@@ -87,7 +87,7 @@ let Entreprise =class {
                         if (result[0] != undefined) {
                             next(new Error(config.errors.sameName))
                         } else {
-                            return db.query('Update Entreprise Set username=?,password=?,name=?,description=?,photo=? where id=?', [username,password,name,description,photo, id])
+                            return db.query('Update entreprise Set username=?,password=?,name=?,description=?,photo=? where id=?', [username,password,name,description,photo, id])
                         }
                     })
                     .then(()=>{
