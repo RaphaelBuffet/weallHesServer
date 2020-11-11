@@ -24,7 +24,7 @@ let Entreprise =class {
     static getAll(max){
         return new Promise((next) => {
             if(max !=undefined && max >0) {
-                db.query('Select * from Entreprise Limit 0, ?', [parseInt(max)])
+                db.query('Select * from entreprise Limit 0, ?', [parseInt(max)])
                     .then((result) => next(result))
                     .catch((err) => next(err))
             }else if(max !=undefined) {
@@ -75,7 +75,7 @@ let Entreprise =class {
 
             if (username != undefined) {
 
-                db.query('Select * from Entreprise WHERE id = ?',[id])
+                db.query('Select * from entreprise WHERE id = ?',[id])
                     .then((result)=>{
                         if (result[0]!=undefined) {
                             return db.query('Select * from Entreprise where name=? And id!=?', [name, id])

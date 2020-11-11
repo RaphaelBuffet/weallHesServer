@@ -9,7 +9,10 @@ const {checkAndChange} = require('./assets/functions')
 const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io').listen(http);
+const crypto = require('crypto');
 
+
+const authToken = crypto.randomBytes (64) .toString ('base64');
 mysql.createConnection(
     {
         host: config.db.host,
@@ -18,6 +21,7 @@ mysql.createConnection(
         password: config.db.password
     }).then((db)=>{
     console.log('connected')
+    console.log(authToken)
     // creation des variables des chemin d'acces
     let BeneficeExterneRouter= express.Router()
     let ChatRouter = express.Router();

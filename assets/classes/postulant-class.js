@@ -25,7 +25,7 @@ let Postulant =class {
     static getAll(max){
         return new Promise((next) => {
             if(max !=undefined && max >0) {
-                db.query('Select * from Postulant Limit 0, ?', [parseInt(max)])
+                db.query('Select * from postulant Limit 0, ?', [parseInt(max)])
                     .then((result) => next(result))
                     .catch((err) => next(err))
             }else if(max !=undefined) {
@@ -33,7 +33,7 @@ let Postulant =class {
 
             }
             else {
-                db.query('Select * from Postulant')
+                db.query('Select * from postulant')
                     .then((result) => next(result))
                     .catch((err) => next(err))
             }
@@ -45,7 +45,7 @@ let Postulant =class {
             let colomn = 0
             let endresult = []
 
-            db.query('Select * from Postulant')
+            db.query('Select * from postulant')
                 .then((result) => {
                     for (let i = 0; i < result.length; i++) {
                         console.log(i)
@@ -131,7 +131,7 @@ let Postulant =class {
                         }
                     })
                     .then(()=>{
-                        return db.query('Select * from members where Username = ?', [username])
+                        return db.query('Select * from postulant where Username = ?', [username])
                     })
                     .then((result)=> {
                         next({
