@@ -11,6 +11,7 @@ const http = require('http').createServer(app);
 const io = require('socket.io').listen(http);
 const crypto = require('crypto');
 var bcrypt = require('bcrypt');
+const { type } = require('os')
 
 const authToken = crypto.randomBytes (64) .toString ('base64');
 mysql.createConnection(
@@ -385,6 +386,13 @@ mysql.createConnection(
     .post(async (req,res)=>{
        clientPassword=req.body.password
        let dbPassword=await User.getByEmail(req.body.email)
+       let accountType
+       if(dbPassword[0].entreprise===1){
+        accountType="entreprise"
+       }
+       else{
+        accountType="postulant"
+       }
        bcrypt.compare(clientPassword,dbPassword[0].mot_de_passe,function(err,ismatch){
         if (!ismatch) {
            res.json("connection failed")
@@ -392,7 +400,8 @@ mysql.createConnection(
         else{
             res.json({
                 email:req.body.email,
-                token: authToken
+                token: authToken,
+                type:accountType
             })
         }
        })
