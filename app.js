@@ -10,7 +10,7 @@ const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io').listen(http);
 const crypto = require('crypto');
-
+var bcrypt = require('bcrypt');
 
 const authToken = crypto.randomBytes (64) .toString ('base64');
 mysql.createConnection(
@@ -43,6 +43,7 @@ mysql.createConnection(
     let SoftskillRouter= express.Router()
     let TauxRouter= express.Router()
     let TypeRouter= express.Router()
+    let UserRouter= express.Router()
 
 
     // importation des classe de requete
@@ -66,6 +67,7 @@ mysql.createConnection(
     let Softskill= require('./assets/classes/softskill-class')(db,config)
     let Taux = require('./assets/classes/taux-class')(db,config)
     let Type= require('./assets/classes/type-class')(db,config)
+    let User= require('./assets/classes/user-class')(db,config)
 
 
     app.use(morgan);
@@ -352,6 +354,49 @@ mysql.createConnection(
             let postulantfilter = await Postulant.getByFilter(req.query.salaire,req.query.derniereExperience,req.query.idDegre,req.query.idFormation,req.query.idDisponibilite,req.query.idSecteurs)
             await res.json(postulantfilter)
         })
+    UserRouter.route('/')
+            .get(async (req, res) => {
+                let users = await User.getAll()
+                await res.json(users)
+            })
+            .post(async (req, res) => {
+                email = req.body.email
+                password = req.body.password
+                entreprise = req.body.entreprise
+                bcrypt.hash(password, 10, function (err, hash) {
+                    var sql = "INSERT INTO user (e_mail,mot_de_passe,entreprise) VALUES ?";
+                    var values = [[email, hash, entreprise]]
+                    db.query(sql, [values], function (err, result, fields) {
+                        if (err) throw err;
+                        res.send({
+                            message: 'Table Data',
+                            Total_record: result.length,
+                            result: result
+                        });
+                    });
+                });
+            });
+    UserRouter.route('/:id')
+    .get(async (req,res)=>{
+        let user = await User.getById(req.params.id)
+        await res.json(user)
+    })
+    UserRouter.route('/token')
+    .post(async (req,res)=>{
+       clientPassword=req.body.password
+       let dbPassword=await User.getByEmail(req.body.email)
+       bcrypt.compare(clientPassword,dbPassword[0].mot_de_passe,function(err,ismatch){
+        if (!ismatch) {
+           res.json("connection failed")
+        }
+        else{
+            res.json({
+                email:req.body.email,
+                token: authToken
+            })
+        }
+       })
+    })
     ChatRouter.route('/myHistoric')
         .get(async (req, res)=>{
             let myHistorical = await Chat.myHistory(1234121);
@@ -381,6 +426,7 @@ mysql.createConnection(
     app.use(config.rootAPI+'softskill',SoftskillRouter)
     app.use(config.rootAPI+'taux',TauxRouter)
     app.use(config.rootAPI+'type',TypeRouter)
+    app.use(config.rootAPI+'user',UserRouter)
 
     io.on('connection', (socket) => {
         console.log('a user connected');
