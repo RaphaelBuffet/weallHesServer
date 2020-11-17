@@ -401,10 +401,10 @@ mysql.createConnection(
        let dbPassword=await User.getByEmail(req.body.email)
        let accountType
        if(dbPassword[0].entreprise===1){
-        accountType="entreprise"
+        accountType=true
        }
        else{
-        accountType="postulant"
+        accountType=false
        }
        bcrypt.compare(clientPassword,dbPassword[0].mot_de_passe,function(err,ismatch){
         if (!ismatch) {
@@ -415,7 +415,7 @@ mysql.createConnection(
             res.json({
                 email:req.body.email,
                 token: authToken,
-                type:accountType
+                isEntreprise:accountType
             })
         }
        })
