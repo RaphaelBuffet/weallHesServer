@@ -23,19 +23,11 @@ let Niveau =class {
     }
     static getAll(max){
         return new Promise((next) => {
-            if(max !=undefined && max >0) {
-                db.query('Select * from niveau Limit 0, ?', [parseInt(max)])
-                    .then((result) => next(result))
-                    .catch((err) => next(err))
-            }else if(max !=undefined) {
-                next(new Error(config.errors.wrongMaxValue))
 
-            }
-            else {
                 db.query('Select * from niveau')
                     .then((result) => next(result))
                     .catch((err) => next(err))
-            }
+
         })
 
     }
