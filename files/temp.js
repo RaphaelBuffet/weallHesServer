@@ -3,10 +3,16 @@ let db, config;
 module.exports= (_db, _config) => {
     db = _db;
     config = _config;
-    return Message;
+    return TempFiles;
 }
 
-let Message = class {
+let TempFiles = class {
+    static sendTempsFiles(myId, otherId, file){
+        return new Promise((next)=>{
+            console.log(file)
+        })
+    }
+
     static myHistory(id){
         return new Promise((next) => {
             db.query('SELECT * FROM chatLogView WHERE id_user1 = ? OR id_user2 = ?', [id,id], (err, rows) => {
@@ -44,10 +50,10 @@ let Message = class {
                     let result = {};
                     result.msg = [];
                     if(rows.length > 0)
-                    result.correspondent = {
-                        id:otherId,
-                        name: rows[0].id_entreprise === otherId ? rows[0].nom_entreprise : rows[0].nom_postulant
-                    }
+                        result.correspondent = {
+                            id:otherId,
+                            name: rows[0].id_entreprise === otherId ? rows[0].nom_entreprise : rows[0].nom_postulant
+                        }
                     else result.correspondent = {
                         id:otherId,
                         name:'unknown'
@@ -63,12 +69,6 @@ let Message = class {
                     next(result);
                 }
             })
-        })
-    }
-
-    static sendTempsFiles(myId, otherId, file){
-        return new Promise((next)=>{
-
         })
     }
 }

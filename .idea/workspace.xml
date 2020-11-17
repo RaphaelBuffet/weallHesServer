@@ -19,9 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Créations des vues pour avoir les bonnes informations à chaque récupération des historiques et modification de ses dernières.">
+    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Fix d'un problème entre les string et int en JS">
+      <change afterPath="$PROJECT_DIR$/files/temp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/request/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/request/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/socket/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/socket/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,18 +91,18 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="C:\Users\disco\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.7319.49\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat\request" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat\socket" />
       <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat" />
       <recent name="C:\Users\raphy\weallbackend\assets" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat\request" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -144,7 +150,16 @@
       <workItem from="1602160271001" duration="2301000" />
       <workItem from="1602503808980" duration="6050000" />
       <workItem from="1602764237708" duration="6956000" />
-      <workItem from="1602925790012" duration="13974000" />
+      <workItem from="1602925790012" duration="14193000" />
+      <workItem from="1603046987263" duration="964000" />
+      <workItem from="1603289578801" duration="1566000" />
+      <workItem from="1603360837106" duration="2125000" />
+      <workItem from="1603623469966" duration="2638000" />
+      <workItem from="1604241353377" duration="1248000" />
+      <workItem from="1604244744639" duration="3615000" />
+      <workItem from="1604499598229" duration="1198000" />
+      <workItem from="1604578558864" duration="3159000" />
+      <workItem from="1605619264796" duration="817000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -237,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603036885112</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fix d'un problème entre les string et int en JS">
+      <created>1603041203717</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1603041203717</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,12 +278,16 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/weallbackend" />
+    </ignored-roots>
     <MESSAGE value="changement mineur" />
     <MESSAGE value="Ajout de socket Io pour le chat" />
     <MESSAGE value="Ajout des logs dans la BDD et splitting dans des fichiers." />
     <MESSAGE value="Ajout de myHistoric qui n'est que l'ébauche de la récupération de l'historique de conv" />
     <MESSAGE value="Créations des vues pour avoir les bonnes informations à chaque récupération des historiques et modification de ses dernières." />
-    <option name="LAST_COMMIT_MESSAGE" value="Créations des vues pour avoir les bonnes informations à chaque récupération des historiques et modification de ses dernières." />
+    <MESSAGE value="Fix d'un problème entre les string et int en JS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix d'un problème entre les string et int en JS" />
   </component>
   <component name="WindowStateProjectService">
     <state x="906" y="378" key="#Inspections" timestamp="1602504914123">
@@ -304,18 +330,19 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="271" height="457" key="HiddenNamespacesPopup/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602351167937" />
-    <state x="781" y="345" key="SettingsEditor" timestamp="1602509004450">
+    <state x="781" y="345" key="SettingsEditor" timestamp="1603624237814">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="345" key="SettingsEditor/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602509004450" />
+    <state x="781" y="345" key="SettingsEditor/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1603624237814" />
     <state width="82" height="441" key="SqlResolveConfigurable" timestamp="1602505093660">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="82" height="441" key="SqlResolveConfigurable/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505093660" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1603036887133">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1603041207528">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603036887133" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603041207528" />
     <state x="1179" y="577" width="890" height="524" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1603035427077">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -324,10 +351,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1170" y="587" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603035142485" />
-    <state x="1179" y="577" width="754" height="497" key="com.intellij.database.actions.DdlActions$ModifyObject$1" timestamp="1603034643467">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="-1036" y="792" width="754" height="497" key="com.intellij.database.actions.DdlActions$ModifyObject$1" timestamp="1605619450380">
+      <screen x="-1920" y="363" width="1920" height="1040" />
     </state>
     <state x="1179" y="577" width="754" height="497" key="com.intellij.database.actions.DdlActions$ModifyObject$1/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603034643467" />
+    <state x="-1036" y="792" key="com.intellij.database.actions.DdlActions$ModifyObject$1/0.0.2560.1400/-1920.363.1920.1040@-1920.363.1920.1040" timestamp="1605619450380" />
     <state x="1076" y="520" width="408" height="355" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1603035471327">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -344,10 +372,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="814" y="506" key="com.intellij.database.view.ui.DatabasePreviewDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603035599881" />
-    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602768965674">
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604246374017">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602768965674" />
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1604246374017" />
     <state x="936" y="330" key="run.anything.popup" timestamp="1603040522135">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
