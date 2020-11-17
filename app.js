@@ -395,7 +395,8 @@ mysql.createConnection(
        }
        bcrypt.compare(clientPassword,dbPassword[0].mot_de_passe,function(err,ismatch){
         if (!ismatch) {
-           res.json("connection failed")
+            res.statusCode=401;
+            res.json("connection failed")
         }
         else{
             res.json({
