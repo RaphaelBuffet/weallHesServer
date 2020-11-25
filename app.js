@@ -44,6 +44,7 @@ mysql.createConnection(
     let DispoRouter = express.Router()
     let EntrepriseRouter= express.Router()
     let EthiqueRouter= express.Router()
+    let FiltreRouter= express.Router()
     let FormationRouter = express.Router()
     let LangueRouter= express.Router()
     let LocaliteRouter = express.Router()
@@ -68,6 +69,7 @@ mysql.createConnection(
     let Dispo= require('./assets/classes/dispo-class')(db,config)
     let Entreprise= require('./assets/classes/entreprise-class')(db,config)
     let Ethique= require('./assets/classes/ethique-class')(db,config)
+    let Filtre= require('./assets/classes/filtre-class')(db,config)
     let Formation= require('./assets/classes/formation-class')(db,config)
     let Langue= require('./assets/classes/langue-class')(db,config)
     let Localite= require('./assets/classes/localite-class')(db,config)
@@ -165,6 +167,14 @@ mysql.createConnection(
             let ethique = await Ethique.getById(req.params.id)
             await res.json(ethique)
         })
+    //requete de filtre
+    FiltreRouter.route('/')
+        .post(async (req,res)=>{
+            let filtre = await Filtre.getProfilFilter(req.body.id)
+            await console.log("App"+filtre)
+            await res.json(filtre)
+        })
+    
     //requete de formation
     FormationRouter.route('/')
         .get(async (req,res)=>{
@@ -453,6 +463,7 @@ mysql.createConnection(
     app.use(config.rootAPI+'dispo',DispoRouter)
     app.use(config.rootAPI+'entreprise',EntrepriseRouter)
     app.use(config.rootAPI+'ethique',EthiqueRouter)
+    app.use(config.rootAPI+'filtre',FiltreRouter)
     app.use(config.rootAPI+'formation',FormationRouter)
     app.use(config.rootAPI+'langue',LangueRouter)
     app.use(config.rootAPI+'localite',LocaliteRouter)
