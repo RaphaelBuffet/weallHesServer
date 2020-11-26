@@ -8,15 +8,20 @@ let filtre = class {
 
     static async getProfilFilter(id) {
         let taux = await this.getTauxFilter(id)
-        let contrat = await []
-        let localite = await []
-        let entrepriseType = await []
-        let ethique = await []
+        let contrat = await this.getTauxFilter(id)
+        let localite = await this.getTauxFilter(id)
+        let entrepriseType = await this.getTauxFilter(id)
+        let ethique = await this.getTauxFilter(id)
         let dispo = await this.getDispoFilter(id)
 
         console.log(taux)
         console.log(dispo)
-        return (taux+dispo)
+        console.log(contrat)
+        console.log(localite)
+        console.log(entrepriseType)
+        console.log(ethique)
+        let result=await db.query('Select * from offre WHERE id_offre IN (?)', [taux])
+        return (result)
     }
 
     static getTauxFilter(id) {
