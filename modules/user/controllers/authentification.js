@@ -14,9 +14,7 @@ function login(req,res,next) {
             res.status(401).json({message: 'utilisateur introuvable'});
             return;
         }
-        console.log("pass: ", result[0].mot_de_passe)
         bcrypt.compare(password, result[0].mot_de_passe, (err, result2) => {
-            console.log("reponse : ", result2)
             if(result2) {
                 const token = jwt.sign(
                     {userId: result[0].id_user},
