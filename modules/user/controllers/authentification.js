@@ -6,12 +6,8 @@ module.exports = {
 }
 
 function login(req,res,next) {
-    console.log("COUCOU")
-    console.log(req.body);
-    console.log(req.headers['content-lenght'])
     const email = req.body.email;
     const password = req.body.password;
-    console.log(email+":"+password);
     const sqlQuery = 'SELECT * FROM `user` WHERE e_mail = ?'
     db.query(sqlQuery, [email], (err, result) => {
         if (err || !result || !result[0]) {
@@ -27,7 +23,8 @@ function login(req,res,next) {
                 );
                 res.status(200).json({
                     userId: result[0].id_user,
-                    token: token
+                    token: token,
+                    isEnterprise: result[0].entreprise === 1
                 });
             }
             else{
