@@ -1,10 +1,4 @@
-let db, config
-module.exports = (_db, _config) => {
-    db = _db
-    config = _config
-    return filtre
-}
-let filtre = class {
+module.exports = filtre = class {
 
     static async getProfilFilter(id) {
         let taux = await this.getTauxFilter(id)

@@ -1,12 +1,5 @@
 let db, config;
-
-module.exports= (_db, _config) => {
-    db = _db;
-    config = _config;
-    return TempFiles;
-}
-
-let TempFiles = class {
+module.exports= TempFiles = class {
     static sendTempsFiles(myId, otherId, file){
         return new Promise((next)=>{
             console.log(file)

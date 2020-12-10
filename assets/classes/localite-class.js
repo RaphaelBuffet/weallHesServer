@@ -1,10 +1,4 @@
-let db, config
-module.exports = (_db, _config)=>{
-    db=_db
-    config=_config
-    return Localite
-}
-let Localite =class {
+module.exports = Localite =class {
     static getById(id){
 
         return new Promise((next) => {

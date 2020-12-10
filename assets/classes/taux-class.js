@@ -1,10 +1,4 @@
-let db, config
-module.exports = (_db, _config)=>{
-    db=_db
-    config=_config
-    return TauxActivite
-}
-let TauxActivite =class {
+module.exports = TauxActivite =class {
     static getById(id){
 
         return new Promise((next) => {

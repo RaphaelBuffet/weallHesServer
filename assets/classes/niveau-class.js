@@ -1,10 +1,4 @@
-let db, config
-module.exports = (_db, _config)=>{
-    db=_db
-    config=_config
-    return Niveau
-}
-let Niveau =class {
+module.exports =  Niveau =class {
     static getById(id){
 
         return new Promise((next) => {
