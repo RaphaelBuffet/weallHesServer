@@ -6,8 +6,12 @@ module.exports = {
 }
 
 function login(req,res,next) {
+    console.log("COUCOU")
+    console.log(req.body);
+    console.log(req.headers['content-lenght'])
     const email = req.body.email;
-    const password = req.body.password
+    const password = req.body.password;
+    console.log(email+":"+password);
     const sqlQuery = 'SELECT * FROM `user` WHERE e_mail = ?'
     db.query(sqlQuery, [email], (err, result) => {
         if (err || !result || !result[0]) {

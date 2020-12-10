@@ -22,7 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Réparation du login">
+    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="suppression des consoles log">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/user/controllers/authentification.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/user/controllers/authentification.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +157,7 @@
       <workItem from="1606400857513" duration="196000" />
       <workItem from="1606401061655" duration="1612000" />
       <workItem from="1607595917781" duration="1206000" />
-      <workItem from="1607597212065" duration="13139000" />
+      <workItem from="1607597212065" duration="14811000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -242,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607615238097</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="suppression des consoles log">
+      <created>1607615269380</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1607615269380</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +278,8 @@
     <MESSAGE value="Ajout de quelques petits changements tels que :&#10;l'autentification&#10;réorganisation infiniment petite du routage.&#10;Ajout de package !" />
     <MESSAGE value="Ajout de quelques petits changements tels que :&#10;l'autentification&#10;réorganisation infiniment petite du routage.&#10;Ajout de package !&#10;et rajout du gitignore" />
     <MESSAGE value="Réparation du login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Réparation du login" />
+    <MESSAGE value="suppression des consoles log" />
+    <option name="LAST_COMMIT_MESSAGE" value="suppression des consoles log" />
   </component>
   <component name="WindowStateProjectService">
     <state x="906" y="378" key="#Inspections" timestamp="1602504914123">
@@ -339,11 +348,11 @@
     </state>
     <state width="82" height="441" key="SqlResolveConfigurable/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505093660" />
     <state width="200" height="441" key="SqlResolveConfigurable/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607610740438" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1607615240812">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1607615270772">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602350864897" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607615240812" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607615270772" />
     <state x="1141" y="582" width="311" height="263" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1607611284797">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
