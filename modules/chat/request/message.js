@@ -1,6 +1,6 @@
 function myHistory(req, res, next){
     console.log(req.userId)
-    const id = req.header('myId') || 1;
+    const id = req.userId;
     db.query('SELECT * FROM chatLogView WHERE id_user1 = ? OR id_user2 = ?', [id,id], (err, rows) => {
         if(err){console.log(err);}
         else {
