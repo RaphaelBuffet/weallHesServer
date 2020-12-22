@@ -22,9 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="fix chatting">
+    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Fix sending and receiving msg">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/chat/socket/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chat/socket/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/temp.js" beforeDir="false" afterPath="$PROJECT_DIR$/files/temp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/Auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +163,12 @@
       <workItem from="1607642833238" duration="66000" />
       <workItem from="1607819665795" duration="2181000" />
       <workItem from="1607944873917" duration="604000" />
-      <workItem from="1608065220679" duration="3210000" />
+      <workItem from="1608065220679" duration="3337000" />
+      <workItem from="1608161278357" duration="27000" />
+      <workItem from="1608227385331" duration="4530000" />
+      <workItem from="1608559732033" duration="21000" />
+      <workItem from="1608580200675" duration="606000" />
+      <workItem from="1608642200770" duration="1784000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -275,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607865290643</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fix sending and receiving msg">
+      <created>1608070226384</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608070226384</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,7 +319,8 @@
     <MESSAGE value="Réparation du login" />
     <MESSAGE value="suppression des consoles log" />
     <MESSAGE value="fix chatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix chatting" />
+    <MESSAGE value="Fix sending and receiving msg" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix sending and receiving msg" />
   </component>
   <component name="WindowStateProjectService">
     <state x="906" y="378" key="#Inspections" timestamp="1602504914123">
@@ -374,11 +389,11 @@
     </state>
     <state width="82" height="441" key="SqlResolveConfigurable/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505093660" />
     <state width="200" height="441" key="SqlResolveConfigurable/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607610740438" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1607865315897">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1608161301257">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602350864897" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607865315897" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1608161301257" />
     <state x="1141" y="582" width="311" height="263" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1607611284797">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
