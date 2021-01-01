@@ -22,11 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Fix sending and receiving msg">
+    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Fix sending and receiving file">
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/temp.js" beforeDir="false" afterPath="$PROJECT_DIR$/files/temp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/chat/request/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chat/request/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/chat/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chat/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +168,9 @@
       <workItem from="1608227385331" duration="4530000" />
       <workItem from="1608559732033" duration="21000" />
       <workItem from="1608580200675" duration="606000" />
-      <workItem from="1608642200770" duration="1784000" />
+      <workItem from="1608642200770" duration="2791000" />
+      <workItem from="1608986605503" duration="852000" />
+      <workItem from="1609511546622" duration="5331000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -289,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608070226384</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Fix sending and receiving file">
+      <created>1608645415769</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608645415769</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +329,8 @@
     <MESSAGE value="suppression des consoles log" />
     <MESSAGE value="fix chatting" />
     <MESSAGE value="Fix sending and receiving msg" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix sending and receiving msg" />
+    <MESSAGE value="Fix sending and receiving file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix sending and receiving file" />
   </component>
   <component name="WindowStateProjectService">
     <state x="906" y="378" key="#Inspections" timestamp="1602504914123">
@@ -339,6 +349,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="654" y="541" key="#SQL_Dialects/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602504901473" />
+    <state x="720" y="515" key="#SQL_Resolution_Scopes" timestamp="1609513630672">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="720" y="515" key="#SQL_Resolution_Scopes/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609513630672" />
     <state x="1224" y="489" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607604258173">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -358,22 +372,22 @@
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505098848" />
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607610689081" />
-    <state width="1741" height="343" key="GridCell.Tab.0.bottom" timestamp="1607609565637">
+    <state width="1741" height="343" key="GridCell.Tab.0.bottom" timestamp="1609515360953">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1741" height="343" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607609565637" />
-    <state width="1741" height="343" key="GridCell.Tab.0.center" timestamp="1607609565637">
+    <state width="1741" height="343" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609515360953" />
+    <state width="1741" height="343" key="GridCell.Tab.0.center" timestamp="1609515360953">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1741" height="343" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607609565637" />
-    <state width="1741" height="343" key="GridCell.Tab.0.left" timestamp="1607609565637">
+    <state width="1741" height="343" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609515360953" />
+    <state width="1741" height="343" key="GridCell.Tab.0.left" timestamp="1609515360953">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1741" height="343" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607609565637" />
-    <state width="1741" height="343" key="GridCell.Tab.0.right" timestamp="1607609565637">
+    <state width="1741" height="343" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609515360953" />
+    <state width="1741" height="343" key="GridCell.Tab.0.right" timestamp="1609515360953">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1741" height="343" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607609565637" />
+    <state width="1741" height="343" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609515360953" />
     <state width="271" height="457" key="HiddenNamespacesPopup" timestamp="1602351167937">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -384,25 +398,29 @@
     <state x="781" y="345" key="SettingsEditor/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505101590" />
     <state x="586" y="256" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603098456322" />
     <state x="781" y="345" key="SettingsEditor/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607610743073" />
-    <state width="200" height="441" key="SqlResolveConfigurable" timestamp="1607610740438">
+    <state width="200" height="441" key="SqlResolveConfigurable" timestamp="1609513628023">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="82" height="441" key="SqlResolveConfigurable/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505093660" />
-    <state width="200" height="441" key="SqlResolveConfigurable/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607610740438" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1608161301257">
+    <state width="200" height="441" key="SqlResolveConfigurable/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609513628023" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1608645417297">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602350864897" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1608161301257" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1608645417297" />
     <state x="1141" y="582" width="311" height="263" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1607611284797">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1141" y="582" width="311" height="263" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607611284797" />
-    <state x="1138" y="263" width="962" height="655" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1607608281456">
+    <state x="1138" y="262" width="962" height="656" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1609513549552">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602507021125" />
-    <state x="1138" y="263" width="962" height="655" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607608281456" />
+    <state x="1138" y="262" width="962" height="656" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609513549552" />
+    <state x="868" y="402" key="com.intellij.database.view.ui.DatabasePreviewDialog" timestamp="1609512953461">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="868" y="402" key="com.intellij.database.view.ui.DatabasePreviewDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609512953461" />
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607642846907">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -416,5 +434,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603098931673" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1609513011799">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609513011799" />
   </component>
 </project>

@@ -12,6 +12,7 @@ function myHistory(req, res, next){
                     result[idOther].msg = [];
                     result[idOther].id = idOther;
                     result[idOther].name = value.id_entreprise === idOther ? value.nom_entreprise : value.nom_postulant;
+                    result[idOther].lastVisit = value.heure_visite;
                 }
                 result[idOther].msg.push({
                     idUser1 : value.id_user1,
@@ -26,8 +27,8 @@ function myHistory(req, res, next){
 }
 
 function myHistoryWith(req, res){
-    const myId = req.header('myId') || 1
-    const otherId = req.params.id;
+    let myId = req.header('myId') || 1
+    let otherId = req.params.id;
     db.query('SELECT * FROM chatLogView WHERE (id_user1 = ? AND id_user2 = ?) OR (id_user1 = ? AND id_user2 = ?)', [myId, otherId, otherId, myId], (err, rows) =>{
         if(err){console.log(err);}
         else {
@@ -57,7 +58,26 @@ function myHistoryWith(req, res){
     })
 }
 
+function updateLastVisit(req,res){
+    console.log("coucou");
+    const time = req.params.time;
+    const from = req.params.from;
+    const to = req.params.to;
+    db.query(`UPDATE chat_derniere_visite set heure_visite = ? where id_from = ? and id_to = ?`,
+        [time,from,to], function(err,result){
+            if(result.affectedRows <1)
+                db.query(`INSERT INTO chat_derniere_visite(id_from, id_to, heure_visite) VALUES (?,?,?)`,
+                    [from,to,time],function(err,rows){
+                        res.json();
+                    });
+            else {
+                res.json();
+            }
+        });
+}
+
 module.exports = {
     myHistory,
-    myHistoryWith
+    myHistoryWith,
+    updateLastVisit
 }
