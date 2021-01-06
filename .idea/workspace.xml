@@ -22,12 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Fix sending and receiving file">
+    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Finish chat">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/chat/request/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chat/request/message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/chat/socket/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chat/socket/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/classes/entreprise-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/entreprise-class.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +171,7 @@
       <workItem from="1608986605503" duration="852000" />
       <workItem from="1609511546622" duration="5340000" />
       <workItem from="1609659266765" duration="3658000" />
-      <workItem from="1609942620568" duration="2233000" />
+      <workItem from="1609942620568" duration="5050000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -308,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609520227158</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Finish chat">
+      <created>1609949034990</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1609949034990</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,7 +345,8 @@
     <MESSAGE value="fix chatting" />
     <MESSAGE value="Fix sending and receiving msg" />
     <MESSAGE value="Fix sending and receiving file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix sending and receiving file" />
+    <MESSAGE value="Finish chat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish chat" />
   </component>
   <component name="WindowStateProjectService">
     <state x="906" y="378" key="#Inspections" timestamp="1602504914123">
@@ -382,22 +388,22 @@
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505098848" />
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607610689081" />
-    <state width="1741" height="343" key="GridCell.Tab.0.bottom" timestamp="1609515360953">
+    <state width="1741" height="343" key="GridCell.Tab.0.bottom" timestamp="1609951904468">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1741" height="343" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609515360953" />
-    <state width="1741" height="343" key="GridCell.Tab.0.center" timestamp="1609515360953">
+    <state width="1741" height="343" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609951904468" />
+    <state width="1741" height="343" key="GridCell.Tab.0.center" timestamp="1609951904467">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1741" height="343" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609515360953" />
-    <state width="1741" height="343" key="GridCell.Tab.0.left" timestamp="1609515360953">
+    <state width="1741" height="343" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609951904467" />
+    <state width="1741" height="343" key="GridCell.Tab.0.left" timestamp="1609951904467">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1741" height="343" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609515360953" />
-    <state width="1741" height="343" key="GridCell.Tab.0.right" timestamp="1609515360953">
+    <state width="1741" height="343" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609951904467" />
+    <state width="1741" height="343" key="GridCell.Tab.0.right" timestamp="1609951904468">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1741" height="343" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609515360953" />
+    <state width="1741" height="343" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609951904468" />
     <state width="271" height="457" key="HiddenNamespacesPopup" timestamp="1602351167937">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -413,29 +419,33 @@
     </state>
     <state width="82" height="441" key="SqlResolveConfigurable/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505093660" />
     <state width="200" height="441" key="SqlResolveConfigurable/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609513628023" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1608645417297">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1609949036495">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602350864897" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1608645417297" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609949036495" />
     <state x="1141" y="582" width="311" height="263" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1607611284797">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1141" y="582" width="311" height="263" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607611284797" />
-    <state x="1138" y="262" width="962" height="656" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1609513549552">
+    <state x="1138" y="262" width="962" height="656" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1609950986426">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602507021125" />
-    <state x="1138" y="262" width="962" height="656" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609513549552" />
+    <state x="1138" y="262" width="962" height="656" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609950986425" />
     <state x="868" y="402" key="com.intellij.database.view.ui.DatabasePreviewDialog" timestamp="1609512953461">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="868" y="402" key="com.intellij.database.view.ui.DatabasePreviewDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609512953461" />
-    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609659972763">
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1609950750212">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609950750212" />
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609950429564">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602504011648" />
-    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609659972763" />
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609950429564" />
     <state x="988" y="417" width="583" height="566" key="find.popup" timestamp="1607604415633">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

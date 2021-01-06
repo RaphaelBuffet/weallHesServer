@@ -1,8 +1,7 @@
 module.exports =  Entreprise =class {
     static getById(id){
-
         return new Promise((next) => {
-            db.query('Select * from entreprise WHERE id= ?',[id])
+            db.query('SELECT * FROM entreprise JOIN user u on entreprise.id_user = u.id_user WHERE entreprise.id_user = 2',[id])
                 .then((result)=> {
                     if (result[0]!=undefined){
                         next(result[0])
