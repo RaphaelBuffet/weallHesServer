@@ -5,6 +5,7 @@ function Auth(req,res,next){
     if(!req.headers['authorization'])
         res.status(400).json({message : 'token invalide'});
     else{
+
         const token = req.headers['authorization'].split(' ')[1];
         const decodedToken = jwt.verify(token, process.env.SECRET_TOKEN_GENERATOR);
         req.userId = decodedToken.userId;

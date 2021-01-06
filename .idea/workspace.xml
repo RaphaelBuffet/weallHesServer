@@ -23,10 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Fix sending and receiving file">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/Auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/chat/request/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chat/request/message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/chat/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chat/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/chat/socket/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chat/socket/message.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +171,9 @@
       <workItem from="1608580200675" duration="606000" />
       <workItem from="1608642200770" duration="2791000" />
       <workItem from="1608986605503" duration="852000" />
-      <workItem from="1609511546622" duration="5331000" />
+      <workItem from="1609511546622" duration="5340000" />
+      <workItem from="1609659266765" duration="3658000" />
+      <workItem from="1609942620568" duration="2233000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -298,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608645415769</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fix sending and receiving file">
+      <created>1609520227158</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1609520227158</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,11 +431,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="868" y="402" key="com.intellij.database.view.ui.DatabasePreviewDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609512953461" />
-    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607642846907">
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609659972763">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602504011648" />
-    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607642846907" />
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609659972763" />
     <state x="988" y="417" width="583" height="566" key="find.popup" timestamp="1607604415633">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

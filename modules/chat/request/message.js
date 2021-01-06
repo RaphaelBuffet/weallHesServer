@@ -59,10 +59,9 @@ function myHistoryWith(req, res){
 }
 
 function updateLastVisit(req,res){
-    console.log("coucou");
-    const time = req.params.time;
-    const from = req.params.from;
-    const to = req.params.to;
+    const time = new Date(req.body.time);
+    const from = req.body.from;
+    const to = req.body.to;
     db.query(`UPDATE chat_derniere_visite set heure_visite = ? where id_from = ? and id_to = ?`,
         [time,from,to], function(err,result){
             if(result.affectedRows <1)
