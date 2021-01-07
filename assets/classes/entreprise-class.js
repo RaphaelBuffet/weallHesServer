@@ -1,6 +1,5 @@
 module.exports =  Entreprise =class {
     static getById(id){
-
         return new Promise((next) => {
             db.query('Select * from entreprise WHERE id= ?',[id],
                 (result)=> {
