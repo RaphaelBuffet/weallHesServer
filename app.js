@@ -26,12 +26,28 @@ const storage = multer.diskStorage({
         cb(null, Date.now() + file.originalname)
     }
 });
+const imageStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        const path =  './image_profile/' + req.userId + "/";
+        fs.mkdir(path, { recursive: true }, (err) => {
+            if (err) throw err;
+        });
+        cb(null, path)
+        req.pathFile = path;
+    },
+    filename: function (req, file, cb) {
+        console.log(file);
+        req.originalNameFile = file.originalname;
+        cb(null, file.originalname)
+    }
+})
 const Auth = require('./middleware/Auth').Auth;
 
 const ChatRouter = require('./modules/chat/routes');
 const UserRouter = require('./modules/user/routes');
 
 const upload = multer({ storage: storage })
+const uploadImage = multer({ storage: imageStorage })
 
 const authToken = crypto.randomBytes (64) .toString ('base64');
 global.db = require('./bdd/connexionDB').getCon();
@@ -379,8 +395,6 @@ PostulantRouter.route('/filter')
 
 FileRouter.route('/upload/temp') //
     .post(upload.single('file'),async (req, res,next) => {
-        console.log(req.file);
-        console.log(req.pathFile);
         var path = req.pathFile.replace('./uploads/', 'http://' + req.headers.host+"/files/") + req.file.filename;
     res.json({
         filename: req.originalNameFile,
@@ -389,6 +403,17 @@ FileRouter.route('/upload/temp') //
         ok:"ok"
     });
 });
+
+FileRouter.route('/upload/profil_image') //
+    .post(uploadImage.single('file'),async (req, res,next) => {
+        console.log("OKOK")
+        var path = req.pathFile.replace('./uploads/', 'http://' + req.headers.host+"/image_profile/") + req.file.filename;
+        res.json({
+            filename: req.originalNameFile,
+            path: path,
+            size : req.file.size
+        });
+    });
 // creation des chemins d'acces pour chaque table de la BDD
 app.get('/coucou', (req,res) => {
    res.end("ok");
@@ -421,6 +446,7 @@ app.use(config.rootAPI+'user',UserRouter)
 app.use(config.rootAPI+'chat',Auth, ChatRouter);
 app.use(config.rootAPI+'files', Auth,FileRouter);
 app.use('/files', express.static(path.join(__dirname+"/uploads")));
+app.use('/image_profile', express.static(path.join(__dirname+"/image_profile")));
 
 io.on('connection', (socket) => {
     console.log('a user connected');
