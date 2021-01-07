@@ -22,12 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Fix sending and receiving file">
+    <list default="true" id="6f27702c-6e37-49a0-b8e5-128443012c72" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/chat/request/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chat/request/message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/chat/socket/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chat/socket/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/classes/entreprise-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/entreprise-class.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

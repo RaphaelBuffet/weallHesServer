@@ -2,8 +2,8 @@ module.exports =  Entreprise =class {
     static getById(id){
 
         return new Promise((next) => {
-            db.query('Select * from entreprise WHERE id= ?',[id])
-                .then((result)=> {
+            db.query('Select * from entreprise WHERE id= ?',[id],
+                (result)=> {
                     if (result[0]!=undefined){
                         next(result[0])
                     }
@@ -11,8 +11,6 @@ module.exports =  Entreprise =class {
                         next(new Error(config.errors.wrongID))
                     }
                 })
-                .catch((err) => next(err))
-
         })
     }
     static getAll(max){
