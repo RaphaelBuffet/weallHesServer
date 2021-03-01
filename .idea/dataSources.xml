@@ -7,5 +7,11 @@
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mariadb://j5zntocs2dn6c3fj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="e2jkpgfevu89xw5r@f80b6byii2vwv8cx.chr7pe7iynqr.eu-west-1.rds.amazonaws.com" uuid="5c0ea0e1-8c6c-4cf5-b16f-122068c219ba">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://f80b6byii2vwv8cx.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/e2jkpgfevu89xw5r</jdbc-url>
+    </data-source>
   </component>
 </project>

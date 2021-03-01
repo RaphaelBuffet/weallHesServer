@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,15 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b09803-4aee-4cd8-aa4b-05df1e89b7c7" name="Default Changelist" comment="Fix d'un problème entre les string et int en JS">
-      <change afterPath="$PROJECT_DIR$/files/temp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="6f27702c-6e37-49a0-b8e5-128443012c72" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/request/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/request/message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/socket/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/socket/message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/classes/entreprise-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/classes/entreprise-class.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,14 +59,16 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="chat" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1ZDrH7WOyjYjc2zxe5AgEhH1Ofd" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -81,8 +80,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.13.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.11.5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/chat/request" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.10" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -91,17 +90,19 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="SQL Resolution Scopes" />
     <property name="ts.external.directory.path" value="C:\Users\disco\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.7319.49\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\disco\WebstormProjects\weallbackend\modules" />
       <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat\socket" />
       <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat" />
       <recent name="C:\Users\raphy\weallbackend\assets" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\disco\WebstormProjects\weallbackend" />
       <recent name="C:\Users\disco\WebstormProjects\weallbackend\chat\request" />
     </key>
   </component>
@@ -148,18 +149,28 @@
       <workItem from="1588286865482" duration="841000" />
       <workItem from="1602084501712" duration="1775000" />
       <workItem from="1602160271001" duration="2301000" />
-      <workItem from="1602503808980" duration="6050000" />
-      <workItem from="1602764237708" duration="6956000" />
-      <workItem from="1602925790012" duration="14193000" />
-      <workItem from="1603046987263" duration="964000" />
-      <workItem from="1603289578801" duration="1566000" />
-      <workItem from="1603360837106" duration="2125000" />
-      <workItem from="1603623469966" duration="2638000" />
-      <workItem from="1604241353377" duration="1248000" />
-      <workItem from="1604244744639" duration="3615000" />
-      <workItem from="1604499598229" duration="1198000" />
-      <workItem from="1604578558864" duration="3159000" />
-      <workItem from="1605619264796" duration="817000" />
+      <workItem from="1602503808980" duration="3772000" />
+      <workItem from="1603097935224" duration="14310000" />
+      <workItem from="1605260305766" duration="547000" />
+      <workItem from="1605618823823" duration="1300000" />
+      <workItem from="1606400805560" duration="45000" />
+      <workItem from="1606400857513" duration="196000" />
+      <workItem from="1606401061655" duration="1612000" />
+      <workItem from="1607595917781" duration="1206000" />
+      <workItem from="1607597212065" duration="17572000" />
+      <workItem from="1607642833238" duration="66000" />
+      <workItem from="1607819665795" duration="2181000" />
+      <workItem from="1607944873917" duration="604000" />
+      <workItem from="1608065220679" duration="3337000" />
+      <workItem from="1608161278357" duration="27000" />
+      <workItem from="1608227385331" duration="4530000" />
+      <workItem from="1608559732033" duration="21000" />
+      <workItem from="1608580200675" duration="606000" />
+      <workItem from="1608642200770" duration="2791000" />
+      <workItem from="1608986605503" duration="852000" />
+      <workItem from="1609511546622" duration="5340000" />
+      <workItem from="1609659266765" duration="3658000" />
+      <workItem from="1609942620568" duration="2233000" />
     </task>
     <task id="LOCAL-00001" summary="changement mineur">
       <created>1588096027104</created>
@@ -224,42 +235,77 @@
       <option name="project" value="LOCAL" />
       <updated>1602506240103</updated>
     </task>
-    <task id="LOCAL-00010" summary="Ajout de myHistoric qui n'est que l'ébauche de la récupération de l'historique de conv">
-      <created>1602507902739</created>
+    <task id="LOCAL-00010" summary="Ajout de quelques petits changements tels que :&#10;l'autentification&#10;réorganisation infiniment petite du routage.&#10;Ajout de package !&#10;et rajout du gitignore">
+      <created>1607612728855</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1602507902739</updated>
+      <updated>1607612728855</updated>
     </task>
-    <task id="LOCAL-00011" summary="Ajout de myHistoric qui n'est que l'ébauche de la récupération de l'historique de conv">
-      <created>1602768320224</created>
+    <task id="LOCAL-00011" summary="Ajout de quelques petits changements tels que :&#10;l'autentification&#10;réorganisation infiniment petite du routage.&#10;Ajout de package !&#10;et rajout du gitignore">
+      <created>1607612839248</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1602768320224</updated>
+      <updated>1607612839248</updated>
     </task>
-    <task id="LOCAL-00012" summary="Ajout de myHistoric qui n'est que l'ébauche de la récupération de l'historique de conv">
-      <created>1602957732652</created>
+    <task id="LOCAL-00012" summary="Réparation du login">
+      <created>1607615238097</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1602957732652</updated>
+      <updated>1607615238097</updated>
     </task>
-    <task id="LOCAL-00013" summary="Créations des vues pour avoir les bonnes informations à chaque récupération des historiques et modification de ses dernières.">
-      <created>1603036885112</created>
+    <task id="LOCAL-00013" summary="suppression des consoles log">
+      <created>1607615269380</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1603036885112</updated>
+      <updated>1607615269380</updated>
     </task>
-    <task id="LOCAL-00014" summary="Fix d'un problème entre les string et int en JS">
-      <created>1603041203717</created>
+    <task id="LOCAL-00014" summary="suppression des consoles log">
+      <created>1607616932192</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1603041203717</updated>
+      <updated>1607616932192</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="suppression des consoles log">
+      <created>1607621179402</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1607621179402</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix chatting">
+      <created>1607865290643</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1607865290643</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Fix sending and receiving msg">
+      <created>1608070226384</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608070226384</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Fix sending and receiving file">
+      <created>1608645415769</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608645415769</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fix sending and receiving file">
+      <created>1609520227158</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1609520227158</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,10 +330,14 @@
     <MESSAGE value="changement mineur" />
     <MESSAGE value="Ajout de socket Io pour le chat" />
     <MESSAGE value="Ajout des logs dans la BDD et splitting dans des fichiers." />
-    <MESSAGE value="Ajout de myHistoric qui n'est que l'ébauche de la récupération de l'historique de conv" />
-    <MESSAGE value="Créations des vues pour avoir les bonnes informations à chaque récupération des historiques et modification de ses dernières." />
-    <MESSAGE value="Fix d'un problème entre les string et int en JS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix d'un problème entre les string et int en JS" />
+    <MESSAGE value="Ajout de quelques petits changements tels que :&#10;l'autentification&#10;réorganisation infiniment petite du routage.&#10;Ajout de package !" />
+    <MESSAGE value="Ajout de quelques petits changements tels que :&#10;l'autentification&#10;réorganisation infiniment petite du routage.&#10;Ajout de package !&#10;et rajout du gitignore" />
+    <MESSAGE value="Réparation du login" />
+    <MESSAGE value="suppression des consoles log" />
+    <MESSAGE value="fix chatting" />
+    <MESSAGE value="Fix sending and receiving msg" />
+    <MESSAGE value="Fix sending and receiving file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix sending and receiving file" />
   </component>
   <component name="WindowStateProjectService">
     <state x="906" y="378" key="#Inspections" timestamp="1602504914123">
@@ -298,92 +348,102 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="358" key="#Intentions/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505062330" />
+    <state x="1155" y="511" key="#Language_Injections" timestamp="1607610553093">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1155" y="511" key="#Language_Injections/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607610553093" />
     <state x="654" y="541" key="#SQL_Dialects" timestamp="1602504901473">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="654" y="541" key="#SQL_Dialects/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602504901473" />
-    <state x="1224" y="489" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602351147065">
+    <state x="720" y="515" key="#SQL_Resolution_Scopes" timestamp="1609513630672">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="720" y="515" key="#SQL_Resolution_Scopes/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609513630672" />
+    <state x="1224" y="489" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607604258173">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1224" y="489" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602351147065" />
-    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1602505098848">
+    <state x="1224" y="489" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607604258173" />
+    <state x="1029" y="490" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607610234050">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1029" y="490" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607610234050" />
+    <state x="920" y="359" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607612827965">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603108197694" />
+    <state x="920" y="359" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607612827965" />
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1607610689081">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505098848" />
-    <state width="860" height="349" key="GridCell.Tab.0.bottom" timestamp="1603040142722">
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607610689081" />
+    <state width="1741" height="343" key="GridCell.Tab.0.bottom" timestamp="1609515360953">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="860" height="349" key="GridCell.Tab.0.bottom/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603040142722" />
-    <state width="860" height="349" key="GridCell.Tab.0.center" timestamp="1603040142722">
+    <state width="1741" height="343" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609515360953" />
+    <state width="1741" height="343" key="GridCell.Tab.0.center" timestamp="1609515360953">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="860" height="349" key="GridCell.Tab.0.center/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603040142722" />
-    <state width="860" height="349" key="GridCell.Tab.0.left" timestamp="1603040142721">
+    <state width="1741" height="343" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609515360953" />
+    <state width="1741" height="343" key="GridCell.Tab.0.left" timestamp="1609515360953">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="860" height="349" key="GridCell.Tab.0.left/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603040142721" />
-    <state width="860" height="349" key="GridCell.Tab.0.right" timestamp="1603040142722">
+    <state width="1741" height="343" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609515360953" />
+    <state width="1741" height="343" key="GridCell.Tab.0.right" timestamp="1609515360953">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="860" height="349" key="GridCell.Tab.0.right/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603040142722" />
+    <state width="1741" height="343" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609515360953" />
     <state width="271" height="457" key="HiddenNamespacesPopup" timestamp="1602351167937">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="271" height="457" key="HiddenNamespacesPopup/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602351167937" />
-    <state x="781" y="345" key="SettingsEditor" timestamp="1603624237814">
+    <state x="781" y="345" key="SettingsEditor" timestamp="1607610743073">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="781" y="345" key="SettingsEditor/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602509004450" />
-    <state x="781" y="345" key="SettingsEditor/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1603624237814" />
-    <state width="82" height="441" key="SqlResolveConfigurable" timestamp="1602505093660">
+    <state x="781" y="345" key="SettingsEditor/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505101590" />
+    <state x="586" y="256" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603098456322" />
+    <state x="781" y="345" key="SettingsEditor/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607610743073" />
+    <state width="200" height="441" key="SqlResolveConfigurable" timestamp="1609513628023">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="82" height="441" key="SqlResolveConfigurable/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602505093660" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1603041207528">
+    <state width="200" height="441" key="SqlResolveConfigurable/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609513628023" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1608645417297">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603041207528" />
-    <state x="1179" y="577" width="890" height="524" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1603035427077">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602350864897" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1608645417297" />
+    <state x="1141" y="582" width="311" height="263" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1607611284797">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1179" y="577" width="890" height="524" key="com.intellij.database.actions.DdlActions$CreateObject$1/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603035427077" />
-    <state x="1170" y="587" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603035142485">
+    <state x="1141" y="582" width="311" height="263" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607611284797" />
+    <state x="1138" y="262" width="962" height="656" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1609513549552">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1170" y="587" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603035142485" />
-    <state x="-1036" y="792" width="754" height="497" key="com.intellij.database.actions.DdlActions$ModifyObject$1" timestamp="1605619450380">
-      <screen x="-1920" y="363" width="1920" height="1040" />
-    </state>
-    <state x="1179" y="577" width="754" height="497" key="com.intellij.database.actions.DdlActions$ModifyObject$1/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603034643467" />
-    <state x="-1036" y="792" key="com.intellij.database.actions.DdlActions$ModifyObject$1/0.0.2560.1400/-1920.363.1920.1040@-1920.363.1920.1040" timestamp="1605619450380" />
-    <state x="1076" y="520" width="408" height="355" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1603035471327">
+    <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602507021125" />
+    <state x="1138" y="262" width="962" height="656" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609513549552" />
+    <state x="868" y="402" key="com.intellij.database.view.ui.DatabasePreviewDialog" timestamp="1609512953461">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1076" y="520" width="408" height="355" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603035471327" />
-    <state x="1179" y="629" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1603040073805">
+    <state x="868" y="402" key="com.intellij.database.view.ui.DatabasePreviewDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609512953461" />
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609659972763">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1179" y="629" key="com.intellij.database.run.ParametersPanel.Standalone/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603040073805" />
-    <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1603032994758">
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602504011648" />
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609659972763" />
+    <state x="988" y="417" width="583" height="566" key="find.popup" timestamp="1607604415633">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1138" y="263" width="877" height="809" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603032994758" />
-    <state x="814" y="506" key="com.intellij.database.view.ui.DatabasePreviewDialog" timestamp="1603035599881">
+    <state x="988" y="417" width="583" height="566" key="find.popup/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1607604415633" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1603098931673">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603098931673" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1609513011799">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="814" y="506" key="com.intellij.database.view.ui.DatabasePreviewDialog/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603035599881" />
-    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604246374017">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602768965674" />
-    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1604246374017" />
-    <state x="936" y="330" key="run.anything.popup" timestamp="1603040522135">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="936" y="330" key="run.anything.popup/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603040522135" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1602508049930">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/-1920.363.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1602508049930" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1609513011799" />
   </component>
 </project>

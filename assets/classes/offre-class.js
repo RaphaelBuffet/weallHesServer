@@ -1,10 +1,4 @@
-let db, config
-module.exports = (_db, _config)=>{
-    db=_db
-    config=_config
-    return Offre
-}
-let Offre =class {
+module.exports = Offre =class {
     static getById(id){
         return new Promise((next) => {
             db.query('Select * from offre WHERE id= ?',[id])
