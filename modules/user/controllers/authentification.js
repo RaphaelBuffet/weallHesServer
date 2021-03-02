@@ -9,13 +9,16 @@ function login(req,res,next) {
     const email = req.body.email;
     const password = req.body.password;
     const sqlQuery = 'SELECT * FROM `user` WHERE e_mail = ?'
+    console.log(password)
     db.query(sqlQuery, [email], (err, result) => {
         if (err || !result || !result[0]) {
             console.log(result)
+            console.log(email)
             res.status(401).json({message: 'utilisateur introuvable'});
             return;
         }
         bcrypt.compare(password, result[0].mot_de_passe, (err, result2) => {
+            console.log(result)
             if(result2) {
                 const token = jwt.sign(
                     {userId: result[0].id_user},
@@ -25,11 +28,12 @@ function login(req,res,next) {
                 res.status(200).json({
                     userId: result[0].id_user,
                     token: token,
-                    isEnterprise: result[0].entreprise === 1
+                    isEnterprise: result[0].isEntreprise === 1
                 });
             }
             else{
                 res.status(401).json({message: 'utilisateur introuvable'});
+                
             }
         })
     })
