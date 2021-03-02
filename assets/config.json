@@ -2,10 +2,10 @@
   "rootAPI": "/api/v1/",
   "port": "process.env.PORT || 8080",
   "db": {
-    "host": "f80b6byii2vwv8cx.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
-    "database": "e2jkpgfevu89xw5r",
-    "user": "n6p2pdx314hg8h1i",
-    "password": "gta6ckbwrjmxklez"
+    "host": "j5zntocs2dn6c3fj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
+    "database": "spc07tfhbp7shb2h",
+    "user": "tx6khruhyytcuvbs",
+    "password": "fnzj9i616b1x7cqh"
   },
   "errors" : {
     "wrongID": "Wrong id",

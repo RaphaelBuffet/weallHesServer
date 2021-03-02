@@ -11,6 +11,7 @@ function login(req,res,next) {
     const sqlQuery = 'SELECT * FROM `user` WHERE e_mail = ?'
     db.query(sqlQuery, [email], (err, result) => {
         if (err || !result || !result[0]) {
+            console.log(result)
             res.status(401).json({message: 'utilisateur introuvable'});
             return;
         }
