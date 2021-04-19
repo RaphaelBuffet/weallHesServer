@@ -45,6 +45,21 @@ const Auth = require('./middleware/Auth').Auth;
 
 const ChatRouter = require('./modules/chat/routes');
 const UserRouter = require('./modules/user/routes');
+const TypeRouter = require('./modules/type/route');
+const TauxRouter = require('./modules/taux/route');
+const CantonRouter = require('./modules/canton/route');
+const CursusRouter = require('./modules/cursus/route');
+const ContratRouter = require('./modules/contrat/route');
+const BeneficeExterneRouter = require('./modules/beneficeExterne/route');
+const EthiqueRouter = require('./modules/ethique/route');
+const FormationRouter = require('./modules/formation/route');
+const LangueRouter = require('./modules/langue/route');
+const LocaliteRouter = require('./modules/localite/route');
+const NiveauRouter = require('./modules/niveau/route');
+const SalaireRouter = require('./modules/salaire/route');
+const SecteurRouter = require('./modules/secteur/route');
+const SoftskillRouter = require('./modules/softskill/route');
+const DiplomeRouter = require('./modules/diplome/route');
 
 const upload = multer({ storage: storage })
 const uploadImage = multer({ storage: imageStorage })
@@ -54,51 +69,24 @@ global.db = require('./bdd/connexionDB').getCon();
 global.config = require('./assets/config')
 
 // creation des variables des chemin d'acces
-let BeneficeExterneRouter= express.Router()
-let ContratRouter= express.Router()
-let CursusRouter= express.Router()
-let DegreRouter = express.Router()
 let DispoRouter = express.Router()
 let EntrepriseRouter= express.Router()
-let EthiqueRouter= express.Router()
 let FiltreRouter= express.Router()
-let FormationRouter = express.Router()
-let LangueRouter= express.Router()
-let LocaliteRouter = express.Router()
-let NiveauRouter= express.Router()
 let NiveauLangueRouter = express.Router()
 let OffreRouter= express.Router()
 let PostulantRouter = express.Router()
-let SalaireRouter= express.Router()
-let SecteurRouter= express.Router()
-let SoftskillRouter= express.Router()
-let TauxRouter= express.Router()
-let TypeRouter= express.Router()
 let FileRouter = express.Router();
 
 // importation des classe de requete
-let BeneficeExterne= require('./assets/classes/benefice_externe-class')
-let Contrat= require('./assets/classes/contrat-class')
-let Cursus= require('./assets/classes/cursus-class')
-let Degre= require('./assets/classes/degre-class')
 let Dispo= require('./assets/classes/dispo-class')
 let Entreprise= require('./assets/classes/entreprise-class')
-let Ethique= require('./assets/classes/ethique-class')
 let Filtre= require('./assets/classes/filtre-class')
-let Formation= require('./assets/classes/formation-class')
-let Langue= require('./assets/classes/langue-class')
-let Localite= require('./assets/classes/localite-class')
-let Niveau= require('./assets/classes/niveau-class')
 let NiveauLangue= require('./assets/classes/niveauLangue-class')
 let Offre= require('./assets/classes/offre-class')
 let Postulant= require('./assets/classes/postulant-class')
-let Salaire= require('./assets/classes/salaire-class')
-let Secteur= require('./assets/classes/secteur-class')
-let Softskill= require('./assets/classes/softskill-class')
-let Taux = require('./assets/classes/taux-class')
-let Type= require('./assets/classes/type-class')
 let FileTemp = require('./files/temp')
 const fs = require("fs");
+
 
 app.use(morgan);
 app.use(bodyParser.json());
@@ -111,75 +99,11 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-//requète de Benefice externe
-BeneficeExterneRouter.route('/')
-    .get(async (req,res)=>{
-        let allBenef=await BeneficeExterne.getAll()
-        await res.json(allBenef)
-    })
-BeneficeExterneRouter.route('/:id')
-    .get(async (req,res)=>{
-        let benef = await BeneficeExterne.getById(req.params.id)
-        await res.json(benef)
-    })
-//requète de Contrat
-ContratRouter.route('/')
-    .get(async (req,res)=>{
-        let allContrat=await Contrat.getAll()
-        await res.json(allContrat)
-    })
-ContratRouter.route('/:id')
-    .get(async (req,res)=>{
-        let contrat = await Contrat.getById(req.params.id)
-        await res.json(contrat)
-    })
-//requète de Cursus
-CursusRouter.route('/')
-    .get(async (req,res)=>{
-        let allcursus=await Cursus.getAll()
-        await res.json(allcursus)
-    })
-CursusRouter.route('/:id')
-    .get(async (req,res)=>{
-        let cursus = await Cursus.getById(req.params.id)
-        await res.json(cursus)
-    })
-//requete de degre
-DegreRouter.route('/')
-    .get(async (req,res)=>{
-        let allDegre=await Degre.getAll()
-        await res.json(allDegre)
-    })
-DegreRouter.route('/:id')
-    .get(async (req,res)=>{
-        let degre = await Degre.getById(req.params.id)
-        await res.json(degre)
-    })
 // requete de dispo
 DispoRouter.route('/')
-    .get(async (req,res)=>{
-        let allDispo=await Dispo.getAll()
-        await res.json(allDispo)
-    })
     .post(async (req,res) => {
         let addDispo= await Dispo.add(req.body)
         await res.json(addDispo)
-    })
-DispoRouter.route('/:id')
-    .get(async (req,res)=>{
-        let dispo = await Dispo.getById(req.params.id)
-        await res.json(dispo)
-    })
-//requete de ethique
-EthiqueRouter.route('/')
-    .get(async (req,res)=>{
-        let allEthique=await Ethique.getAll()
-        await res.json(allEthique)
-    })
-EthiqueRouter.route('/:id')
-    .get(async (req,res)=>{
-        let ethique = await Ethique.getById(req.params.id)
-        await res.json(ethique)
     })
 //requete de filtre
 FiltreRouter.route('/')
@@ -188,107 +112,6 @@ FiltreRouter.route('/')
         await console.log("App"+filtre)
         await res.json(filtre)
     })
-
-//requete de formation
-FormationRouter.route('/')
-    .get(async (req,res)=>{
-        let allFormation=await Formation.getAll()
-        await res.json(allFormation)
-    })
-FormationRouter.route('/:id')
-    .get(async (req,res)=>{
-        let formation = await Formation.getById(req.params.id)
-        await res.json(formation)
-    })
-//requete de langue
-LangueRouter.route('/')
-    .get(async (req,res)=>{
-        let allLangue=await Langue.getAll()
-        await res.json(allLangue)
-    })
-LangueRouter.route('/:id')
-    .get(async (req,res)=>{
-        let langue = await Langue.getById(req.params.id)
-        await res.json(langue)
-    })
-//requete de localite
-LocaliteRouter.route('/')
-    .get(async (req,res)=>{
-        let allLocalite=await Localite.getAll()
-        await res.json(allLocalite)
-    })
-LocaliteRouter.route('/:id')
-    .get(async (req,res)=>{
-        let localite = await Localite.getById(req.params.id)
-        await res.json(localite)
-    })
-//requete de niveau
-NiveauRouter.route('/')
-    .get(async (req,res)=>{
-        let allNiveau=await Niveau.getAll()
-        await res.json(allNiveau)
-    })
-NiveauRouter.route('/:id')
-    .get(async (req,res)=>{
-        let niveau = await Niveau.getById(req.params.id)
-        await res.json(niveau)
-    })
-// requete de salaire
-SalaireRouter.route('/')
-    .get(async (req,res)=>{
-        let allSalaire=await Salaire.getAll()
-        res.json(allSalaire)
-    })
-SalaireRouter.route('/:id')
-    .get(async (req,res)=>{
-        let salaire = await Salaire.getById(req.params.id)
-        await res.json(salaire)
-    })
-// requete de secteur
-SecteurRouter.route('/')
-    .get(async (req,res)=>{
-        let allSecteurs=await Secteur.getAll()
-        res.json(allSecteurs)
-    })
-SecteurRouter.route('/:id')
-    .get(async (req,res)=>{
-        let secteur = await Secteur.getById(req.params.id)
-        await res.json(secteur)
-    })
-// requete de softskill
-SoftskillRouter.route('/')
-    .get(async (req,res)=>{
-        let allSoftskill=await Softskill.getAll()
-        res.json(allSoftskill)
-    })
-SoftskillRouter.route('/:id')
-    .get(async (req,res)=>{
-        let softskill = await Softskill.getById(req.params.id)
-        await res.json(softskill)
-    })
-//requete de taux d activite
-TauxRouter.route('/')
-    .get(async (req,res)=>{
-        let alltaux=await Taux.getAll()
-        await res.json(alltaux)
-    })
-TauxRouter.route('/:id')
-    .get(async (req,res)=>{
-        let taux = await Taux.getById(req.params.id)
-        await res.json(taux)
-    })
-//requete de type d'entreprise
-TypeRouter.route('/')
-    .get(async (req,res)=>{
-        let alltype=await Type.getAll()
-        await res.json(alltype)
-    })
-TypeRouter.route('/:id')
-    .get(async (req,res)=>{
-        let type = await Type.getById(req.params.id)
-        await res.json(type)
-    })
-
 //requete d'entreprise
 EntrepriseRouter.route('/')
     .get(async (req,res)=>{
@@ -422,27 +245,28 @@ app.get('/coucouMoi', Auth, (req,res, next) => {
     res.end('Salut toi, ton id est ' + req.userId + ' non ?');
 })
 
-app.use(config.rootAPI+'benefice',BeneficeExterneRouter)
-app.use(config.rootAPI+'contrat',ContratRouter)
-app.use(config.rootAPI+'cursus',CursusRouter)
-app.use(config.rootAPI+'degre',DegreRouter)
+app.use(config.rootAPI+'benefice',Auth,BeneficeExterneRouter)
+app.use(config.rootAPI+'canton',Auth,CantonRouter)
+app.use(config.rootAPI+'cursus',Auth,CursusRouter)
+app.use(config.rootAPI+'diplome',DiplomeRouter)
 app.use(config.rootAPI+'dispo',DispoRouter)
 app.use(config.rootAPI+'entreprise',EntrepriseRouter)
-app.use(config.rootAPI+'ethique',EthiqueRouter)
+app.use(config.rootAPI+'ethique',Auth,EthiqueRouter)
 app.use(config.rootAPI+'filtre',FiltreRouter)
-app.use(config.rootAPI+'formation',FormationRouter)
-app.use(config.rootAPI+'langue',LangueRouter)
-app.use(config.rootAPI+'localite',LocaliteRouter)
-app.use(config.rootAPI+'niveau',NiveauRouter)
+app.use(config.rootAPI+'formation',Auth,FormationRouter)
+app.use(config.rootAPI+'langue',Auth,LangueRouter)
+app.use(config.rootAPI+'localite',Auth,LocaliteRouter)
+app.use(config.rootAPI+'niveau',Auth,NiveauRouter)
 app.use(config.rootAPI+'niveaulangue',NiveauLangueRouter)
-app.use(config.rootAPI+'salaire',SalaireRouter)
+app.use(config.rootAPI+'salaire',Auth,SalaireRouter)
 app.use(config.rootAPI+'offre',OffreRouter)
 app.use(config.rootAPI+'postulant',PostulantRouter)
-app.use(config.rootAPI+'secteur',SecteurRouter)
-app.use(config.rootAPI+'softskill',SoftskillRouter)
-app.use(config.rootAPI+'taux',TauxRouter)
-app.use(config.rootAPI+'type',TypeRouter)
+app.use(config.rootAPI+'secteur',Auth,SecteurRouter)
+app.use(config.rootAPI+'softskill',Auth,SoftskillRouter)
+app.use(config.rootAPI+'taux',Auth,TauxRouter)
+app.use(config.rootAPI+'type',Auth,TypeRouter)
 app.use(config.rootAPI+'user',UserRouter)
+app.use(config.rootAPI+'contrat',Auth, ContratRouter);
 app.use(config.rootAPI+'chat',Auth, ChatRouter);
 app.use(config.rootAPI+'files', Auth,FileRouter);
 app.use('/files', express.static(path.join(__dirname+"/uploads")));
