@@ -60,6 +60,13 @@ const SalaireRouter = require('./modules/salaire/route');
 const SecteurRouter = require('./modules/secteur/route');
 const SoftskillRouter = require('./modules/softskill/route');
 const DiplomeRouter = require('./modules/diplome/route');
+const DispoRouter = require('./modules/dispo/route');
+const PostulantRouter = require('./modules/postulant/route');
+const EntrepriseRouter = require('./modules/entreprise/route');
+const OffreRouter = require('./modules/offre/route');
+const ExperienceRouter = require('./modules/experienceProfessionelle/route');
+const CompetenceRouter = require('./modules/competence/route');
+const FiltreRouter = require('./modules/filtre/route');
 
 const upload = multer({ storage: storage })
 const uploadImage = multer({ storage: imageStorage })
@@ -69,16 +76,10 @@ global.db = require('./bdd/connexionDB').getCon();
 global.config = require('./assets/config')
 
 // creation des variables des chemin d'acces
-let DispoRouter = express.Router()
-let EntrepriseRouter= express.Router()
-let FiltreRouter= express.Router()
 let NiveauLangueRouter = express.Router()
-let OffreRouter= express.Router()
-let PostulantRouter = express.Router()
 let FileRouter = express.Router();
 
 // importation des classe de requete
-let Dispo= require('./assets/classes/dispo-class')
 let Entreprise= require('./assets/classes/entreprise-class')
 let Filtre= require('./assets/classes/filtre-class')
 let NiveauLangue= require('./assets/classes/niveauLangue-class')
@@ -86,6 +87,7 @@ let Offre= require('./assets/classes/offre-class')
 let Postulant= require('./assets/classes/postulant-class')
 let FileTemp = require('./files/temp')
 const fs = require("fs");
+
 
 
 app.use(morgan);
@@ -99,42 +101,6 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-// requete de dispo
-DispoRouter.route('/')
-    .post(async (req,res) => {
-        let addDispo= await Dispo.add(req.body)
-        await res.json(addDispo)
-    })
-//requete de filtre
-FiltreRouter.route('/')
-    .post(async (req,res)=>{
-        let filtre = await Filtre.getProfilFilter(req.body.id)
-        await console.log("App"+filtre)
-        await res.json(filtre)
-    })
-//requete d'entreprise
-EntrepriseRouter.route('/')
-    .get(async (req,res)=>{
-        let allEntreprise=await Entreprise.getAll(req.query.max)
-        await res.json(allEntreprise)
-    })
-    .post(async (req,res) => {
-        let addEntreprise= await Entreprise.add(req.body)
-        await res.json(addEntreprise)
-    })
-EntrepriseRouter.route('/:id')
-    .get(async (req,res)=>{
-        let entreprise = await Entreprise.getById(req.params.id)
-        await res.json(entreprise)
-    })
-    .put(async (req,res)=>{
-        let updateEntreprise=await Entreprise.update(req.params.id,req.body.username,req.body.password,req.body.name,req.body.description,req.body.photo)
-        await res.json(updateEntreprise)
-    })
-    .delete(async (req,res)=> {
-        let deletEntrprise=await Entreprise.delete(req.params.id)
-        await res.json(deletEntrprise)
-    })
 //requete de niveau de langue
 NiveauLangueRouter.route('/')
     .post(async (req,res) => {
@@ -154,68 +120,6 @@ NiveauLangueRouter.route('/:id')
         let deleteLangue=await NiveauLangue.delete(req.params.id)
         await res.json(deleteLangue)
     })
-//requete Offre
-OffreRouter.route('/')
-    .post(async (req,res) => {
-        let addOffre= await Offre.add(req.body)
-        await res.json(addOffre)
-    })
-    .get(async (req,res) => {
-        let Offres= await Offre.getAll(req.query.max)
-        await res.json(Offres)
-    })
-OffreRouter.route('/filter')
-    .get(async (req,res)=>{
-        let offreFilter = await Offre.getByFilter(req.query.idDisponibilite,req.query.idContrat,req.query.idTaux,req.query.idLocalite,req.query.idSecteur)
-        await res.json(offreFilter)
-    })
-OffreRouter.route('/id/:id')
-    .get(async (req,res)=>{
-        let offre = await Offre.getById(req.params.id)
-        await res.json(offre)
-    })
-    .put(async (req,res)=>{
-        let updateOffre=await Offre.update(req.params.id,req.body.name,req.body.cahierCharge,req.body.idEntreprise,req.body.idDisponibilite,req.body.idContrat,req.body.idTaux,req.body.idLocalite,req.body.idSecteur)
-        await res.json(updateOffre)
-    })
-    .delete(async (req,res)=> {
-        let deletOffre=await Offre.delete(req.params.id)
-        await res.json(deletOffre)
-    })
-OffreRouter.route('/entreprise/:id')
-    .get(async (req,res)=>{
-        let offre = await Offre.getByEntreprise(req.params.id)
-        await res.json(offre)
-    })
-//requete des postulants
-PostulantRouter.route('/')
-    .get(async (req,res)=>{
-        let allposutlant=await Postulant.getAll(req.query.max)
-        await res.json(allposutlant)
-    })
-    .post(async (req,res) => {
-        let addPostulant= await Postulant.add(req.body)
-        await res.json(addPostulant)
-    })
-PostulantRouter.route('/id/:id')
-    .get(async (req,res)=>{
-        let postulant = await Postulant.getById(req.params.id)
-        await res.json(postulant)
-    })
-    .put(async (req,res)=>{
-        let updatePostulant=await Postulant.update(req.params.id,req.body.username,req.body.password,req.body.description,req.body.photo,req.body.salaire,req.body.derniereExperience,req.body.idDegre,req.body.idFormation,req.body.idDisponibilite,req.body.idSecteurs)
-        await res.json(updatePostulant)
-    })
-    .delete(async (req,res)=> {
-        let deletePostulant=await Postulant.delete(req.params.id)
-        await res.json(deletePostulant)
-    })
-PostulantRouter.route('/filter')
-    .get(async (req,res)=>{
-        let postulantfilter = await Postulant.getByFilter(req.query.salaire,req.query.derniereExperience,req.query.idDegre,req.query.idFormation,req.query.idDisponibilite,req.query.idSecteurs)
-        await res.json(postulantfilter)
-    })
-
 FileRouter.route('/upload/temp') //
     .post(upload.single('file'),async (req, res,next) => {
         var path = req.pathFile.replace('./uploads/', 'http://' + req.headers.host+"/files/") + req.file.filename;
@@ -247,10 +151,11 @@ app.get('/coucouMoi', Auth, (req,res, next) => {
 
 app.use(config.rootAPI+'benefice',Auth,BeneficeExterneRouter)
 app.use(config.rootAPI+'canton',Auth,CantonRouter)
+app.use(config.rootAPI+'competence',Auth,CompetenceRouter)
 app.use(config.rootAPI+'cursus',Auth,CursusRouter)
-app.use(config.rootAPI+'diplome',DiplomeRouter)
-app.use(config.rootAPI+'dispo',DispoRouter)
-app.use(config.rootAPI+'entreprise',EntrepriseRouter)
+app.use(config.rootAPI+'diplome',Auth,DiplomeRouter)
+app.use(config.rootAPI+'dispo',Auth,DispoRouter)
+app.use(config.rootAPI+'entreprise',Auth,EntrepriseRouter)
 app.use(config.rootAPI+'ethique',Auth,EthiqueRouter)
 app.use(config.rootAPI+'filtre',FiltreRouter)
 app.use(config.rootAPI+'formation',Auth,FormationRouter)
@@ -260,13 +165,14 @@ app.use(config.rootAPI+'niveau',Auth,NiveauRouter)
 app.use(config.rootAPI+'niveaulangue',NiveauLangueRouter)
 app.use(config.rootAPI+'salaire',Auth,SalaireRouter)
 app.use(config.rootAPI+'offre',OffreRouter)
-app.use(config.rootAPI+'postulant',PostulantRouter)
+app.use(config.rootAPI+'postulant',Auth,PostulantRouter)
 app.use(config.rootAPI+'secteur',Auth,SecteurRouter)
 app.use(config.rootAPI+'softskill',Auth,SoftskillRouter)
 app.use(config.rootAPI+'taux',Auth,TauxRouter)
 app.use(config.rootAPI+'type',Auth,TypeRouter)
 app.use(config.rootAPI+'user',UserRouter)
 app.use(config.rootAPI+'contrat',Auth, ContratRouter);
+app.use(config.rootAPI+'contrat',Auth, ExperienceRouter);
 app.use(config.rootAPI+'chat',Auth, ChatRouter);
 app.use(config.rootAPI+'files', Auth,FileRouter);
 app.use('/files', express.static(path.join(__dirname+"/uploads")));

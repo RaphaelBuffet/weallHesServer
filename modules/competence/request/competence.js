@@ -1,5 +1,5 @@
 function getall(req, res, next) {
-    db.query('SELECT * FROM formation_view', (err, rows) => {
+    db.query('SELECT * FROM competence', (err, rows) => {
         if (err) { console.log(err); }
         else {
             console.log(rows)
@@ -7,7 +7,7 @@ function getall(req, res, next) {
             for (const value of rows) {
                 console.log(value.nom)
                 result.push({
-                    id: value.id_formation,
+                    id: value.id_competence,
                     nom: value.nom,
                 });
             }
@@ -17,7 +17,7 @@ function getall(req, res, next) {
 }
 function getById(req, res, next) {
     console.log(req.params.id)
-    db.query('Select * from formation_view WHERE id_formation= ?', [req.params.id], (err, rows) => {
+    db.query('Select * from competence WHERE id_competence= ?', [req.params.id], (err, rows) => {
         if (err) { console.log(err); }
         else {
             let result = rows;
@@ -28,7 +28,7 @@ function getById(req, res, next) {
 }
 function getByPostulant(req, res, next) {
     console.log(req.params.id)
-    db.query('Select * from formation_view WHERE id_postulant= ?', [req.params.id], (err, rows) => {
+    db.query('Select * from competence_view WHERE id_postulant= ?', [req.params.id], (err, rows) => {
         if (err) { console.log(err); }
         else {
             let result = rows;
@@ -37,18 +37,14 @@ function getByPostulant(req, res, next) {
         
     })
 }
-function getmodifyFormation(req, res, next) {
+function modifyCompetence(req, res, next) {
     console.log(req.params.id)
     let data= [
-        req.body.debut,
-        req.body.fin,
-        req.body.cursus,
-        req.body.institut,
-        req.body.degre,
-        req.body.diplome,
-        req.params.id
+        req.body.competence,
+        req.params.id_postulant,
+        req.params.id_competence,
     ]
-    db.query('UPDATE formation SET date_debut=?,date_fin=?,id_cursus=?,id_institut=?,id_degre=?,diplome=? where id_entreprise=?', data, (err, rows) => {
+    db.query('UPDATE competence_postulant SET id_competence=? where id_postulant=? and id_competence=?', data, (err, rows) => {
         if (err) { console.log(err); }
         else {
             let result = {status:true};
@@ -61,5 +57,5 @@ module.exports = {
     getall,
     getById,
     getByPostulant,
-    getmodifyFormation
+    modifyCompetence
 }

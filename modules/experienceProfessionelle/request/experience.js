@@ -1,23 +1,15 @@
 function getall(req, res, next) {
-    db.query('SELECT * FROM formation_view', (err, rows) => {
+    db.query('SELECT * FROM Experience_view', (err, rows) => {
         if (err) { console.log(err); }
         else {
-            console.log(rows)
-            let result = [];
-            for (const value of rows) {
-                console.log(value.nom)
-                result.push({
-                    id: value.id_formation,
-                    nom: value.nom,
-                });
-            }
+            let result = rows;
             res.json(result);
         }
     })
 }
 function getById(req, res, next) {
     console.log(req.params.id)
-    db.query('Select * from formation_view WHERE id_formation= ?', [req.params.id], (err, rows) => {
+    db.query('Select * from Experience_view WHERE id_experience= ?', [req.params.id], (err, rows) => {
         if (err) { console.log(err); }
         else {
             let result = rows;
@@ -28,7 +20,7 @@ function getById(req, res, next) {
 }
 function getByPostulant(req, res, next) {
     console.log(req.params.id)
-    db.query('Select * from formation_view WHERE id_postulant= ?', [req.params.id], (err, rows) => {
+    db.query('Select * from Experience_view WHERE id_postulant= ?', [req.params.id], (err, rows) => {
         if (err) { console.log(err); }
         else {
             let result = rows;
@@ -37,18 +29,20 @@ function getByPostulant(req, res, next) {
         
     })
 }
-function getmodifyFormation(req, res, next) {
+function modifyExperience(req, res, next) {
     console.log(req.params.id)
     let data= [
+        req.body.entreprise,
+        req.body.poste,
         req.body.debut,
         req.body.fin,
-        req.body.cursus,
-        req.body.institut,
-        req.body.degre,
-        req.body.diplome,
+        req.body.secteur,
+        req.body.pays,
+        req.body.npa,
+        req.body.description,
         req.params.id
     ]
-    db.query('UPDATE formation SET date_debut=?,date_fin=?,id_cursus=?,id_institut=?,id_degre=?,diplome=? where id_entreprise=?', data, (err, rows) => {
+    db.query('UPDATE experience_professionelle SET entreprise=?,poste=?,date_debut=?,date_fin=?,id_secteur=?,id_pays=?,npa=?,description=? where id_experience=?', data, (err, rows) => {
         if (err) { console.log(err); }
         else {
             let result = {status:true};
@@ -61,5 +55,5 @@ module.exports = {
     getall,
     getById,
     getByPostulant,
-    getmodifyFormation
+    modifyExperience
 }

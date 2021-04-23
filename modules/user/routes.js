@@ -6,14 +6,17 @@ const authentification = require('./controllers/authentification')
 UserRouter.get('/', async (req, res) => {
     db.query('Select * from user', (err, result) => res.json(result))
 });
+//inscription
 UserRouter.post('/', async (req, res) => {
     let email = req.body.email
     let password = req.body.password
     let entreprise = req.body.entreprise
+    let id
     bcrypt.hash(password, 10, function (err, hash) {
-        let sql = "INSERT INTO user (e_mail,mot_de_passe,entreprise) VALUES ?";
+        let sql = "INSERT INTO user (e_mail,mot_de_passe,isEntreprise) VALUES ?";
         let values = [[email, hash, entreprise]]
         db.query(sql, [values], function (err, result, fields) {
+            id=parseInt(result.insertId);
             if (err) throw err;
             res.send({
                 message: 'Table Data',
@@ -21,6 +24,13 @@ UserRouter.post('/', async (req, res) => {
                 result: result
             });
         });
+            if(entreprise ==="1"){
+                setTimeout(function () {db.query('INSERT INTO entreprise (id_user) VALUES (?)',[id])},500)
+            }
+            else if(entreprise==="0"){
+                setTimeout(function () {db.query('INSERT INTO postulant (id_user) VALUES (?)',[id])},500)
+            }
+        
     });
 });
 UserRouter.get('/:id', async (req, res) => {
@@ -33,6 +43,7 @@ UserRouter.get('/:id', async (req, res) => {
         }
     })
 })
+//connexion
 UserRouter.route('/token')
     .post(async (req, res) => {
         let clientPassword = req.body.password

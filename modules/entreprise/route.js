@@ -1,8 +1,11 @@
-const Contrat = require('./request/contrat')
+const Entreprise = require('./request/entreprise')
 const express = require('express')
-const ContratRouter = express.Router();
+const EntrepriseRouter = express.Router();
 
-ContratRouter.get('/', Contrat.getall);
-ContratRouter.get('/:id', Contrat.getById);
+EntrepriseRouter.get('/', Entreprise.getall);
+EntrepriseRouter.get('/:id', Entreprise.getById);
+EntrepriseRouter.get('/user/:id', Entreprise.getByUser);
+EntrepriseRouter.put('/:id', Entreprise.modifyEntreprise);
+EntrepriseRouter.put('/contact/:id', Entreprise.modifyContact);
 
-module.exports = ContratRouter;
+module.exports = EntrepriseRouter;

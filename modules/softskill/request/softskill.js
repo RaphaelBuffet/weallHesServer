@@ -26,7 +26,35 @@ function getById(req, res, next) {
         
     })
 }
+function getByPostulant(req, res, next) {
+    console.log(req.params.id)
+    db.query('Select * from softskill_View WHERE id_postulant= ?', [req.params.id], (err, rows) => {
+        if (err) { console.log(err); }
+        else {
+            let result = rows;
+            res.json(result);
+        }
+        
+    })
+}
+function modifySoftskill(req, res, next) {
+    console.log(req.params.id)
+    let data= [
+        req.body.softskill,
+        req.params.id_postulant,
+        req.params.id_softskill
+    ]
+    db.query('UPDATE softskill_postulant SET id_softskill=? where id_postulant=? and id_softskill=?', data, (err, rows) => {
+        if (err) { console.log(err); }
+        else {
+            let result = {status:true};
+            res.json(result);
+        }
+    })
+}
 module.exports = {
     getall,
-    getById
+    getById,
+    getByPostulant,
+    modifySoftskill
 }
