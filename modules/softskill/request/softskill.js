@@ -52,9 +52,15 @@ function modifySoftskill(req, res, next) {
         }
     })
 }
+function deleteSoftskill(req, res, next) {
+    db.query('Delete from softskill_postulant WHERE id_postulant= ?', [req.params.id], (err, rows) => {
+        if (err) { console.log(err); }
+    })
+}
 module.exports = {
     getall,
     getById,
     getByPostulant,
-    modifySoftskill
+    modifySoftskill,
+    deleteSoftskill
 }

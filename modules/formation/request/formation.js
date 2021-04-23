@@ -37,7 +37,7 @@ function getByPostulant(req, res, next) {
         
     })
 }
-function getmodifyFormation(req, res, next) {
+function modifyFormation(req, res, next) {
     console.log(req.params.id)
     let data= [
         req.body.debut,
@@ -57,9 +57,15 @@ function getmodifyFormation(req, res, next) {
         
     })
 }
+function deleteFormation(req, res, next) {
+    db.query('Delete from formation WHERE id_postulant= ?', [req.params.id], (err, rows) => {
+        if (err) { console.log(err); }
+    })
+}
 module.exports = {
     getall,
     getById,
     getByPostulant,
-    getmodifyFormation
+    modifyFormation,
+    deleteFormation
 }

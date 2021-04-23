@@ -8,5 +8,6 @@ LangueRouter.get('/postulant/:id', Langue.getByPostulant);
 LangueRouter.get('/sejours/:id_postulant/:id_langue', Langue.getAllSejours);
 LangueRouter.put('/postulant/:id_postulant/:id_langue', Langue.modifyLanguePostulant);
 LangueRouter.put('/sejours/:id_postulant/:id_langue', Langue.modifySejours);
+LangueRouter.delete('/postulant/:id', Langue.deleteLangue);
 
 module.exports = LangueRouter;

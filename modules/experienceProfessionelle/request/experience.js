@@ -51,9 +51,15 @@ function modifyExperience(req, res, next) {
         
     })
 }
+function deleteExperience(req, res, next) {
+    db.query('Delete from experience_professionelle WHERE id_postulant= ?', [req.params.id], (err, rows) => {
+        if (err) { console.log(err); }
+    })
+}
 module.exports = {
     getall,
     getById,
     getByPostulant,
-    modifyExperience
+    modifyExperience,
+    deleteExperience
 }

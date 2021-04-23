@@ -85,11 +85,17 @@ function modifySejours(req, res, next) {
         }
     })
 }
+function deleteLangue(req, res, next) {
+    db.query('Delete from langue_postulant WHERE id_postulant= ?', [req.params.id], (err, rows) => {
+        if (err) { console.log(err); }
+    })
+}
 module.exports = {
     getall,
     getById,
     getByPostulant,
     getAllSejours,
     modifyLanguePostulant,
-    modifySejours
+    modifySejours,
+    deleteLangue
 }

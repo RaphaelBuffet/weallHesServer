@@ -53,9 +53,15 @@ function modifyCompetence(req, res, next) {
         
     })
 }
+function deleteCompetence(req, res, next) {
+    db.query('Delete from competence_postulant WHERE id_postulant= ?', [req.params.id], (err, rows) => {
+        if (err) { console.log(err); }
+    })
+}
 module.exports = {
     getall,
     getById,
     getByPostulant,
-    modifyCompetence
+    modifyCompetence,
+    deleteCompetence
 }

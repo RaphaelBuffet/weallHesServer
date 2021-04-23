@@ -7,5 +7,6 @@ EntrepriseRouter.get('/:id', Entreprise.getById);
 EntrepriseRouter.get('/user/:id', Entreprise.getByUser);
 EntrepriseRouter.put('/:id', Entreprise.modifyEntreprise);
 EntrepriseRouter.put('/contact/:id', Entreprise.modifyContact);
+EntrepriseRouter.delete('/:id',Entreprise.deleteEntreprise);
 
 module.exports = EntrepriseRouter;

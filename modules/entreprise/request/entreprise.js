@@ -75,10 +75,16 @@ function modifyContact(req, res, next) {
         
     })
 }
+function deleteEntreprise(req, res, next) {
+    db.query('Delete from entreprise WHERE id_entreprise= ?', [req.params.id], (err, rows) => {
+        if (err) { console.log(err); }
+    })
+}
 module.exports = {
     getall,
     getById,
     getByUser,
     modifyEntreprise,
-    modifyContact
+    modifyContact,
+    deleteEntreprise
 }
