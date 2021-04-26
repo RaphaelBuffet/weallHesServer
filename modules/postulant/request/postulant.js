@@ -14,6 +14,7 @@ function getById(req, res, next) {
         if (err) { console.log(err); }
         else {
             let result = rows;
+            res.status(200)
             res.json(result);
         }
         
