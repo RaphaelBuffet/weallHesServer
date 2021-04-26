@@ -21,6 +21,8 @@ function getById(req, res, next) {
     })
 }
 function getByuser(req, res, next) {
+    console.log(req.headers.authorization)
+    console.log("id")
     console.log(req.params.id)
     db.query('Select * from postulant_view WHERE id_user= ?', [req.params.id], (err, rows) => {
         if (err) { console.log(err); }
