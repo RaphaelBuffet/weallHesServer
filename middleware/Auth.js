@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
 
 function Auth(req,res,next){
+    console.log("auth start")
+    console.log(req.headers)
     console.log(req.headers['authorization']);
     if(!req.headers['authorization'])
         res.status(400).json({message : 'token invalide'});

@@ -28,7 +28,7 @@ function getByuser(req, res, next) {
         if (err) { console.log(err); }
         else {
             let result = rows;
-            res.json(result);
+            res.status(200).json(result);
         }
         
     })
