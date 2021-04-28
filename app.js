@@ -1,4 +1,5 @@
 const express = require('express')
+const cors= require('cors')
 const bodyParser= require('body-parser')
 require('dotenv').config();
 const morgan = require('morgan')('dev')
@@ -61,7 +62,7 @@ const SecteurRouter = require('./modules/secteur/route');
 const SoftskillRouter = require('./modules/softskill/route');
 const DiplomeRouter = require('./modules/diplome/route');
 const DispoRouter = require('./modules/dispo/route');
-const PostulantRouter = express.Router();
+const PostulantRouter = require('./modules/postulant/route');
 const EntrepriseRouter = require('./modules/entreprise/route');
 const OffreRouter = require('./modules/offre/route');
 const ExperienceRouter = require('./modules/experienceProfessionelle/route');
@@ -85,41 +86,19 @@ let FileTemp = require('./files/temp')
 const fs = require("fs");
 
 
-
+app.use(cors())
 app.use(morgan);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(config.rootAPI+'api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
-app.use(function(req, res, next) {
+/*app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "DELETE, GET, OPTIONS, PATCH, POST, PUT")
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,Authorization,OPTIONS,authorization");
     next();
-});
-app.get("/api/v1/postulant/user/:id",Auth,function (req,res){
-    console.log(req.headers)
-    db.query('SELECT * FROM postulant_view', (err, rows) => {
-        if (err) { console.log(err); }
-        else {
-            console.log(rows)
-            let result = rows;
-            res.json(result);
-        }
-    })
-})
-app.get("/api/v1/lecacacestdelicieux",Auth,function (req,res){
-    console.log(req.headers)
-    db.query('SELECT * FROM postulant_view', (err, rows) => {
-        if (err) { console.log(err); }
-        else {
-            console.log(rows)
-            let result = rows;
-            res.json(result);
-        }
-    })
-})
+});*/
 //requete de niveau de langue
 NiveauLangueRouter.route('/')
     .post(async (req,res) => {
