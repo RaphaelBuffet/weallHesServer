@@ -61,7 +61,7 @@ const SecteurRouter = require('./modules/secteur/route');
 const SoftskillRouter = require('./modules/softskill/route');
 const DiplomeRouter = require('./modules/diplome/route');
 const DispoRouter = require('./modules/dispo/route');
-const PostulantRouter = require('./modules/postulant/route');
+const PostulantRouter = express.Router();
 const EntrepriseRouter = require('./modules/entreprise/route');
 const OffreRouter = require('./modules/offre/route');
 const ExperienceRouter = require('./modules/experienceProfessionelle/route');
@@ -80,11 +80,7 @@ let NiveauLangueRouter = express.Router()
 let FileRouter = express.Router();
 
 // importation des classe de requete
-let Entreprise= require('./assets/classes/entreprise-class')
-let Filtre= require('./assets/classes/filtre-class')
 let NiveauLangue= require('./assets/classes/niveauLangue-class')
-let Offre= require('./assets/classes/offre-class')
-let Postulant= require('./assets/classes/postulant-class')
 let FileTemp = require('./files/temp')
 const fs = require("fs");
 
@@ -98,9 +94,32 @@ app.use(config.rootAPI+'api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocum
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "DELETE, GET, OPTIONS, PATCH, POST, PUT")
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,Authorization,OPTIONS,authorization");
     next();
 });
+app.get("/api/v1/postulant/user/:id",Auth,function (req,res){
+    console.log(req.headers)
+    db.query('SELECT * FROM postulant_view', (err, rows) => {
+        if (err) { console.log(err); }
+        else {
+            console.log(rows)
+            let result = rows;
+            res.json(result);
+        }
+    })
+})
+app.get("/api/v1/lecacacestdelicieux",Auth,function (req,res){
+    console.log(req.headers)
+    db.query('SELECT * FROM postulant_view', (err, rows) => {
+        if (err) { console.log(err); }
+        else {
+            console.log(rows)
+            let result = rows;
+            res.json(result);
+        }
+    })
+})
 //requete de niveau de langue
 NiveauLangueRouter.route('/')
     .post(async (req,res) => {
