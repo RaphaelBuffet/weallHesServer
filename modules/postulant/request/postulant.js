@@ -4,6 +4,7 @@ function getall(req, res, next) {
         else {
             console.log(rows)
             let result = rows;
+            res.status(200)
             res.json(result);
         }
     })

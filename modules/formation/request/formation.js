@@ -3,14 +3,7 @@ function getall(req, res, next) {
         if (err) { console.log(err); }
         else {
             console.log(rows)
-            let result = [];
-            for (const value of rows) {
-                console.log(value.nom)
-                result.push({
-                    id: value.id_formation,
-                    nom: value.nom,
-                });
-            }
+            let result = rows;
             res.json(result);
         }
     })
