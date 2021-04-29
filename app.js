@@ -170,7 +170,7 @@ app.use(config.rootAPI+'taux',Auth,TauxRouter)
 app.use(config.rootAPI+'type',Auth,TypeRouter)
 app.use(config.rootAPI+'user',UserRouter)
 app.use(config.rootAPI+'contrat',Auth, ContratRouter);
-app.use(config.rootAPI+'contrat',Auth, ExperienceRouter);
+app.use(config.rootAPI+'experience',Auth, ExperienceRouter);
 app.use(config.rootAPI+'chat',Auth, ChatRouter);
 app.use(config.rootAPI+'files', Auth,FileRouter);
 app.use('/files', express.static(path.join(__dirname+"/uploads")));
