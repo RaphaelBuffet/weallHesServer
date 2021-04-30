@@ -77,11 +77,9 @@ global.db = require('./bdd/connexionDB').getCon();
 global.config = require('./assets/config')
 
 // creation des variables des chemin d'acces
-let NiveauLangueRouter = express.Router()
 let FileRouter = express.Router();
 
 // importation des classe de requete
-let NiveauLangue= require('./assets/classes/niveauLangue-class')
 let FileTemp = require('./files/temp')
 const fs = require("fs");
 
@@ -99,26 +97,8 @@ app.use(config.rootAPI+'api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocum
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,Authorization,OPTIONS,authorization");
     next();
 });*/
-//requete de niveau de langue
-NiveauLangueRouter.route('/')
-    .post(async (req,res) => {
-        let addLangue= await NiveauLangue.add(req.body)
-        await res.json(addLangue)
-    })
-NiveauLangueRouter.route('/:id')
-    .get(async (req,res)=>{
-        let langueniveau = await NiveauLangue.getByPostulant(req.params.id)
-        await res.json(langueniveau)
-    })
-    .put(async (req,res)=>{
-        let updateLangue=await NiveauLangue.update(req.params.id,req.body.idPostulant,req.body.idLangue,req.body.idNiveau)
-        await res.json(updateLangue)
-    })
-    .delete(async (req,res)=> {
-        let deleteLangue=await NiveauLangue.delete(req.params.id)
-        await res.json(deleteLangue)
-    })
-FileRouter.route('/upload/temp') //
+//methode upload fichier
+FileRouter.route('/upload/temp') 
     .post(upload.single('file'),async (req, res,next) => {
         var path = req.pathFile.replace('./uploads/', 'http://' + req.headers.host+"/files/") + req.file.filename;
     res.json({
@@ -129,7 +109,7 @@ FileRouter.route('/upload/temp') //
     });
 });
 
-FileRouter.route('/upload/profil_image') //
+FileRouter.route('/upload/profil_image') 
     .post(uploadImage.single('file'),async (req, res,next) => {
         console.log("OKOK")
         var path = req.pathFile.replace('./uploads/', 'http://' + req.headers.host+"/image_profile/") + req.file.filename;
@@ -160,7 +140,6 @@ app.use(config.rootAPI+'formation',Auth,FormationRouter)
 app.use(config.rootAPI+'langue',Auth,LangueRouter)
 app.use(config.rootAPI+'localite',Auth,LocaliteRouter)
 app.use(config.rootAPI+'niveau',Auth,NiveauRouter)
-app.use(config.rootAPI+'niveaulangue',NiveauLangueRouter)
 app.use(config.rootAPI+'salaire',Auth,SalaireRouter)
 app.use(config.rootAPI+'offre',OffreRouter)
 app.use(config.rootAPI+'postulant',Auth,PostulantRouter)

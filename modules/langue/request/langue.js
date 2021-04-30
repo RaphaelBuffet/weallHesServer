@@ -38,9 +38,8 @@ function getByPostulant(req, res, next) {
     })
 }
 function getAllSejours(req, res, next) {
-    let langue=req.params.id_langue
     let postulant=req.params.id_postulant
-    db.query('Select * from sejours_view WHERE id_postulant= ? and id_langue=?', [postulant,langue], (err, rows) => {
+    db.query('Select * from sejours_view WHERE id_postulant= ?', [postulant], (err, rows) => {
         if (err) { console.log(err); }
         else {
             let result = rows;
