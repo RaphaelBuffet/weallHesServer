@@ -156,7 +156,7 @@ app.use('/files', express.static(path.join(__dirname+"/uploads")));
 app.use('/image_profile', express.static(path.join(__dirname+"/image_profile")));
 
 io.on('connection', (socket) => {
-    console.log('a user connected');
+    console.log('a user connected to api');
     let message = require('./modules/chat/socket/message')(db,io);
     socket.on("chat message", msg => message.postMessage(msg));
 });
