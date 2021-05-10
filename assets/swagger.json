@@ -39,6 +39,10 @@
       "description": "méthode de récupération des informations de l'offre"
     },
 	{
+      "name": "Connexion",
+      "description": "méthode de connexion et récupération d'un token de connexion"
+    },
+	{
       "name": "Infos Postulant",
       "description": "méthode de récupération des informations postulants"
     },
@@ -1725,7 +1729,7 @@
       "description": "Token invalide"
     }
 	},
-        "tags": ["User"]
+        "tags": ["User","Connexion"]
       }
     },
     "/contrat": {
