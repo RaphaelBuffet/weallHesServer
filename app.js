@@ -122,10 +122,10 @@ FileRouter.route('/upload/profil_image')
         });
     });
 // creation des chemins d'acces pour chaque table de la BDD
-app.get('/coucou', (req,res) => {
+app.get(config.rootAPI+'coucou', (req,res) => {
    res.end("ok");
 });
-app.get('/coucouMoi', Auth, (req,res, next) => {
+app.get(config.rootAPI+'coucouMoi', Auth, (req,res, next) => {
     res.end('Salut toi, ton id est ' + req.userId + ' non ?');
 })
 
