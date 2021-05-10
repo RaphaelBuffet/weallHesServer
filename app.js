@@ -1,5 +1,4 @@
 const express = require('express')
-const swaggerCreator = require('express-oas-generator')
 const cors= require('cors')
 const bodyParser= require('body-parser')
 require('dotenv').config();
@@ -8,7 +7,6 @@ const config = require('./assets/config')
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./assets/swagger.json');
 const app = express();
-swaggerCreator.init(app, {})
 const http = require('http').createServer(app);
 const io = require('socket.io').listen(http);
 const multer  = require('multer');
