@@ -30,6 +30,9 @@
       "name": "Test",
       "description": "methode de test de la connexion a l'api"
     },
+	 "name": "Connexion",
+      "description": "methode de connexion et récupération du token personel"
+    },
 	    {
       "name": "Chat",
       "description": "methode de gestion du chat fonction avec socket io coté serveur"
@@ -1725,7 +1728,7 @@
       "description": "Token invalide"
     }
 	},
-        "tags": ["User"]
+        "tags": ["User","Connexion"]
       }
     },
     "/contrat": {
