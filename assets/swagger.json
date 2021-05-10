@@ -30,6 +30,10 @@
       "name": "Test",
       "description": "methode de test de la connexion a l'api"
     },
+	{
+      "name": "Connexion",
+      "description": "méthode de connexion et récupération d'un token de connexion"
+    },
 	    {
       "name": "Chat",
       "description": "methode de gestion du chat fonction avec socket io coté serveur"
@@ -37,10 +41,6 @@
 	{
       "name": "Infos Offre",
       "description": "méthode de récupération des informations de l'offre"
-    },
-	{
-      "name": "Connexion",
-      "description": "méthode de connexion et récupération d'un token de connexion"
     },
 	{
       "name": "Infos Postulant",
