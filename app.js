@@ -6,6 +6,7 @@ const morgan = require('morgan')('dev')
 const config = require('./assets/config')
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./assets/swagger.json');
+const swaggerDocument2 = require('./assets/swagger2.json');
 const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io').listen(http);
@@ -89,6 +90,7 @@ app.use(morgan);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(config.rootAPI+'api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api/v2/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument2));
 
 
 /*app.use(function(req, res, next) {

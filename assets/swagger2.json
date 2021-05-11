@@ -1,0 +1,2002 @@
+
+{
+  "definitions": {},
+  "info": {
+    "title": "API REST Weall Documentation",
+    "version": "2.0.0",
+    "license": {
+      "name": "ISC"
+    },
+    "description": "API REST pour gérer l'application weall"
+  },
+  "basePath": "/api/v1",
+  "host": "https://weallbackend.herokuapp.com",
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+		"bearerFormat": "JWT"
+      }
+    }
+  },
+"security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+  {
+      "name": "Test",
+      "description": "methode de test de la connexion a l'api"
+    },
+	{
+      "name": "Connexion",
+      "description": "méthode de connexion et récupération d'un token de connexion"
+    },
+	    {
+      "name": "Chat",
+      "description": "methode de gestion du chat fonction avec socket io coté serveur"
+    },
+	{
+      "name": "Infos Offre",
+      "description": "méthode de récupération des informations de l'offre"
+    },
+	{
+      "name": "Infos Postulant",
+      "description": "méthode de récupération des informations postulants"
+    },
+    {
+      "name": "Benefice externe",
+      "description": "gestion de la table des Benefice externe de l'entreprise"
+    },
+	{
+      "name": "Canton",
+      "description": "gestion de la table des cantons"
+    },
+    {
+      "name": "Contrat",
+      "description": "gestion de la table des contrats"
+    },
+	{
+      "name": "Compétence",
+      "description": "gestion de la table des compétence Postulant"
+    },
+    {
+      "name": "Cursus",
+      "description": "gestion de la table des cursus"
+    },
+	{
+      "name": "Diplome",
+      "description": "methode de la table diplome"
+    },
+    {
+      "name": "Disponibilite",
+      "description": "methode de la table Disponibilite"
+    },
+    {
+      "name": "Entreprise",
+      "description": "methode de la table Entreprise"
+    },
+    {
+      "name": "Ethique",
+      "description": "methode de la table Ethique"
+    },
+	{
+      "name": "Experience",
+      "description": "methode de la table Expérience professionelle"
+    },
+	{
+      "name": "Filtre",
+      "description": "methode de la table Filtre"
+    },
+    {
+      "name": "Formation",
+      "description": "methode de la table Formation"
+    },
+    {
+      "name": "Langue",
+      "description": "methode de la table Langue"
+    },
+    {
+      "name": "Localité",
+      "description": "methode de la table Localité"
+    },
+    {
+      "name": "Niveau",
+      "description": "methode de la table Niveau(langue)"
+    },
+    {
+      "name": "Offre",
+      "description": "methode de la table offre"
+    },
+    {
+      "name": "Postulant",
+      "description": "methode de la table Postulant"
+    },
+    {
+      "name": "Salaire",
+      "description": "methode de la table Salaire"
+    },
+    {
+      "name": "Secteurs d'activité",
+      "description": "methode de la table Secteurs d'activité"
+    },
+    {
+      "name": "Softskill",
+      "description": "methode de la table Softskill"
+    },
+    {
+      "name": "Taux d'activité",
+      "description": "methode de la table taux d'activité"
+    },
+    {
+      "name": "Type",
+      "description": "methode de la table type d'entreprise"
+    },
+	{
+      "name": "User",
+      "description": "methode de la table utilisateur"
+    }
+  ],
+  "paths": {
+    "/coucou": {
+      "get": {
+        "summary": "test de connexion a l'api sans token de connexion",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "tags": ["Test"],
+		"security" : [],
+		"responses":{
+	"200": {
+      "description": "OK"
+    }
+      }
+	  }
+    },
+    "/coucouMoi": {
+      "get": {
+        "summary": "test de connexion a l'api avec token de connexion",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": ["Test"]
+      }
+    },
+    "/benefice": {
+      "get": {
+        "summary": "/benefice",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Benefice externe"]
+      }
+    },
+    "/benefice/{id}": {
+      "get": {
+        "summary": "/benefice/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Benefice externe"]
+      }
+    },
+    "/canton": {
+      "get": {
+        "summary": "/canton",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Canton"]
+      }
+    },
+    "/canton/{id}": {
+      "get": {
+        "summary": "/canton/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Canton"]
+      }
+    },
+    "/competence": {
+      "get": {
+        "summary": "/competence",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Compétence"]
+      }
+    },
+    "/competence/{id}": {
+      "get": {
+        "summary": "/competence/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Compétence"]
+      }
+    },
+    "/competence/postulant/{id}": {
+      "get": {
+        "summary": "récupération des compétences du postulant renseigné",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Compétence","Infos Postulant"]
+      },
+      "delete": {
+        "summary": "/competence/postulant/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Compétence"]
+      }
+    },
+    "/competence/postulant/{id_postulant}/{id_competence}": {
+      "put": {
+        "summary": "/competence/postulant/{id_postulant}/{id_competence}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id_postulant",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "id_competence",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Compétence"]
+      }
+    },
+    "/cursus": {
+      "get": {
+        "summary": "/cursus",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Cursus"]
+      }
+    },
+    "/cursus/{id}": {
+      "get": {
+        "summary": "/cursus/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Cursus"]
+      }
+    },
+    "/diplome": {
+      "get": {
+        "summary": "/diplome",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Diplome"]
+      }
+    },
+    "/diplome/{id}": {
+      "get": {
+        "summary": "/diplome/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Diplome"]
+      }
+    },
+    "/dispo": {
+      "get": {
+        "summary": "/dispo",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Disponibilite"]
+      }
+    },
+    "/dispo/{id}": {
+      "get": {
+        "summary": "/dispo/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Disponibilite"]
+      }
+    },
+    "/entreprise": {
+      "get": {
+        "summary": "/entreprise",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Entreprise"]
+      }
+    },
+    "/entreprise/{id}": {
+      "get": {
+        "summary": "récupération des informations personelles de l'entreprise renseigné",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Entreprise","Infos Offre"]
+      },
+      "put": {
+        "summary": "/entreprise/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Entreprise"]
+      },
+      "delete": {
+        "summary": "/entreprise/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Entreprise"]
+      }
+    },
+    "/entreprise/user/{id}": {
+      "get": {
+        "summary": "/entreprise/user/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Entreprise"]
+      }
+    },
+    "/entreprise/contact/{id}": {
+      "put": {
+        "summary": "/entreprise/contact/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Entreprise"]
+      }
+    },
+    "/ethique": {
+      "get": {
+        "summary": "/ethique",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Ethique"]
+      }
+    },
+    "/ethique/{id}": {
+      "get": {
+        "summary": "/ethique/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Ethique"]
+      }
+    },
+    "/filtre": {
+      "get": {
+        "summary": "/filtre",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Filtre"]
+      }
+    },
+    "/filtre/{id}": {
+      "get": {
+        "summary": "/filtre/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Filtre"]
+      }
+    },
+    "/filtre/postulant/{id}": {
+      "get": {
+        "summary": "/filtre/postulant/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Filtre"]
+      },
+      "put": {
+        "summary": "/filtre/postulant/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Filtre"]
+      }
+    },
+    "/filtre/offre/{id}": {
+      "get": {
+        "summary": "/filtre/offre/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Filtre"]
+      },
+      "put": {
+        "summary": "/filtre/offre/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Filtre"]
+      }
+    },
+    "/formation": {
+      "get": {
+        "summary": "/formation",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Formation"]
+      }
+    },
+    "/formation/{id}": {
+      "get": {
+        "summary": "/formation/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Formation"]
+      },
+      "put": {
+        "summary": "/formation/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Formation"]
+      }
+    },
+    "/formation/postulant/{id}": {
+      "get": {
+        "summary": "récupération des formations du postulant renseigné",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Formation","Infos Postulant"]
+      },
+      "delete": {
+        "summary": "/formation/postulant/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Formation"]
+      }
+    },
+    "/langue": {
+      "get": {
+        "summary": "/langue",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Langue"]
+      }
+    },
+    "/langue/{id}": {
+      "get": {
+        "summary": "/langue/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Langue"]
+      }
+    },
+    "/langue/postulant/{id}": {
+      "get": {
+        "summary": "récupération des langues du postulant renseigné",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+       "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Langue","Infos Postulant"]
+      },
+      "delete": {
+        "summary": "/langue/postulant/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Langue"]
+      }
+    },
+    "/langue/sejours/{id_postulant}/": {
+      "get": {
+        "summary": "récupération des séjours et experiences linguistique du postulant renseigné",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id_postulant",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Langue","Infos Postulant"]
+      }
+    },
+    "/langue/postulant/{id_postulant}/{id_langue}": {
+      "put": {
+        "summary": "/langue/postulant/{id_postulant}/{id_langue}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id_postulant",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "id_langue",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Langue"]
+      }
+    },
+    "/langue/sejours/{id_postulant}/{id_langue}": {
+      "put": {
+        "summary": "/langue/sejours/{id_postulant}/{id_langue}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id_postulant",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "id_langue",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Langue"]
+      }
+    },
+    "/localite": {
+      "get": {
+        "summary": "/localite",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Localité"]
+      }
+    },
+    "/localite/{id}": {
+      "get": {
+        "summary": "/localite/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Localité"]
+      }
+    },
+    "/niveau": {
+      "get": {
+        "summary": "/niveau",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Niveau"]
+      }
+    },
+    "/niveau/{id}": {
+      "get": {
+        "summary": "/niveau/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Niveau"]
+      }
+    },
+    "/salaire": {
+      "get": {
+        "summary": "/salaire",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Salaire"]
+      }
+    },
+    "/salaire/{id}": {
+      "get": {
+        "summary": "/salaire/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Salaire"]
+      }
+    },
+    "/offre": {
+      "get": {
+        "summary": "/offre",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Offre"]
+      }
+    },
+    "/offre/{id}": {
+      "get": {
+        "summary": "récupération des informations de l'offre renseigné",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Offre","Infos Offre"]
+      },
+      "put": {
+        "summary": "/offre/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Offre"]
+      },
+      "delete": {
+        "summary": "/offre/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Offre"]
+      }
+    },
+    "/offre/entreprise/{id}": {
+      "get": {
+        "summary": "/offre/entreprise/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Offre"]
+      }
+    },
+    "/postulant": {
+      "get": {
+        "summary": "/postulant",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Postulant"]
+      }
+    },
+    "/postulant/{id}": {
+      "get": {
+        "summary": "récupération des informations personelles du postulant renseigné",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Postulant","Infos Postulant"]
+      },
+      "put": {
+        "summary": "/postulant/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Postulant"]
+      }
+    },
+    "/postulant/user/{id}": {
+      "get": {
+        "summary": "/postulant/user/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Postulant"]
+      }
+    },
+    "/secteur": {
+      "get": {
+        "summary": "/secteur",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Secteurs d'activité"]
+      }
+    },
+    "/secteur/{id}": {
+      "get": {
+        "summary": "/secteur/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Secteurs d'activité"]
+      }
+    },
+    "/softskill": {
+      "get": {
+        "summary": "/softskill",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Softskill"]
+      }
+    },
+    "/softskill/{id}": {
+      "get": {
+        "summary": "/softskill/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Softskill"]
+      }
+    },
+    "/softskill/postulant/{id}": {
+      "get": {
+        "summary": "récupération des softskills du postulant renseigné",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Softskill","Infos Postulant"]
+      },
+      "delete": {
+        "summary": "/softskill/postulant/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {},
+        "tags": ["Softskill"]
+      }
+    },
+    "/softskill/postulant/{id_postulant}/{id_softskill}": {
+      "put": {
+        "summary": "/softskill/postulant/{id_postulant}/{id_softskill}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id_postulant",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "id_softskill",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Softskill"]
+      }
+    },
+    "/taux": {
+      "get": {
+        "summary": "/taux",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": ["Taux d'activité"]
+      }
+    },
+    "/taux/{id}": {
+      "get": {
+        "summary": "/taux/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Taux d'activité"]
+      }
+    },
+    "/type": {
+      "get": {
+        "summary": "/type",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Type"]
+      }
+    },
+    "/type/{id}": {
+      "get": {
+        "summary": "/type/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Type"]
+      }
+    },
+    "/user": {
+      "get": {
+        "summary": "/user",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["User"]
+      },
+      "post": {
+        "summary": "/user",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["User"]
+      }
+    },
+    "/user/{id}": {
+      "get": {
+        "summary": "/user/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["User"]
+      }
+    },
+    "/user/token": {
+      "post": {
+        "summary": "/user/token",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["User"]
+      }
+    },
+    "/user/login": {
+      "post": {
+        "summary": "/user/login",
+        "consumes": [
+          "application/json"
+        ],
+		"security" : [],
+        "parameters": [
+    {
+      "in": "body",
+      "name": "email",
+      "required": true,
+      "schema": {
+        "type": "string"
+      }
+    },
+	{
+      "in": "body",
+      "name": "password",
+      "required": true,
+      "schema": {
+        "type": "string"
+      }
+    }
+  ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["User","Connexion"]
+      }
+    },
+    "/contrat": {
+      "get": {
+        "summary": "/contrat",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Contrat"]
+      }
+    },
+    "/contrat/{id}": {
+      "get": {
+        "summary": "/contrat/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Contrat"]
+      }
+    },
+    "/experience": {
+      "get": {
+        "summary": "/experience",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Experience"]
+      }
+    },
+    "/experience/{id}": {
+      "get": {
+        "summary": "/experience/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Experience"]
+      },
+      "put": {
+        "summary": "/experience/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Experience"]
+      }
+    },
+    "/experience/postulant/{id}": {
+      "get": {
+        "summary": "récupération des expériences professionnelles du postulant renseigné",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Experience","Infos Postulant"]
+      },
+      "delete": {
+        "summary": "/experience/postulant/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Experience"]
+      }
+    },
+    "/chat/myHistoric": {
+      "get": {
+        "summary": "récupération de toutes les conversations de l'utilisateur grace au token de connexion",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Chat"]
+      }
+    },
+    "/chat/{id}": {
+      "get": {
+        "summary": "récupération de toutes les message de la convestion de l'utilisateur grace au token de connexion et de l'utilisateur avec l'id renseigner",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Chat"]
+      }
+    },
+    "/chat/last_visit": {
+      "post": {
+        "summary": "met a jour la dernière visite de la convesation",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Chat"]
+      }
+    },
+    "/files/upload/temp": {
+      "post": {
+        "summary": "/files/upload/temp",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["file"]
+      }
+    },
+    "/files/upload/profil_image": {
+      "post": {
+        "summary": "/files/upload/profil_image",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["file"]
+      }
+    }
+  },
+  "swagger": "2.0"
+}
