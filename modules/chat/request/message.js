@@ -75,9 +75,97 @@ function updateLastVisit(req,res){
             }
         });
 }
+function getQuestionByUser(req, res, next){
+    console.log("ici")
+    console.log(req.userId)
+    const id = req.userId;
+    db.query('SELECT * FROM question_chat WHERE id_user = ?', [id], (err, rows) => {
+        if(err){console.log(err);}
+        else {
+            let result = []
+            let data=[]
+            for (let i=0;i<rows.length;i++){
+                data.push(rows[i])
+            }
+            result=data
+            res.json(result);
+        }
+    })
+}
+function getReponseByUser(req, res, next){
+    console.log("ici")
+    console.log(req.userId)
+    const id = req.userId;
+    db.query('SELECT * FROM reponse_chat_view WHERE id_user = ? and id_user2', [id,req.params.id], (err, rows) => {
+        if(err){console.log(err);}
+        else {
+            let result = []
+            let data=[]
+            for (let i=0;i<rows.length;i++){
+                data.push(rows[i])
+            }
+            result=data
+            res.json(result);
+        }
+    })
+}
+function insertQuestion(req, res, next){
+    console.log("ici")
+    console.log(req.userId)
+    const id = req.userId;
+    db.query('Insert into question_chat (id_user,intitule) VALUES (?,?)', [id,req.body.question], (err, rows) => {
+        if(err){console.log(err);}
+        else {
+            let result={'status':'ok'}
+            res.json(result);
+        }
+    })
+}
+function insertReponse(req, res, next){
+    console.log("ici")
+    console.log(req.userId)
+    const id = req.userId;
+    db.query('Insert into reponse_chat (id_user,intitule,id_question,id_user2) VALUES (?,?,?,?)', [id,req.body.reponse,req.body.questionId,req.body.user], (err, rows) => {
+        if(err){console.log(err);}
+        else {
+            let result={'status':'ok'}
+            res.json(result);
+        }
+    })
+}
+function updateQuestion(req, res, next){
+    console.log("ici")
+    console.log(req.userId)
+    const id = req.userId;
+    db.query('Update question_chat set intitule=? where id_user=? and id_question=?', [req.body.question,id,req.params.id], (err, rows) => {
+        if(err){console.log(err);}
+        else {
+            let result={'status':'ok'}
+            res.json(result);
+        }
+    })
+}
+function deleteQuestion(req, res, next){
+    console.log("ici")
+    console.log(req.userId)
+    const id = req.userId;
+    db.query('Delete from question_chat where (id_question=?)', [req.params.id], (err, rows) => {
+        if(err){console.log(err);}
+        else {
+            let result={'status':'ok'}
+            res.json(result);
+        }
+    })
+}
 
 module.exports = {
     myHistory,
     myHistoryWith,
-    updateLastVisit
+    updateLastVisit,
+    getQuestionByUser,
+    getReponseByUser,
+    insertQuestion,
+    insertReponse,
+    updateQuestion,
+    deleteQuestion
 }

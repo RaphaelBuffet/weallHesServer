@@ -90,7 +90,7 @@ app.use(morgan);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(config.rootAPI+'api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.use('/api/v2/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument2));
+//app.use('/api/v2/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument2));
 
 
 /*app.use(function(req, res, next) {

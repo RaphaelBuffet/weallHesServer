@@ -435,6 +435,164 @@
         "tags": ["Chat"]
       }
     },
+	"/chat/question": {
+      "get": {
+        "summary": "récupère toutes les question de l'utilisateur garce au token d'authentifiaction",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Chat"]
+      },
+	  "post": {
+        "summary": "Insère une nouvelle question à l'utilisateur",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+    {
+      "in": "body",
+      "name": "question",
+      "required": true,
+      "schema": {
+        "type": "string"
+      }
+    }
+  ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Chat"]
+      }
+    },
+	"/chat/question/{id}": {
+      "put": {
+        "summary": "modifie la question définis",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          },
+      {
+      "in": "body",
+      "name": "question",
+      "required": true,
+      "schema": {
+        "type": "string"
+      }
+    }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Chat"]
+      },
+	  "delete": {
+        "summary": "supprime la question définis",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Chat"]
+      }
+    },
+	"/chat/reponse": {
+      "post": {
+        "summary": "envoi la reponse a la question posé",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+    {
+      "in": "body",
+      "name": "reponse",
+      "required": true,
+      "schema": {
+        "type": "string"
+      }
+    },
+	{
+      "in": "body",
+      "name": "questionId",
+      "required": true,
+      "schema": {
+        "type": "integer"
+      }
+    },
+	{
+      "in": "body",
+      "name": "user",
+      "required": true,
+      "schema": {
+        "type": "integer"
+      }
+    }
+  ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Chat"]
+      }
+    },
+	"/chat/reponse/{id}": {
+      "get": {
+        "summary": "récupère les réponses des question de l'utilisateur définis",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Chat"]
+      }
+    },
     "/files/upload/temp": {
       "post": {
         "summary": "/files/upload/temp",
