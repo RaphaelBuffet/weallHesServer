@@ -12,26 +12,36 @@ UserRouter.post('/', async (req, res) => {
     let password = req.body.password
     let entreprise = req.body.entreprise
     let id
-    bcrypt.hash(password, 10, function (err, hash) {
-        let sql = "INSERT INTO user (e_mail,mot_de_passe,isEntreprise) VALUES ?";
-        let values = [[email, hash, entreprise]]
-        db.query(sql, [values], function (err, result, fields) {
-            id=parseInt(result.insertId);
-            if (err) throw err;
-            res.send({
-                message: 'Table Data',
-                Total_record: result.length,
-                result: result
+    db.query("Select * from user where e_mail=?",[req.body.email],function (err, result, fields) {
+        if (err) throw err;
+        if(result[0]!=undefined){
+            console.log(result[0])
+            res.send({message: 'email already use'})
+        }
+        else{
+            bcrypt.hash(password, 10, function (err, hash) {
+                let sql = "INSERT INTO user (e_mail,mot_de_passe,isEntreprise) VALUES ?";
+                let values = [[email, hash, entreprise]]
+                db.query(sql, [values], function (err, result, fields) {
+                    id=parseInt(result.insertId);
+                    if (err) throw err;
+                    res.send({
+                        message: 'Table Data',
+                        Total_record: result.length,
+                        result: result
+                    });
+                });
+                    if(entreprise ==="1"){
+                        setTimeout(function () {db.query('INSERT INTO entreprise (id_user) VALUES (?)',[id])},500)
+                    }
+                    else if(entreprise==="0"){
+                        setTimeout(function () {db.query('INSERT INTO postulant (id_user) VALUES (?)',[id])},500)
+                    }
+                
             });
-        });
-            if(entreprise ==="1"){
-                setTimeout(function () {db.query('INSERT INTO entreprise (id_user) VALUES (?)',[id])},500)
-            }
-            else if(entreprise==="0"){
-                setTimeout(function () {db.query('INSERT INTO postulant (id_user) VALUES (?)',[id])},500)
-            }
-        
+        }
     });
+    
 });
 UserRouter.get('/:id', async (req, res) => {
     db.query('Select * from user WHERE id_user= ?', [id], (err, result) => {
