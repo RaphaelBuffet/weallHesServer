@@ -52,7 +52,7 @@ function getAllFiltrePostulant(req, res, next) {
             result.secteur = rows
         }
     })
-    db.query('Select id_canton AS id from filtre_canton WHERE id_filtre= ?', [req.params.id], (err, rows) => {
+    db.query('Select id_canton AS id from filtre_canton WHERE id_filtre_postulant= ?', [req.params.id], (err, rows) => {
         if (err) { console.log(err); }
         else {
             result.canton = rows
