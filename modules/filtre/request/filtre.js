@@ -1,5 +1,5 @@
 function getall(req, res, next) {
-    db.query('SELECT * FROM filtre', (err, rows) => {
+    db.query('SELECT * FROM filtre_offre', (err, rows) => {
         if (err) { console.log(err); }
         else {
             console.log(rows)
@@ -17,7 +17,7 @@ function getall(req, res, next) {
 }
 function getById(req, res, next) {
     console.log(req.params.id)
-    db.query('Select * from filtre WHERE id_filtre= ?', [req.params.id], (err, rows) => {
+    db.query('Select * from filtre_offre WHERE id_filtre= ?', [req.params.id], (err, rows) => {
         if (err) { console.log(err); }
         else {
             let result = rows;
@@ -46,37 +46,37 @@ function getAllFiltrePostulant(req, res, next) {
             console.log(rows)
         }
     })
-    db.query('Select id_secteur from filtre_secteur WHERE id_filtre_postulant= ?', [req.params.id], (err, rows) => {
+    db.query('Select id_secteur AS id from filtre_secteur WHERE id_filtre_postulant= ?', [req.params.id], (err, rows) => {
         if (err) { console.log(err); }
         else {
             result.secteur = rows
         }
     })
-    db.query('Select id_canton from filtre_canton WHERE id_filtre= ?', [req.params.id], (err, rows) => {
+    db.query('Select id_canton AS id from filtre_canton WHERE id_filtre= ?', [req.params.id], (err, rows) => {
         if (err) { console.log(err); }
         else {
             result.canton = rows
         }
     })
-    db.query('Select id_contrat from filtre_contrat WHERE id_filtre= ?', [req.params.id], (err, rows) => {
+    db.query('Select id_contrat AS id from filtre_contrat WHERE id_filtre= ?', [req.params.id], (err, rows) => {
         if (err) { console.log(err); }
         else {
             result.contrat = rows
         }
     })
-    db.query('Select id_salaire from filtre_salaire WHERE id_filtre= ?', [req.params.id], (err, rows) => {
+    db.query('Select id_salaire AS id from filtre_salaire WHERE id_filtre= ?', [req.params.id], (err, rows) => {
         if (err) { console.log(err); }
         else {
             result.salaire = rows
         }
     })
-    db.query('Select id_type from filtre_type_entreprise WHERE id_filtre= ?', [req.params.id], (err, rows) => {
+    db.query('Select id_type AS id from filtre_type_entreprise WHERE id_filtre= ?', [req.params.id], (err, rows) => {
         if (err) { console.log(err); }
         else {
             result.type = rows
         }
     })
-    db.query('Select id_ethique from filtre_ethique WHERE id_filtre= ?', [req.params.id], (err, rows) => {
+    db.query('Select id_ethique AS id from filtre_ethique WHERE id_filtre= ?', [req.params.id], (err, rows) => {
         if (err) { console.log(err); }
         else {
             result.ethique = rows
