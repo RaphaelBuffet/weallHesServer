@@ -9,7 +9,7 @@ const swaggerDocument = require('./assets/swagger.json');
 const swaggerDocument2 = require('./assets/swagger2.json');
 const app = express();
 const http = require('http').createServer(app);
-const io = require('socket.io').listen(http);
+//const io = require('socket.io').listen(http);
 const multer  = require('multer');
 const crypto = require('crypto');
 const path = require('path');
@@ -157,11 +157,11 @@ app.use(config.rootAPI+'files', Auth,FileRouter);
 app.use('/files', express.static(path.join(__dirname+"/uploads")));
 app.use('/image_profile', express.static(path.join(__dirname+"/image_profile")));
 
-io.on('connection', (socket) => {
+/*io.on('connection', (socket) => {
     console.log('a user connected to api');
     let message = require('./modules/chat/socket/message')(db,io);
     socket.on("chat message", msg => message.postMessage(msg));
-});
+});*/
 
 // ouverture du port pour les requetea
 http.listen(process.env.PORT || '8080', () => console.log('started on '+ (process.env.PORT || 8080)))
