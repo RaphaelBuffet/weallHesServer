@@ -2,10 +2,10 @@
   "rootAPI": "/api/v1/",
   "port": "process.env.PORT || 8080",
   "db": {
-    "host": "node65282-env-2758730.jcloud-ver-jpc.ik-server.com",
+    "host": "j5zntocs2dn6c3fj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
     "database": "spc07tfhbp7shb2h",
-    "user": "root",
-    "password": "NTRrna40329"
+    "user": "tx6khruhyytcuvbs",
+    "password": "fnzj9i616b1x7cqh"
   },
   "errors" : {
     "wrongID": "Wrong id",
