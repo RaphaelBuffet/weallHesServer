@@ -10,11 +10,11 @@
     "description": "API REST pour gérer l'application weall"
   },
   "basePath": "/api/v1",
-  "host": "https://weallbackend.herokuapp.com",
+  "host": "weallbackend.herokuapp.com",
   "components": {
     "securitySchemes": {
       "BearerAuth": {
-        "type": "http",
+        "type": "https",
         "scheme": "bearer",
 		"bearerFormat": "JWT"
       }
