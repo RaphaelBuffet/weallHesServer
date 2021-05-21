@@ -11,7 +11,6 @@ const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io').listen(http);
 const multer  = require('multer');
-const crypto = require('crypto');
 const path = require('path');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -73,7 +72,6 @@ const FiltreRouter = require('./modules/filtre/route');
 const upload = multer({ storage: storage })
 const uploadImage = multer({ storage: imageStorage })
 
-const authToken = crypto.randomBytes (64) .toString ('base64');
 global.db = require('./bdd/connexionDB').getCon();
 global.config = require('./assets/config')
 
