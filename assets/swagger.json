@@ -99,6 +99,30 @@
         "tags": ["Compétence","Infos Postulant"]
       }
     },
+    "/entreprise": {
+      "get": {
+        "summary": "liste toutes les informations de toutes les entreprises",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Entreprise","Infos Offre"]
+      }
+    },
     "/entreprise/{id}": {
       "get": {
         "summary": "récupération des informations personelles de l'entreprise renseigné",
@@ -219,6 +243,30 @@
         "tags": ["Langue","Infos Postulant"]
       }
     },
+    "/offre": {
+      "get": {
+        "summary": "récupération des informations de toutes les offres",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Offre","Infos Offre"]
+      }
+    },
     "/offre/{id}": {
       "get": {
         "summary": "récupération des informations de l'offre renseigné",
@@ -243,6 +291,30 @@
         "tags": ["Offre","Infos Offre"]
       }
     },
+    "/postulant": {
+      "get": {
+        "summary": "récupération des informations personelles des postulants",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses":{
+	"200": {
+      "description": "OK (successfully authenticated)"
+    },
+	"400": {
+      "description": "Token invalide"
+    }
+	},
+        "tags": ["Postulant","Infos Postulant"]
+      }
+	},
     "/postulant/{id}": {
       "get": {
         "summary": "récupération des informations personelles du postulant renseigné",
