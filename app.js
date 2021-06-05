@@ -129,7 +129,6 @@ app.get(config.rootAPI+'coucouMoi', Auth, (req,res, next) => {
 
 app.use(config.rootAPI+'benefice',Auth,BeneficeExterneRouter)
 app.use(config.rootAPI+'canton',Auth,CantonRouter)
-app.use(config.rootAPI+'chat',Auth,ChatRouter)
 app.use(config.rootAPI+'competence',Auth,CompetenceRouter)
 app.use(config.rootAPI+'cursus',Auth,CursusRouter)
 app.use(config.rootAPI+'diplome',Auth,DiplomeRouter)
@@ -151,15 +150,16 @@ app.use(config.rootAPI+'type',Auth,TypeRouter)
 app.use(config.rootAPI+'user',UserRouter)
 app.use(config.rootAPI+'contrat',Auth, ContratRouter);
 app.use(config.rootAPI+'experience',Auth, ExperienceRouter);
+app.use(config.rootAPI+'chat',Auth, ChatRouter);
 app.use(config.rootAPI+'files', Auth,FileRouter);
 app.use('/files', express.static(path.join(__dirname+"/uploads")));
 app.use('/image_profile', express.static(path.join(__dirname+"/image_profile")));
 
-/*io.on('connection', (socket) => {
+io.on('connection', (socket) => {
     console.log('a user connected to api');
     let message = require('./modules/chat/socket/message')(db,io);
     socket.on("chat message", msg => message.postMessage(msg));
 });
-*/
+
 // ouverture du port pour les requetea
 http.listen(process.env.PORT || '8080', () => console.log('started on '+ (process.env.PORT || 8080)))
